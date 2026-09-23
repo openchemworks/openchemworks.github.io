@@ -225,6 +225,8 @@ table.price tbody tr:last-child td{border-bottom:0}
 .shipbox img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;max-width:100%}
 .shipbox .body{padding:1.4rem 1.5rem 1.5rem;display:grid;gap:.8rem}
 .shipbox .addr{background:var(--band);border-radius:4px;padding:.9rem 1rem;font-size:.95rem;line-height:1.55;color:var(--text-2)}
+.shipbox .addr strong{color:var(--navy);font-weight:700;background:rgba(232,121,43,.16);padding:0 .22em;border-radius:2px}
+.shipbox .addr .sfine{display:block;margin-top:.55rem;font-size:.85rem;color:var(--muted)}
 .shipbox p{color:var(--text-2);font-size:.97rem}
 
 /* about */
@@ -1151,7 +1153,7 @@ Q 29.5 104.8, 31.0 104.8
         <div class="body">
           <h3>Shipping</h3>
           <p>Email the tracking number when you ship; we confirm receipt on arrival.</p>
-          <div class="addr">OpenChemWorks<br>Attn: Sample Receiving<br>720 Olive Drive, Suite G<br>Davis, CA 95616</div>
+          <div class="addr">OpenChemWorks<br>Attn: Sample Receiving<br>720 Olive Drive, <strong>Suite G</strong><br>Davis, CA 95616<span class="sfine">720 Olive Drive is a multi-tenant building — please keep <strong>Suite G</strong> on the label.</span></div>
           <p><a class="btn btn-outline-blue" href="openchemworks-sample-sheet.xlsx">Download the sample sheet (Excel)</a></p>
         </div>
       </div>
@@ -1196,7 +1198,7 @@ Q 29.5 104.8, 31.0 104.8
     <div class="intro">
       <h2>Request a Quote</h2>
       <p>Tell us what you're measuring. You'll receive a price and a sample sheet. If the method isn't the right one for your question, we'll say so.</p>
-      <div class="line">Email: <a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>720 Olive Drive, Suite G<br>Davis, CA 95616</div>
+      <div class="line">Email: <a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>720 Olive Drive, <strong>Suite G</strong><br>Davis, CA 95616</div>
     </div>
     <div class="formcard">
       <form id="quoteForm" novalidate>
@@ -1228,7 +1230,7 @@ Q 29.5 104.8, 31.0 104.8
   <div class="container">
     <div>
       <h4>OpenChemWorks</h4>
-      <p>Independent analytical laboratory<br>720 Olive Drive, Suite G<br>Davis, CA 95616<br><a href="mailto:info@openchemworks.com">info@openchemworks.com</a></p>
+      <p>Independent analytical laboratory<br>720 Olive Drive, <strong>Suite G</strong><br>Davis, CA 95616<br><a href="mailto:info@openchemworks.com">info@openchemworks.com</a></p>
     </div>
     <div>
       <h4>Services</h4>
