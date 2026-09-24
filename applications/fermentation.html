@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fermentation Broth Amino Acid Analysis | OpenChemWorks</title>
+<meta name="description" content="Free amino acids and ammonia in fermentation broths and nitrogen sources by AQC HPLC: uptake order, secretion and lot checks, in µM and mg/L.">
+<link rel="canonical" href="https://openchemworks.com/applications/fermentation">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0C2340">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OpenChemWorks">
+<meta property="og:title" content="Fermentation Broth Amino Acid Analysis">
+<meta property="og:description" content="Free amino acids and ammonia in fermentation broths and nitrogen sources by AQC HPLC: uptake order, secretion and lot checks, in µM and mg/L.">
+<meta property="og:url" content="https://openchemworks.com/applications/fermentation">
+<meta property="og:image" content="https://openchemworks.com/img/og/applications-fermentation.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fermentation Broth Amino Acid Analysis">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Amino Acid Analysis for Precision and Microbial Fermentation","description":"Free amino acids and ammonia in fermentation broths and nitrogen sources by AQC HPLC: uptake order, secretion and lot checks, in µM and mg/L.","url":"https://openchemworks.com/applications/fermentation","isPartOf":{"@type":"WebSite","url":"https://openchemworks.com/"},"provider":{"@id":"https://openchemworks.com/#business"},"dateModified":"2026-09-23","about":{"@type":"Thing","name":"Precision & microbial fermentation"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://openchemworks.com/"},{"@type":"ListItem","position":2,"name":"Applications","item":"https://openchemworks.com/applications/"},{"@type":"ListItem","position":3,"name":"Precision & microbial fermentation"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=20260923b">
+<link rel="alternate" type="application/rss+xml" title="OpenChemWorks — methods, notes and insights" href="/feed.xml">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="container">
+    <a class="logo" href="/" aria-label="OpenChemWorks home">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#0C2340"/><path d="M12 44 H20 C22 44 22.5 41 24 41 C25.5 41 26 44 27.5 44 H31" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 44 C33 44 33.6 18 36.5 18 C39.4 18 40 44 42 44" fill="none" stroke="#E8792B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 44 H45.5 C47 44 47.5 36 49.5 36 C51.5 36 52 44 53 44" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span><span class="name">Open<em>Chem</em>Works</span><span class="sub">Analytical Laboratory · Davis, California</span></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="primary-nav" id="menuBtn">Menu</button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="/services/">Services</a>
+      <div class="has-drop">
+        <button class="drop-btn current" type="button" aria-expanded="false" aria-controls="mega">Applications <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <div class="mega" id="mega">
+<a href="/applications/cell-culture-media"><span class="mini" aria-hidden="true"><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M3.0,29.0 L3.4,29.0 L3.9,29.0 L4.3,29.0 L4.7,29.0 L5.1,29.0 L5.6,29.0 L6.0,29.0 L6.4,28.9 L6.8,27.2 L7.3,26.6 L7.7,26.2 L8.1,24.8 L8.6,28.4 L9.0,27.9 L9.4,21.7 L9.8,24.0 L10.3,23.6 L10.7,23.7 L11.1,26.7 L11.5,26.6 L12.0,26.9 L12.4,26.7 L12.8,28.6 L13.2,26.9 L13.7,25.6 L14.1,28.5 L14.5,27.5 L15.0,12.1 L15.4,12.1 L15.8,27.4 L16.2,26.5 L16.7,23.9 L17.1,27.8 L17.5,25.3 L17.9,24.3 L18.4,28.5 L18.8,28.6 L19.2,20.9 L19.7,15.8 L20.1,27.1 L20.5,29.0 L20.9,29.0 L21.4,29.0 L21.8,29.0 L22.2,28.2 L22.6,23.5 L23.1,25.6 L23.5,28.8 L23.9,29.0 L24.3,28.8 L24.8,26.6 L25.2,25.9 L25.6,28.7 L26.1,29.0 L26.5,28.8 L26.9,25.5 L27.3,23.3 L27.8,28.2 L28.2,29.0 L28.6,28.6 L29.0,26.2 L29.5,27.3 L29.9,28.6 L30.3,25.1 L30.8,24.0 L31.2,28.4 L31.6,29.0 L32.0,29.0 L32.5,28.9 L32.9,26.2 L33.3,24.5 L33.7,28.3 L34.2,27.9 L34.6,23.2 L35.0,26.2 L35.4,28.9 L35.9,29.0 L36.3,28.8 L36.7,26.6 L37.2,25.9 L37.6,28.7 L38.0,29.0 L38.4,29.0 L38.9,28.2 L39.3,27.3 L39.7,28.7 L40.1,29.0 L40.6,29.0 L41.0,29.0" fill="none" stroke="#F6B27A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><b>Cell culture media</b><span>Glutamine, ammonia, asparagine and essential amino acids in fresh, fed and spent media, for feed design and lot comparison.</span></span></a>
+<a href="/applications/cultivated-meat"><span class="mini" aria-hidden="true"><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M3.0,29.0 L3.4,29.0 L3.9,29.0 L4.3,29.0 L4.7,29.0 L5.1,29.0 L5.6,29.0 L6.0,29.0 L6.4,28.7 L6.8,24.0 L7.3,22.2 L7.7,22.2 L8.1,19.0 L8.6,27.6 L9.0,27.9 L9.4,21.2 L9.8,23.8 L10.3,23.7 L10.7,23.7 L11.1,24.8 L11.5,23.3 L12.0,13.7 L12.4,10.2 L12.8,26.7 L13.2,24.7 L13.7,22.0 L14.1,28.0 L14.5,28.7 L15.0,25.7 L15.4,25.7 L15.8,28.5 L16.2,23.9 L16.7,18.4 L17.1,26.7 L17.5,22.8 L17.9,21.1 L18.4,28.1 L18.8,28.8 L19.2,25.5 L19.7,23.4 L20.1,28.2 L20.5,29.0 L20.9,29.0 L21.4,29.0 L21.8,29.0 L22.2,28.1 L22.6,22.4 L23.1,25.0 L23.5,28.8 L23.9,29.0 L24.3,28.7 L24.8,24.0 L25.2,22.6 L25.6,28.3 L26.1,29.0 L26.5,28.7 L26.9,22.9 L27.3,19.0 L27.8,27.6 L28.2,29.0 L28.6,28.3 L29.0,23.8 L29.5,25.8 L29.9,28.4 L30.3,22.3 L30.8,20.5 L31.2,28.0 L31.6,29.0 L32.0,29.0 L32.5,28.7 L32.9,23.5 L33.3,20.1 L33.7,27.7 L34.2,27.1 L34.6,18.4 L35.0,23.9 L35.4,28.8 L35.9,29.0 L36.3,28.7 L36.7,24.9 L37.2,23.8 L37.6,28.4 L38.0,29.0 L38.4,28.9 L38.9,27.7 L39.3,26.3 L39.7,28.5 L40.1,29.0 L40.6,29.0 L41.0,29.0" fill="none" stroke="#F6B27A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><b>Cultivated meat</b><span>Spent-media amino acid profiles for cultivated-meat teams cutting media cost: depletion, recycling and hydrolysate comparisons.</span></span></a>
+<a href="/applications/fermentation"><span class="mini" aria-hidden="true"><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M3.0,29.0 L3.4,29.0 L3.9,29.0 L4.3,29.0 L4.7,29.0 L5.1,29.0 L5.6,29.0 L6.0,29.0 L6.4,28.6 L6.8,23.7 L7.3,22.0 L7.7,24.1 L8.1,22.2 L8.6,28.0 L9.0,27.6 L9.4,19.0 L9.8,22.6 L10.3,25.0 L10.7,25.1 L11.1,26.5 L11.5,25.8 L12.0,22.4 L12.4,21.0 L12.8,27.9 L13.2,25.1 L13.7,22.7 L14.1,28.1 L14.5,27.5 L15.0,12.1 L15.4,12.1 L15.8,27.4 L16.2,26.0 L16.7,22.9 L17.1,27.6 L17.5,25.3 L17.9,24.3 L18.4,28.5 L18.8,28.8 L19.2,25.8 L19.7,23.8 L20.1,28.3 L20.5,29.0 L20.9,29.0 L21.4,29.0 L21.8,29.0 L22.2,28.1 L22.6,22.7 L23.1,25.1 L23.5,28.8 L23.9,29.0 L24.3,28.9 L24.8,26.9 L25.2,26.3 L25.6,28.7 L26.1,29.0 L26.5,28.8 L26.9,25.5 L27.3,23.3 L27.8,28.2 L28.2,29.0 L28.6,28.5 L29.0,25.6 L29.5,26.9 L29.9,28.6 L30.3,25.3 L30.8,24.3 L31.2,28.5 L31.6,29.0 L32.0,29.0 L32.5,28.9 L32.9,26.2 L33.3,24.5 L33.7,28.3 L34.2,27.8 L34.6,22.3 L35.0,25.8 L35.4,28.9 L35.9,29.0 L36.3,28.8 L36.7,26.3 L37.2,25.5 L37.6,28.6 L38.0,29.0 L38.4,29.0 L38.9,28.1 L39.3,27.2 L39.7,28.7 L40.1,29.0 L40.6,29.0 L41.0,29.0" fill="none" stroke="#F6B27A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><b>Precision & microbial fermentation</b><span>Free amino acid and ammonia profiles for fermentation broths and complex nitrogen sources, from yeast and fungi to E. coli.</span></span></a>
+<a href="/applications/protein-hydrolysates"><span class="mini" aria-hidden="true"><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M3.0,29.0 L3.4,29.0 L3.9,29.0 L4.3,29.0 L4.7,29.0 L5.1,29.0 L5.6,29.0 L6.0,29.0 L6.4,28.3 L6.8,19.2 L7.3,16.1 L7.7,20.6 L8.1,17.6 L8.6,27.3 L9.0,26.1 L9.4,8.5 L9.8,15.9 L10.3,22.7 L10.7,23.0 L11.1,23.6 L11.5,22.7 L12.0,28.3 L12.4,29.0 L12.8,29.0 L13.2,29.0 L13.7,29.0 L14.1,29.0 L14.5,29.0 L15.0,29.0 L15.4,29.0 L15.8,28.8 L16.2,24.3 L16.7,19.3 L17.1,26.8 L17.5,22.4 L17.9,20.6 L18.4,28.1 L18.8,28.7 L19.2,23.4 L19.7,19.9 L20.1,27.7 L20.5,29.0 L20.9,29.0 L21.4,29.0 L21.8,29.0 L22.2,26.4 L22.6,10.8 L23.1,17.8 L23.5,28.4 L23.9,29.0 L24.3,28.4 L24.8,20.8 L25.2,18.5 L25.6,27.8 L26.1,29.0 L26.5,28.4 L26.9,17.8 L27.3,10.8 L27.8,26.4 L28.2,29.0 L28.6,28.0 L29.0,22.2 L29.5,24.8 L29.9,28.0 L30.3,17.5 L30.8,14.4 L31.2,27.4 L31.6,29.0 L32.0,29.0 L32.5,28.6 L32.9,22.0 L33.3,17.6 L33.7,27.3 L34.2,25.0 L34.6,7.2 L35.0,18.5 L35.4,28.6 L35.9,29.0 L36.3,28.4 L36.7,20.8 L37.2,18.5 L37.6,27.8 L38.0,29.0 L38.4,29.0 L38.9,27.8 L39.3,26.6 L39.7,28.6 L40.1,29.0 L40.6,29.0 L41.0,29.0" fill="none" stroke="#F6B27A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><b>Protein hydrolysates & peptones</b><span>Free amino acid profiles for hydrolysates, peptones and yeast extracts: check lot consistency and compare suppliers on the free fraction.</span></span></a>
+<a href="/applications/label-claims"><span class="mini" aria-hidden="true"><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M3.0,29.0 L3.4,29.0 L3.9,29.0 L4.3,29.0 L4.7,29.0 L5.1,29.0 L5.6,29.0 L6.0,29.0 L6.4,28.9 L6.8,27.4 L7.3,26.8 L7.7,26.7 L8.1,24.1 L8.6,11.6 L9.0,11.6 L9.4,23.8 L9.8,26.3 L10.3,24.2 L10.7,24.3 L11.1,27.3 L11.5,27.1 L12.0,24.1 L12.4,23.0 L12.8,28.3 L13.2,29.0 L13.7,28.5 L14.1,23.6 L14.5,23.3 L15.0,25.7 L15.4,26.2 L15.8,28.6 L16.2,25.9 L16.7,22.5 L17.1,27.7 L17.5,26.8 L17.9,26.2 L18.4,28.7 L18.8,28.8 L19.2,26.2 L19.7,24.4 L20.1,28.3 L20.5,29.0 L20.9,29.0 L21.4,29.0 L21.8,29.0 L22.2,28.5 L22.6,25.6 L23.1,26.9 L23.5,28.9 L23.9,29.0 L24.3,28.9 L24.8,27.6 L25.2,27.2 L25.6,28.8 L26.1,29.0 L26.5,28.9 L26.9,26.5 L27.3,25.0 L27.8,28.4 L28.2,29.0 L28.6,28.8 L29.0,27.3 L29.5,28.0 L29.9,28.7 L30.3,25.1 L30.8,24.0 L31.2,28.4 L31.6,29.0 L32.0,29.0 L32.5,28.8 L32.9,25.8 L33.3,23.8 L33.7,28.2 L34.2,27.5 L34.6,20.7 L35.0,25.0 L35.4,28.8 L35.9,29.0 L36.3,28.9 L36.7,27.4 L37.2,26.9 L37.6,28.8 L38.0,29.0 L38.4,29.0 L38.9,29.0 L39.3,29.0 L39.7,29.0 L40.1,29.0 L40.6,29.0 L41.0,29.0" fill="none" stroke="#F6B27A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><b>Supplements, beverages & pet food</b><span>Measured free taurine, GABA, glutamine, BCAAs and arginine in supplements, energy drinks and pet food, with the chromatogram behind each number.</span></span></a>
+<a href="/applications/wine-and-brewing"><span class="mini" aria-hidden="true"><svg viewBox="0 0 44 32" aria-hidden="true"><path d="M3.0,29.0 L3.4,29.0 L3.9,29.0 L4.3,29.0 L4.7,29.0 L5.1,29.0 L5.6,29.0 L6.0,29.0 L6.4,28.9 L6.8,27.0 L7.3,26.3 L7.7,25.9 L8.1,24.4 L8.6,28.3 L9.0,28.4 L9.4,25.1 L9.8,26.5 L10.3,27.5 L10.7,27.5 L11.1,27.2 L11.5,26.5 L12.0,23.8 L12.4,22.6 L12.8,28.2 L13.2,28.2 L13.7,27.6 L14.1,28.8 L14.5,27.5 L15.0,12.1 L15.4,12.1 L15.8,27.2 L16.2,21.0 L16.7,12.4 L17.1,25.8 L17.5,25.9 L17.9,25.1 L18.4,28.6 L18.8,28.8 L19.2,25.0 L19.7,22.6 L20.1,28.1 L20.5,29.0 L20.9,29.0 L21.4,29.0 L21.8,29.0 L22.2,26.4 L22.6,10.8 L23.1,17.8 L23.5,28.4 L23.9,29.0 L24.3,28.9 L24.8,28.0 L25.2,27.7 L25.6,28.9 L26.1,29.0 L26.5,29.0 L26.9,28.1 L27.3,27.5 L27.8,28.8 L28.2,29.0 L28.6,28.8 L29.0,27.9 L29.5,28.3 L29.9,28.8 L30.3,27.3 L30.8,26.8 L31.2,28.8 L31.6,29.0 L32.0,29.0 L32.5,28.9 L32.9,27.9 L33.3,27.3 L33.7,28.7 L34.2,28.6 L34.6,26.8 L35.0,27.9 L35.4,29.0 L35.9,29.0 L36.3,28.9 L36.7,27.8 L37.2,27.5 L37.6,28.8 L38.0,29.0 L38.4,29.0 L38.9,28.4 L39.3,27.7 L39.7,28.8 L40.1,29.0 L40.6,29.0 L41.0,29.0" fill="none" stroke="#F6B27A" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><b>Wine & brewing</b><span>Ammonia and free amino acids in juice, must and wort: calculate YAN, see which nitrogen sources are low, compare worts beyond FAN.</span></span></a>
+<div class="foot"><span>One method, six matrices, published prices.</span><a href="/applications/">All applications →</a></div>
+        </div>
+      </div>
+      <a href="/methods/">Methods</a>
+      <a href="/insights/">Insights</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+      <a class="btn btn-orange" href="/?matrix=Precision%20%26%20microbial%20fermentation#contact">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phero tall">
+  <div class="glow"></div><div class="grid"></div>
+  <canvas class="anim" id="heroAnim" data-anim="fermentation" aria-hidden="true"></canvas>
+<div class="anim-cap"><span>Illustrative · amino acid uptake over a fermentation</span><button type="button" data-pause="heroAnim" aria-pressed="false">Pause</button></div>  <div class="container">
+    <div class="inner">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/applications/">Applications</a><span class="sep">/</span><span aria-current="page">Precision & microbial fermentation</span></nav>
+<span class="kicker">Precision & microbial fermentation</span>      <h1>Amino Acid Analysis for Precision and Microbial Fermentation</h1>
+<p class="lead">See which amino acids your yeast, fungal or bacterial culture takes up, which it releases and how much ammonia is left, sample by sample across a run or lot by lot across your yeast extract and peptone supply.</p><div class="actions"><a class="btn btn-orange" href="/?matrix=Precision%20%26%20microbial%20fermentation#contact">Request a Quote</a><a class="btn btn-outline-white" href="#measure">What we measure</a></div>    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container hub-grid">
+    <div class="prose">
+      <p>The free amino acids in a fermentation broth show what your strain has taken up, what it has released and how much nitrogen it has left. We measure them, with ammonia, in broth samples across a run and in the complex nitrogen sources that go into the medium.</p>
+      <h2 id="measure">What we measure in fermentation broths</h2>
+      <p>Our free amino acid profile (<a href="/services/amino-acid-analysis">AA-1</a>) covers 19 amino acids plus ammonia, reported in µM and mg/L. It uses pre-column derivatization with AQC, reversed-phase HPLC on a C18 column and UV detection at 260 nm (<a href="/methods/aqc-derivatization">how AQC derivatization works</a>). The extended panel (AA-2) adds GABA, ornithine, citrulline, taurine and hydroxyproline.</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>What published work shows</th>
+<th>Analytes to watch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uptake order</td>
+<td>In synthetic grape must, <em>S. cerevisiae</em> used aspartate, threonine, glutamate, leucine, histidine, methionine, isoleucine, serine, glutamine and phenylalanine early, and ammonium, valine, arginine, alanine, tryptophan and tyrosine late. Proline was not assimilated under anaerobic conditions <sup class="cite"><a href="#ref-1" aria-label="Reference 1">1</a></sup>.</td>
+<td>Full AA-1 panel and ammonia</td>
+</tr>
+<tr>
+<td>Preferred nitrogen</td>
+<td>Filamentous fungi use ammonium and glutamine first; genes for secondary nitrogen sources stay under nitrogen metabolite repression <sup class="cite"><a href="#ref-2" aria-label="Reference 2">2</a></sup>.</td>
+<td>Glutamine, glutamate, ammonia</td>
+</tr>
+<tr>
+<td>Amino acids as carbon</td>
+<td>In LB broth, <em>E. coli</em> draws its carbon mainly from amino acids recovered from oligopeptides and excretes the surplus nitrogen as ammonium <sup class="cite"><a href="#ref-3" aria-label="Reference 3">3</a></sup>.</td>
+<td>Serine, aspartate, glycine, alanine, ammonia</td>
+</tr>
+<tr>
+<td>Overflow</td>
+<td>On glucose minimal media with no amino acids added, <em>E. coli</em>, <em>B. licheniformis</em>, <em>S. cerevisiae</em> and <em>C. glutamicum</em> all released amino acids at micromolar levels <sup class="cite"><a href="#ref-4" aria-label="Reference 4">4</a></sup>.</td>
+<td>Valine, glycine, asparagine, lysine and others</td>
+</tr>
+</tbody>
+</table>
+<p>Uptake is sequential, so one time point rarely explains a run. A time course shows when each amino acid runs out and whether ammonia builds up late. Disappearance from the broth measures uptake, not incorporation. In wine yeast, only a limited fraction of most consumed amino acids went directly into protein; the rest was catabolized and its nitrogen redistributed <sup class="cite"><a href="#ref-5" aria-label="Reference 5">5</a></sup>. For grape must and wort, see <a href="/applications/wine-and-brewing">wine and brewing</a>.</p>
+<p>Complex nitrogen sources add their own variation. Yeast extract composition can vary sharply from lot to lot with yeast strain, production process, autolysis method and purification <sup class="cite"><a href="#ref-6" aria-label="Reference 6">6</a></sup>. In <em>E. coli</em>, yeast extract lots from different suppliers, and from the same supplier, gave very different recombinant enzyme activity after induction, while respiration without induction was unaffected <sup class="cite"><a href="#ref-6" aria-label="Reference 6">6</a></sup>. Eight yeast extracts (six manufacturers, two lots from one) changed <em>Azotobacter vinelandii</em> cell dry weight up to 1.9-fold and alginate production up to twofold <sup class="cite"><a href="#ref-7" aria-label="Reference 7">7</a></sup>. Nine corn steep liquor batches differed in lactic acid, free amino acid profiles, total nitrogen and phosphorus, although <em>Ogataea polymorpha</em> proved robust to those differences <sup class="cite"><a href="#ref-8" aria-label="Reference 8">8</a></sup>. In yeast extracts, the reported free amino acid share ranged from 11–15% after mechanical cell disruption to 77.5% after 48 hours of autolysis at 50 °C <sup class="cite"><a href="#ref-9" aria-label="Reference 9">9</a></sup>. For lot checks on these inputs, see <a href="/applications/protein-hydrolysates">protein hydrolysates and peptones</a>.</p>
+      <h2 id="questions">Questions this answers</h2>
+      <ul class="qgrid"><li>Which amino acids has my strain exhausted by the time growth or titer stalls?</li><li>Is the culture secreting amino acids as feed rate or induction changes, and which ones?</li><li>How much ammonia is left at each time point, and does it climb late in the run?</li><li>Does this lot of yeast extract, peptone or corn steep liquor deliver the same free amino acids as the lot that worked?</li><li>Are two suppliers' nitrogen sources interchangeable on free amino acids?</li><li>How much free amino acid does a nitrogen supplement add to a wort or defined medium?</li></ul>
+      <h2 id="caveats">Caveats for this matrix</h2>
+<div class="caveat"><h3 id="the-profile-keeps-changing-after-sampling">The profile keeps changing after sampling</h3>
+<p>Cells take up and release amino acids throughout a culture <sup class="cite"><a href="#ref-1" aria-label="Reference 1">1</a>,<a href="#ref-4" aria-label="Reference 4">4</a></sup>, and they do not stop when a sample is drawn. Handling can also move metabolites out of cells. In yeast, conventional cold-methanol quenching caused leakage that led to most intracellular levels being underestimated by at least twofold, and smaller metabolites leaked most <sup class="cite"><a href="#ref-10" aria-label="Reference 10">10</a></sup>. The time and handling between sampling and cell removal are part of your result. We report what is in the sample we receive, and we are glad to talk through sampling design in a free feasibility call (<a href="/services/method-development">MD-0</a>).</p></div><div class="caveat"><h3 id="free-amino-acids-are-not-total-nitrogen">Free amino acids are not total nitrogen</h3>
+<p>Complex nitrogen sources carry much of their nitrogen as peptides. Peptides can make up more than 50% of yeast extract mass, depending on manufacture <sup class="cite"><a href="#ref-11" aria-label="Reference 11">11</a></sup>. In one account of autolytic yeast extract, free amino acids were 35–40% of the proteinogenic material and the rest was di- to tetrapeptides and larger oligopeptides <sup class="cite"><a href="#ref-9" aria-label="Reference 9">9</a></sup>. In LB, the amino acids <em>E. coli</em> uses come from oligopeptides <sup class="cite"><a href="#ref-3" aria-label="Reference 3">3</a></sup>. We measure free amino acids only; total amino acids after acid hydrolysis are not offered yet. See <a href="/methods/free-vs-total-amino-acids">free vs total amino acids</a>.</p></div><div class="caveat"><h3 id="dense-broths-need-clarification-and-protein-removal">Dense broths need clarification and protein removal</h3>
+<p>High-cell-density broths carry cells, debris and secreted protein. Complete AQC derivatization needs a 4–6-fold molar excess of reagent <sup class="cite"><a href="#ref-12" aria-label="Reference 12">12</a></sup>, and the reaction is meant for free amino acids only. We clarify and deproteinize these samples in-house before derivatization. An internal standard goes into every sample, and every run includes a QC standard and reagent blanks (<a href="/methods/sample-preparation">sample preparation</a>).</p></div><div class="caveat"><h3 id="acidic-or-salty-broths-and-reaction-ph">Acidic or salty broths and reaction pH</h3>
+<p>AQC derivatization needs the sample buffered at roughly pH 8.2–10.1. Below 8.2 it is incomplete, and glutamic acid and alanine suffer more than serine or phenylalanine <sup class="cite"><a href="#ref-12" aria-label="Reference 12">12</a></sup>. Low-pH broths, or media built on corn steep liquor, which is described as rich in lactic acid <sup class="cite"><a href="#ref-8" aria-label="Reference 8">8</a></sup>, can pull a reaction below that range. Salts can also interfere with amino acid analysis <sup class="cite"><a href="#ref-13" aria-label="Reference 13">13</a></sup>. We check and adjust reaction pH, dilute where needed, and run a spike-recovery check the first time we see a matrix type (PREP-2). Results below the quantitation limit are flagged, not reported as numbers. For help interpreting a time course, see <a href="/methods/reading-an-amino-acid-profile">reading an amino acid profile</a>.</p></div>      <h2 id="notes">Application notes</h2>
+<p>Application notes for this matrix are in preparation. The <a href="/methods/">methods library</a> covers the chemistry in the meantime.</p>      <div class="litwatch"><b>Literature watch</b><p>New publications on precision & microbial fermentation analysis are reviewed monthly; relevant findings and what they change for sampling or interpretation are added to this page.</p></div>
+      <h2 id="references">Key references</h2>
+      <ol class="refs"><li id="ref-1"><span><a href="https://journals.asm.org/doi/10.1128/aem.02294-12" target="_blank" rel="noopener">Sequential Use of Nitrogen Compounds by Saccharomyces cerevisiae during Wine Fermentation: a Model Based on Kinetic and Regulation Characteristics of Nitrogen Permeases</a> — Crépin L, Nidelet T, Sanchez I, Dequin S, Camarasa C. Applied and Environmental Microbiology, 2012.</span></li><li id="ref-2"><span><a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2014.00656/full" target="_blank" rel="noopener">Nitrogen regulation of fungal secondary metabolism in fungi</a> — Tudzynski B. Frontiers in Microbiology, 2014.</span></li><li id="ref-3"><span><a href="https://journals.asm.org/doi/10.1128/jb.01368-07" target="_blank" rel="noopener">Escherichia coli Physiology in Luria-Bertani Broth</a> — Sezonov G, Joseleau-Petit D, D'Ari R. Journal of Bacteriology, 2007.</span></li><li id="ref-4"><span><a href="https://link.springer.com/article/10.1186/1475-2859-11-122" target="_blank" rel="noopener">Extensive exometabolome analysis reveals extended overflow metabolism in various microorganisms</a> — Paczia N, Nilgen A, Lehmann T, Gätgens J, Wiechert W, Noack S. Microbial Cell Factories, 2012.</span></li><li id="ref-5"><span><a href="https://journals.asm.org/doi/full/10.1128/aem.02617-16" target="_blank" rel="noopener">Management of Multiple Nitrogen Sources during Wine Fermentation by Saccharomyces cerevisiae</a> — Crépin L, Truong NM, Bloem A, Sanchez I, Dequin S, Camarasa C. Applied and Environmental Microbiology, 2017.</span></li><li id="ref-6"><span><a href="https://link.springer.com/article/10.1186/s12934-014-0149-5" target="_blank" rel="noopener">Phenotyping the quality of complex medium components by simple online-monitored shake flask experiments</a> — Diederichs S, Korona A, Staaden A, Kroutil W, Honda K, Ohtake H, Büchs J. Microbial Cell Factories, 2014.</span></li><li id="ref-7"><span><a href="https://link.springer.com/article/10.1186/s12934-023-02112-3" target="_blank" rel="noopener">Yeast extracts from different manufacturers and supplementation of amino acids and micro elements reveal a remarkable impact on alginate production by A. vinelandii ATCC9046</a> — Sparviero S, Dicke MD, Rosch TM, Castillo T, Salgado-Lugo H, Galindo E, Peña C, Büchs J. Microbial Cell Factories, 2023.</span></li><li id="ref-8"><span><a href="https://link.springer.com/article/10.1186/s12896-024-00927-5" target="_blank" rel="noopener">Metabolic studies of Ogataea polymorpha using nine different corn steep liquors</a> — Wahjudi SMW, Engel D, Büchs J. BMC Biotechnology, 2025.</span></li><li id="ref-9"><span><a href="https://brewingscience.de/index.php/brewingscience/article/download/236/145" target="_blank" rel="noopener">The complexity of yeast extracts and its consequences on the utility in brewing: A review</a> — Jacob FF, Methner FJ, Michel M, Zarnkow M, Hutzler M. BrewingScience, 2019.</span></li><li id="ref-10"><span><a href="https://link.springer.com/article/10.1007/s11306-008-0116-4" target="_blank" rel="noopener">Leakage-free rapid quenching technique for yeast metabolomics</a> — Canelas AB, Ras C, ten Pierick A, van Dam JC, Heijnen JJ, van Gulik WM. Metabolomics, 2008.</span></li><li id="ref-11"><span><a href="https://www.frontiersin.org/articles/10.3389/fmicb.2019.00906/full" target="_blank" rel="noopener">Insights Into the Complexity of Yeast Extract Peptides and Their Utilization by Streptococcus thermophilus</a> — Proust L, Sourabié A, Pedersen M, Besançon I, Haudebourg E, Monnet V, Juillard V. Frontiers in Microbiology, 2019.</span></li><li id="ref-12"><span><a href="https://www.waters.com/nextgen/us/en/education/primers/comprehensive-guide-to-hydrolysis-and-analysis-of-amino-acids/derivatization-of-amino-acids-using-waters-accqtag-chemistry.html" target="_blank" rel="noopener">Derivatization of Amino Acids Using Waters AccQ•Tag Chemistry</a> — Waters Corporation, Comprehensive Guide to Hydrolysis and Analysis of Amino Acids (primer), n.d.</span></li><li id="ref-13"><span><a href="https://www.usp.org/sites/default/files/usp/document/harmonization/biotechnology/harmonization_april_2017_m858.pdf" target="_blank" rel="noopener">〈1052〉 Biotechnology-Derived Articles—Amino Acid Analysis</a> — United States Pharmacopeia, harmonized general chapter (official May 1, 2018).</span></li></ol>
+      <p class="review-line">OpenChemWorks Laboratory · Reviewed by the laboratory director, PhD chemist · Updated September 23, 2026</p>
+    </div>
+    <aside class="side-card" aria-label="Services and prices for this matrix">
+      <div class="hd"><b>Services for this matrix</b><span>Precision & microbial fermentation</span></div>
+      <ul><li><span><span class="c">AA-1</span> Free amino acid profile</span><span class="p">$125<small>$99 at 10+ · $79 at 50+</small></span></li><li><span><span class="c">AA-2</span> Extended panel</span><span class="p">+ $25<small>per sample, same run</small></span></li><li><span><span class="c">RUSH</span> 48-hour rush</span><span class="p">+ 100 %</span></li></ul>
+      <div class="ft">
+        <a class="btn btn-orange" href="/?matrix=Precision%20%26%20microbial%20fermentation#contact">Request a quote</a>
+        <a class="btn btn-outline-blue" href="/pricing">Full price list</a>
+        <small>Typically 5 business days · minimum order $150 · 48-hour rush available</small>
+      </div>
+      <div class="ft" style="background:#fff;border-top:1px solid var(--line)">
+        <small style="font-family:var(--head);font-weight:600;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;font-size:.74rem">Related methods</small>
+<a href="/methods/sample-preparation" style="font-size:.93rem">Sample Preparation for Free Amino Acid Analysis →</a><a href="/methods/aqc-derivatization" style="font-size:.93rem">How AQC Derivatization Works →</a><a href="/methods/reading-an-amino-acid-profile" style="font-size:.93rem">Reading an Amino Acid Profile: Units, Ratios and Flags →</a>      </div>
+    </aside>
+  </div>
+</section>
+<section class="cta-band">
+  <div class="container">
+    <div><h2>Request a quote for precision & microbial fermentation</h2><p>Tell us the matrix, the number of samples and the question. You'll receive a price and a sample sheet.</p></div>
+    <div class="actions"><a class="btn btn-orange" href="/?matrix=Precision%20%26%20microbial%20fermentation#contact">Request a Quote</a><a class="btn btn-outline-white" href="/pricing">View Pricing</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <div>
+      <h4>OpenChemWorks</h4>
+      <p>Independent analytical laboratory<br>720 Olive Drive, <strong>Suite G</strong><br>Davis, CA 95616<br><a href="mailto:info@openchemworks.com">info@openchemworks.com</a></p>
+    </div>
+    <div>
+      <h4>Applications</h4>
+      <ul><li><a href="/applications/cell-culture-media">Cell culture media</a></li><li><a href="/applications/cultivated-meat">Cultivated meat</a></li><li><a href="/applications/fermentation">Precision & microbial fermentation</a></li><li><a href="/applications/protein-hydrolysates">Protein hydrolysates & peptones</a></li><li><a href="/applications/label-claims">Supplements, beverages & pet food</a></li><li><a href="/applications/wine-and-brewing">Wine & brewing</a></li></ul>
+    </div>
+    <div>
+      <h4>Laboratory</h4>
+      <ul><li><a href="/services/amino-acid-analysis">Amino acid analysis</a></li><li><a href="/services/method-development">HPLC method development</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/services/sample-submission">Sample submission</a></li><li><a href="/methods/">Methods library</a></li><li><a href="/insights/">Insights and notes</a></li><li><a href="/example-report.pdf" target="_blank" rel="noopener">Example report</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>Analytical services for research, development and process monitoring. OpenChemWorks is not a GLP, GMP or ISO/IEC 17025 accredited laboratory; results are not intended for regulatory submission or product release testing.</span>
+      <span>© 2026 OpenChemWorks · Chromatogram animations are illustrative. Photography via Pexels; Agilent HPLC photograph by Nick Birse, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank">CC BY-SA 4.0</a>, via Wikimedia Commons (cropped)</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/site.js?v=20260923b" defer></script>
+<script src="/assets/anim.js?v=20260923b" defer></script>
+</body>
+</html>
