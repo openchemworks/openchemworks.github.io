@@ -32,36 +32,37 @@
   /* order estimator */
   (function(){
     var n=document.getElementById('est-n'); if(!n) return;
-    var ext=document.getElementById('est-ext'), solid=document.getElementById('est-solid'), rush=document.getElementById('est-rush');
+    var ext=document.getElementById('est-ext'), solid=document.getElementById('est-solid');
     var total=document.getElementById('est-total'), detail=document.getElementById('est-detail'), cta=document.getElementById('est-cta');
     function money(v){ return '$'+Math.round(v).toLocaleString('en-US'); }
     function calc(){
       var k=Math.max(1,Math.min(500,parseInt(n.value,10)||1));
       var tier=k>=50?79:(k>=10?99:125), tierName=k>=50?'50 + tier':(k>=10?'10–49 tier':'1–9 tier');
       var per=tier+(ext.checked?25:0)+(solid.checked?30:0);
-      var sub=per*k; if(rush.checked) sub*=2; var t=Math.max(sub,150);
+      var sub=per*k; var t=Math.max(sub,150);
       var parts=[k+' sample'+(k>1?'s':'')+' × '+money(per)+' ('+tierName+(ext.checked?' + AA-2':'')+(solid.checked?' + PREP-1':'')+')'];
-      if(rush.checked) parts.push('48-hour rush +100 %'); if(sub<150) parts.push('minimum order applied');
+      if(sub<150) parts.push('minimum order applied');
       total.textContent=money(t); detail.textContent=parts.join(' · ');
-      var q=['n='+k]; if(ext.checked) q.push('ext=1'); if(solid.checked) q.push('solid=1'); if(rush.checked) q.push('rush=1');
+      var q=['n='+k]; if(ext.checked) q.push('ext=1'); if(solid.checked) q.push('solid=1');
       if(cta && cta.getAttribute('data-page')) cta.setAttribute('href','/?'+q.join('&')+'#contact');
     }
-    [n,ext,solid,rush].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
-    if(cta && !cta.getAttribute('data-page')) cta.addEventListener('click',function(){ fill({n:n.value,ext:ext.checked,solid:solid.checked,rush:rush.checked}); });
+    [n,ext,solid].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
+    if(cta && !cta.getAttribute('data-page')) cta.addEventListener('click',function(){ fill({n:n.value,ext:ext.checked,solid:solid.checked}); });
     calc();
   })();
 
   /* quote form prefill (from estimator or ?matrix= links) */
   function fill(o){
     var q=document.getElementById('q-n'), w=document.getElementById('q-what'), notes=document.getElementById('q-notes'), m=document.getElementById('q-matrix');
-    if(o.n&&q) q.value=o.n; if(w) w.value=o.ext?'AA-1 + AA-2 Extended panel':(o.md?'MD-1 HPLC method development':'AA-1 Free amino acid profile');
+    if(o.n&&q) q.value=o.n; if(w) w.value=o.svc==='pilot'?'PILOT 5-sample pilot ($250)':(o.svc==='run'?'RUN-1 Bioreactor run package':(o.svc==='plan'?'PLAN-1 Monthly standing order':(o.ext?'AA-1 + AA-2 Extended panel':(o.md?'MD-1 HPLC method development':'AA-1 Free amino acid profile'))));
+    if(o.svc==='pilot'&&q&&!q.value) q.value='5';
     if(o.matrix&&m&&!m.value) m.value=o.matrix;
-    if(notes&&!notes.value){ var extra=[]; if(o.rush) extra.push('48-hour rush requested'); if(o.solid) extra.push('samples are solids/powders (PREP-1)'); if(extra.length) notes.value=extra.join('; ')+'.'; }
+    if(notes&&!notes.value){ var extra=[]; if(o.solid) extra.push('samples are solids/powders (PREP-1)'); if(extra.length) notes.value=extra.join('; ')+'.'; }
   }
   (function(){
     if(!document.getElementById('quoteForm')) return;
-    var p=new URLSearchParams(location.search); if(![].slice.call(p.keys()).length) return;
-    fill({n:p.get('n'),ext:p.get('ext')==='1',solid:p.get('solid')==='1',rush:p.get('rush')==='1',matrix:p.get('matrix'),md:p.get('service')==='md'});
+    if(!location.search||location.search.length<2) return; var p=new URLSearchParams(location.search);
+    fill({n:p.get('n'),ext:p.get('ext')==='1',solid:p.get('solid')==='1',matrix:p.get('matrix'),md:p.get('service')==='md',svc:p.get('service')});
   })();
 
   /* quote form */

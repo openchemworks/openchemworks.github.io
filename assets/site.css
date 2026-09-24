@@ -429,4 +429,17 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);paddin
 @media (max-width:820px){.hero .container{padding-bottom:150px}}
 .profile-demo table{display:table;width:100%;min-width:0;margin:0;border:0}.profile-demo .tbls>table{border:1px solid var(--line);border-radius:6px;overflow:hidden}
 
+.tiles.tiles-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){.tiles.tiles-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.tiles.tiles-4{grid-template-columns:minmax(0,1fr)}}
+.tiles.tiles-small .tile .body p{font-size:.92rem}
+.app-sub{margin:2.4rem 0 1rem;font-family:var(--head);font-weight:600;color:var(--navy);font-size:1.05rem;text-align:center}
+.hero-pilot{margin-top:1rem;font-size:.95rem;color:rgba(255,255,255,.82)}
+.hero-pilot b{color:#F6B27A;font-weight:600}
+.pilot-band{border:1px solid var(--line);border-left:4px solid #E8792B;background:#fff;border-radius:8px;padding:1.3rem 1.5rem;display:flex;gap:1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 1.8rem}
+.pilot-band h3{margin:0 0 .3rem;font-size:1.2rem;color:var(--navy)}
+.pilot-band p{margin:0;color:var(--text-2);max-width:62ch}
+.notdo{margin-top:1.4rem;padding:1rem 1.2rem;border-radius:6px;background:var(--band);font-size:.95rem;color:var(--text-2)}
+.notdo b{color:var(--navy)}
+
 .mega .mini{overflow:hidden}.mega .mini svg{display:block;width:100%;height:100%}
