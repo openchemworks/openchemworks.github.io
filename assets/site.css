@@ -609,3 +609,10 @@ footer .f-cta .btn{color:#fff}
 .review-line{max-width:none}
 .est2 .chk{font-family:var(--body);font-weight:400}
 .more-links{margin-top:1.4rem;font-size:.95rem;color:var(--text-2)}
+/* hub guide tables (Oct 8) */
+table.guide{width:100%;border-collapse:collapse;font-size:.95rem;background:#fff}
+table.guide th{text-align:left;background:var(--navy);color:#fff;font-family:var(--head);font-weight:600;font-size:.9rem;padding:.75rem .9rem}
+table.guide td{padding:.75rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.guide td a{font-weight:600}
+.section.tight .more-links{margin:0}
+@media (max-width:640px){table.guide th,table.guide td{padding:.6rem .55rem;font-size:.88rem}}
