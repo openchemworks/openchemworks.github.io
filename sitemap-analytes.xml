@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://openchemworks.com/analytes/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://openchemworks.com/analytes/</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://openchemworks.com/analytes/alanine</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://openchemworks.com/analytes/arginine</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://openchemworks.com/analytes/asparagine</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -11,4 +11,14 @@
   <url><loc>https://openchemworks.com/analytes/glycine</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://openchemworks.com/analytes/histidine</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://openchemworks.com/analytes/isoleucine</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/leucine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/lysine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/methionine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/phenylalanine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/proline</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/serine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/threonine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/tryptophan</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/tyrosine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://openchemworks.com/analytes/valine</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
