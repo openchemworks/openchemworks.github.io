@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,21 +132,32 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#summary-key-findings">Summary: key findings</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#the-computed-dataset">The computed dataset</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#what-to-do-with-this">What to do with this</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="summary-key-findings">Summary: key findings</h2>
+<div class="summary-box rv"><h2 id="summary-key-findings">Summary: key findings</h2>
 <p>All figures below are our computations from two published inputs: NRC requirement tables (swine NRC 2012 as republished by Merck Veterinary Manual; poultry NRC 1994 as republished by Merck Veterinary Manual and Purdue Extension AS-584-W) and published ingredient amino acid profiles (Evonik AMINODat-style feed table: corn and soybean meal, n = 765 and n = 773 samples respectively). Diet archetypes, formulas, and every intermediate number are in data.csv and calc-notes.md.</p>
 <ul>
-<li><strong>In a 78% corn / 20% soybean meal diet for 25–50 kg growing pigs, every key amino acid falls short, and lysine falls furthest.</strong> Computed diet lysine is 0.757% against a 1.12% requirement: 67.6% of requirement, a gap of 0.363 percentage points. Methionine + cystine reaches 82.0% of requirement, threonine 82.8%, methionine alone 80.3%. Limiting order: lysine first, methionine (as Met+Cys) second, threonine third.</li>
+<li><strong>In a 78% corn / 20% soybean meal diet for 25–50 kg growing pigs, every key amino acid falls short, and lysine falls furthest.</strong> Computed diet lysine is 0.757% against a 1.12% requirement: <span class="cu" data-v="67.6" data-dec="1" data-pre="" data-suf="%">67.6%</span> of requirement, a gap of 0.363 percentage points. Methionine + cystine reaches <span class="cu" data-v="82.0" data-dec="1" data-pre="" data-suf="%">82.0%</span> of requirement, threonine <span class="cu" data-v="82.8" data-dec="1" data-pre="" data-suf="%">82.8%</span>, methionine alone 80.3%. Limiting order: lysine first, methionine (as Met+Cys) second, threonine third.</li>
 <li><strong>Closing the pig lysine gap with synthetic lysine alone takes 0.47% L-lysine HCl.</strong> Worked: gap 0.363% ÷ 0.78 (lysine content of L-Lys HCl) = 0.465% of diet, or 4.65 kg per tonne, before the next-limiting amino acids are addressed. Threonine then needs a further 0.126% L-threonine (gap 0.124% ÷ 0.985).</li>
-<li><strong>The same two ingredients in broiler-starter proportions (60% corn / 35% soybean meal) flip the problem.</strong> Lysine (1.133% vs 1.10% required, 103.0%), threonine (101.6%), tryptophan (128.0%), and arginine (113.0%) all clear NRC 1994. Only the sulfur amino acids fail: methionine at 63.8% of requirement and Met+Cys at 73.9%. For broilers on corn-soy, methionine is first-limiting, exactly as the poultry literature states, and our ingredient arithmetic reproduces it from raw profiles.</li>
+<li><strong>The same two ingredients in broiler-starter proportions (60% corn / 35% soybean meal) flip the problem.</strong> Lysine (1.133% vs 1.10% required, <span class="cu" data-v="103.0" data-dec="1" data-pre="" data-suf="%">103.0%</span>), threonine (101.6%), tryptophan (128.0%), and arginine (113.0%) all clear NRC 1994. Only the sulfur amino acids fail: methionine at <span class="cu" data-v="63.8" data-dec="1" data-pre="" data-suf="%">63.8%</span> of requirement and Met+Cys at 73.9%. For broilers on corn-soy, methionine is first-limiting, exactly as the poultry literature states, and our ingredient arithmetic reproduces it from raw profiles.</li>
 <li><strong>The fix the arithmetic implies for broilers is 0.18–0.24% DL-methionine.</strong> Closing the methionine-only gap takes 0.181% ÷ 0.99 = 0.183% DL-Met; closing the full Met+Cys gap with methionine takes 0.235% ÷ 0.99 = 0.237%. Published commercial starter formulas typically include about 0.23–0.30% DL-methionine, which brackets our computed range.</li>
 <li><strong>Corn is the structural cause in both species.</strong> Corn carries 0.25% lysine and 0.35% Met+Cys at 8.4% crude protein; soybean meal carries 2.81% lysine and 1.30% Met+Cys at about 46% crude protein. Every 10 points of diet swapped from corn to soybean meal adds 0.256 points of lysine but only 0.095 points of Met+Cys. Lysine gaps close with ingredient swaps; sulfur gaps mostly do not. That asymmetry is why synthetic methionine is the first purchase in poultry and synthetic lysine is the first purchase in swine.</li>
 </ul>
 <p><strong>So what:</strong> the limiting-amino-acid order is not a matter of opinion or of which supplier's brochure you read. It falls out of two public tables and one weighted average. If your formulation software disagrees with the order above for these archetypes, the disagreement is in its ingredient matrix values, and an assay of your actual corn and soybean meal lots is how you settle it.</p>
 <p><strong>Why it matters:</strong> formulating to book values when your lots run below them is a silent performance tax: the pig diet above is short 32% of its lysine requirement before a single pig eats. Synthetic amino acids are cheap insurance only when they are aimed at the amino acid that is actually first-limiting.</p>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>A corn and soybean meal diet can look adequate on crude protein and still fail the animal on individual amino acids. This article asks a narrow, checkable question: for two standard corn-soy diets, one for growing pigs and one for broiler starters, how much of each key amino acid do the ingredients actually deliver, compared with what the requirement tables say the animal needs?</p>
+<p>We computed the answer from two published inputs only: NRC requirement tables, for swine as republished by the Merck Veterinary Manual and for poultry as republished by Merck and Purdue Extension, and published ingredient amino acid profiles for corn and soybean meal. Each diet is a weighted average of those two profiles, set against the requirement, amino acid by amino acid. From that one calculation come the supply ratios, the limiting order, and the amounts of synthetic amino acid that would close each gap.</p>
+<p>Read the tables that follow as an audit trail: supply, requirement, ratio and gap are shown for every amino acid, with a worked example, so any formulator can reproduce the arithmetic or rerun it with different ingredient values. That is also the practical point for buyers. Book values are population averages, so where a ration underperforms, an assay of the actual corn and soybean meal lots is how a disagreement about the limiting order gets settled.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Swine corn-soy diet: supply as a share of requirement</p>
+<p class="viz-sub">Growing pig archetype. Bars show diet supply divided by the requirement.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Lysine</span><span class="vb-val">67.6%</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:67.6%;transition-delay:0ms"></div><div class="vb-ref" style="left:100.0%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Methionine</span><span class="vb-val">80.3%</span></div><div class="vb-track"><div class="vb-fill" style="--w:80.3%;transition-delay:90ms"></div><div class="vb-ref" style="left:100.0%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Met + Cys</span><span class="vb-val">82.0%</span></div><div class="vb-track"><div class="vb-fill" style="--w:82.0%;transition-delay:180ms"></div><div class="vb-ref" style="left:100.0%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Threonine</span><span class="vb-val">82.8%</span></div><div class="vb-track"><div class="vb-fill" style="--w:82.8%;transition-delay:270ms"></div><div class="vb-ref" style="left:100.0%"></div></div></div><div class="vb-axis"><span>0</span><span>50%</span><span>100%</span></div><p class="vb-note">100% = requirement met</p></div>
+<figcaption>Figure 1 — Every key amino acid falls short in the swine archetype, and lysine falls furthest. The marker shows the requirement level.</figcaption>
+</figure>
 <h2 id="the-computed-dataset">The computed dataset</h2>
 <p>Ingredient inputs (total amino acids, % as-fed, published feed table):</p>
 <table>
@@ -242,6 +313,12 @@
 </tbody>
 </table>
 <p>Worked example (Met+Cys): 0.60 × 0.35 + 0.35 × 1.30 = 0.210 + 0.455 = 0.665%. Ratio: 0.665 / 0.90 = 0.739. Synthetic closure: 0.235 / 0.99 = 0.237% DL-methionine (99%) if the entire sulfur gap is closed with methionine, which is legitimate because methionine converts to cysteine in the bird and pig; the reverse is not true.</p>
+<figure class="viz rv ">
+<p class="viz-title">Broiler starter corn-soy diet: supply as a share of requirement</p>
+<p class="viz-sub">Broiler starter archetype. Bars show diet supply divided by the requirement.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Methionine</span><span class="vb-val">63.8%</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:49.8%;transition-delay:0ms"></div><div class="vb-ref" style="left:78.1%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Met + Cys</span><span class="vb-val">73.9%</span></div><div class="vb-track"><div class="vb-fill" style="--w:57.7%;transition-delay:90ms"></div><div class="vb-ref" style="left:78.1%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Threonine</span><span class="vb-val">101.6%</span></div><div class="vb-track"><div class="vb-fill" style="--w:79.4%;transition-delay:180ms"></div><div class="vb-ref" style="left:78.1%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Lysine</span><span class="vb-val">103.0%</span></div><div class="vb-track"><div class="vb-fill" style="--w:80.5%;transition-delay:270ms"></div><div class="vb-ref" style="left:78.1%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Arginine</span><span class="vb-val">113.0%</span></div><div class="vb-track"><div class="vb-fill" style="--w:88.3%;transition-delay:360ms"></div><div class="vb-ref" style="left:78.1%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Tryptophan</span><span class="vb-val">128.0%</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:450ms"></div><div class="vb-ref" style="left:78.1%"></div></div></div><div class="vb-axis"><span>0</span><span>64%</span><span>128.0%</span></div><p class="vb-note">100% = requirement met</p></div>
+<figcaption>Figure 2 — In the broiler archetype only the sulfur amino acids fall short, and methionine falls furthest. The marker shows the requirement level.</figcaption>
+</figure>
 <h2 id="perspectives">Perspectives</h2>
 <p><strong>Formulator.</strong> Ideal-protein ratios read straight off Table 1: at the point lysine is set to 100, the pig archetype delivers Met+Cys at 70.4% of lysine (0.533/0.757) against a requirement ratio of 58.0% (0.65/1.12), and threonine at 78.7% against a required 64.3%. Read carefully: once lysine is supplemented to requirement without adding protein, those ratios are what the supplemented diet must preserve, which is why Thr and Met+Cys become the binding constraints immediately after lysine. Supplement order for the pig archetype: Lys, then Thr/Met+Cys together. For the broiler archetype the order is Met first, and nothing else until sulfur is fixed.</p>
 <p><strong>Buyer of ingredients.</strong> Which purchases close a gap? Per tonne of diet, replacing 10 points of corn with soybean meal buys +2.56 kg lysine, +0.95 kg Met+Cys, +1.51 kg threonine. Replacing the same 10 points with synthetic product buys exactly the amino acid on the label and nothing else. When the gap is lysine-only ( pigs after Thr/Met are covered), synthetics win on precision; when several amino acids are short at once (the unsupplemented pig archetype), ingredient swaps close three gaps at once but drag crude protein and cost up with them.</p>
@@ -311,5 +388,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

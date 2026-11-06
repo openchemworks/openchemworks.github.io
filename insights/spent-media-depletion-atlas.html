@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,15 +132,14 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#table-1-starting-concentrations-mm-computed-from-published-formulations">Table 1. Starting concentrations (mM), computed from published formulations</a></li><li><a href="#table-2-the-depletion-model-only-where-a-published-rate-exists">Table 2. The depletion model (only where a published rate exists)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#check-your-own-medium">Check your own medium</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
-<p><em>Slug: spent-media-depletion-atlas</em>
-Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
+<p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
+<div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
-<li><strong>Total amino acid load differs 2.8-fold across common basal media.</strong> Summing the published formulations: DMEM (high glucose) starts at 10.68 mM total amino acids, DMEM/F-12 at 7.26 mM, RPMI-1640 at 6.41 mM, and Ham's F-12 at just 3.83 mM. Same cells, very different starting pools. (Our sum of manufacturer formulation sheets; see Table 1.)</li>
+<li><strong>Total amino acid load differs <span class="cu" data-v="2.8" data-dec="1" data-pre="" data-suf="-fold">2.8-fold</span> across common basal media.</strong> Summing the published formulations: DMEM (high glucose) starts at <span class="cu" data-v="10.68" data-dec="2" data-pre="" data-suf="">10.68</span> mM total amino acids, DMEM/F-12 at 7.26 mM, RPMI-1640 at 6.41 mM, and Ham's F-12 at just <span class="cu" data-v="3.83" data-dec="2" data-pre="" data-suf="">3.83</span> mM. Same cells, very different starting pools. (Our sum of manufacturer formulation sheets; see Table 1.)</li>
 <li><strong>Glutamine is 26 to 38% of the entire starting pool</strong> in every formulation (DMEM 37.5%, DMEM/F-12 34.5%, RPMI-1640 32.0%, Ham's F-12 26.1%), so glutamine kinetics dominate any spent-media profile.</li>
-<li><strong>Under one published CHO consumption rate, the glutamine clock runs out in about 1 to 4 days at 1×10⁶ cells/mL.</strong> Applying the maximum glutamine consumption rate reported by Avilan Garzon et al. (Frontiers in Bioengineering and Biotechnology, 2025), 1.008 pmol/cell/day, as a constant-density batch model: Ham's F-12 reaches zero in 0.99 days, RPMI-1640 in 2.04 days, DMEM/F-12 in 2.48 days, DMEM in 3.97 days. Asparagine runs out faster still where it exists at all: 0.13 days in DMEM/F-12, 0.26 days in Ham's F-12, 0.98 days in RPMI-1640, and DMEM contains no asparagine to begin with.</li>
+<li><strong>Under one published CHO consumption rate, the glutamine clock runs out in about 1 to 4 days at 1×10⁶ cells/mL.</strong> Applying the maximum glutamine consumption rate reported by Avilan Garzon et al. (Frontiers in Bioengineering and Biotechnology, 2025), 1.008 pmol/cell/day, as a constant-density batch model: Ham's F-12 reaches zero in <span class="cu" data-v="0.99" data-dec="2" data-pre="" data-suf="">0.99</span> days, RPMI-1640 in 2.04 days, DMEM/F-12 in 2.48 days, DMEM in <span class="cu" data-v="3.97" data-dec="2" data-pre="" data-suf="">3.97</span> days. Asparagine runs out faster still where it exists at all: 0.13 days in DMEM/F-12, 0.26 days in Ham's F-12, 0.98 days in RPMI-1640, and DMEM contains no asparagine to begin with.</li>
 <li><strong>Tryptophan is the smallest molar pool in all four media</strong> (0.010 to 0.078 mM), 51 to 100 times smaller than glutamine in the same bottle. Small pools move first in percentage terms, which is why tryptophan is a sensitive spent-media discriminator even though its absolute consumption is low.</li>
 <li><strong>DMEM starts with five amino acids at exactly zero</strong>: alanine, asparagine, aspartic acid, glutamic acid, and proline are not in the DMEM formulation. Anything measured for those analytes in spent DMEM was made by the cells, not left over from the medium.</li>
 <li><strong>Stoichiometric ammonia ceiling</strong>: if every glutamine in 1 L of DMEM (4.00 mM) deamidated, it would release 4.00 mmol of ammonia. That is a ceiling computed from the formulation, not a measured accumulation rate.</li>
@@ -91,6 +150,17 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 <p><strong>Scope limit, stated plainly:</strong> This article uses published formulations only. Commercial CHO production media formulations are partly proprietary and are not included. Depletion timing is computed only where a published consumption rate could be verified (glutamine and asparagine, one CHO study); for the other 18 amino acids we publish starting-concentration rankings and say so, rather than inventing rates.</p>
 </blockquote>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>A spent-media result is a residual: what is left of what the cells were given. Read on its own it says almost nothing, because the same low reading can mean heavy consumption from a rich medium or modest consumption from a lean one. This atlas supplies the missing half of every spent-media comparison: the starting concentrations of the common basal media, harmonized onto one scale, and the order in which their amino acid pools run out. Total starting load alone differs 2.8-fold across the four media covered.</p>
+<p>The baseline matters because feed timing is set by the first pools to empty, not by the analytes teams usually watch. A feed schedule inherited from one medium can be days late in another, and an amino acid that starts at zero in a formulation measures production by the cells, not leftover medium. Knowing which situation a reading describes is the difference between feeding on evidence and feeding on habit.</p>
+<p>The starting concentrations are computed from the published formulation sheets of each medium, with salt forms converted to amino acid molarity. Depletion timing is modeled only where a published consumption rate could be verified, for glutamine and asparagine in one published CHO batch study, run as a constant-density batch bound; for the remaining amino acids, the article publishes starting concentrations and rankings and says so, rather than inventing rates. Read the formulation table as the specification, and the depletion table as an ordering, not a calendar.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Glutamine depletion: the clock runs out in about 1 to 4 days</p>
+<p class="viz-sub">Published model lines under one CHO consumption rate at constant density: each medium starts at its formulated glutamine concentration and falls to zero at its days-to-zero from Table 2. End labels show the starting concentration of each medium.</p>
+<div class="viz-legend"><span><span class="swl" style="background:#0C2340"></span>DMEM (high glucose)</span><span><span class="swl" style="background:#E8792B"></span>DMEM/F-12</span><span><span class="swl" style="background:#3E6DA3"></span>RPMI-1640</span><span><span class="swl" style="background:#B3541E"></span>Ham&#x27;s F-12</span></div><svg class="vchart" viewBox="0 0 680 300" role="img" aria-label="Line chart, glutamine, mM by days"><line x1="62" y1="260.0" x2="584" y2="260.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="264.0" font-size="12.5" text-anchor="end">0</text><line x1="62" y1="199.0" x2="584" y2="199.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="203.0" font-size="12.5" text-anchor="end">1</text><line x1="62" y1="138.0" x2="584" y2="138.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="142.0" font-size="12.5" text-anchor="end">2</text><line x1="62" y1="77.0" x2="584" y2="77.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="81.0" font-size="12.5" text-anchor="end">3</text><line x1="62" y1="16.0" x2="584" y2="16.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="20.0" font-size="12.5" text-anchor="end">4</text><line x1="62" y1="16" x2="62" y2="260" stroke="#8A97A5" stroke-width="1.2"/><line x1="62" y1="260" x2="584" y2="260" stroke="#8A97A5" stroke-width="1.2"/><text class="tick" x="62.0" y="280" font-size="12.5" text-anchor="middle">0</text><text class="tick" x="192.5" y="280" font-size="12.5" text-anchor="middle">1</text><text class="tick" x="323.0" y="280" font-size="12.5" text-anchor="middle">2</text><text class="tick" x="453.5" y="280" font-size="12.5" text-anchor="middle">3</text><text class="tick" x="584.0" y="280" font-size="12.5" text-anchor="middle">4</text><text class="tick" x="323" y="298" font-size="12.5" text-anchor="middle">days</text><text class="tick" x="14" y="138" font-size="12.5" text-anchor="middle" transform="rotate(-90 14 138)">glutamine, mM</text><polyline class="draw" pathLength="1" points="62.0,16.0 580.1,260.0" fill="none" stroke="#0C2340" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="16.0" r="3.4" fill="#0C2340"/><circle class="pop" cx="580.1" cy="260.0" r="3.4" fill="#0C2340"/><text class="vval pop" x="588.1" y="264.0" font-size="13.5">4.000</text><polyline class="draw" pathLength="1" points="62.0,107.5 385.6,260.0" fill="none" stroke="#E8792B" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="107.5" r="3.4" fill="#E8792B"/><circle class="pop" cx="385.6" cy="260.0" r="3.4" fill="#E8792B"/><text class="vval pop" x="393.6" y="246.0" font-size="13.5">2.500</text><polyline class="draw" pathLength="1" points="62.0,134.8 328.2,260.0" fill="none" stroke="#3E6DA3" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="134.8" r="3.4" fill="#3E6DA3"/><circle class="pop" cx="328.2" cy="260.0" r="3.4" fill="#3E6DA3"/><text class="vval pop" x="336.2" y="264.0" font-size="13.5">2.053</text><polyline class="draw" pathLength="1" points="62.0,199.0 191.2,260.0" fill="none" stroke="#B3541E" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="199.0" r="3.4" fill="#B3541E"/><circle class="pop" cx="191.2" cy="260.0" r="3.4" fill="#B3541E"/><text class="vval pop" x="199.2" y="264.0" font-size="13.5">1.000</text></svg>
+<figcaption>Figure 1 — The glutamine clock is set by the starting formulation: the leanest medium empties first and the richest last, at the same consumption rate.</figcaption>
+</figure>
 <h2 id="table-1-starting-concentrations-mm-computed-from-published-formulations">Table 1. Starting concentrations (mM), computed from published formulations</h2>
 <p>Salt forms were converted to amino acid molarity (see calc-notes.md). Cystine/cysteine row combines the sulfur amino acid form each formulation actually uses; see the note under the table.</p>
 <table>
@@ -257,6 +327,12 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 <blockquote>
 <p><strong>Worked example (Table 1, one full chain).</strong> RPMI-1640 arginine: the Corning formulation lists L-arginine (free base) at 200.00 mg/L. Molarity = 200.00 mg/L ÷ 174.20 g/mol (arginine free base) = 1.148 mmol/L = 1.148 mM. Total for RPMI-1640 = 2.053 + 0.378 + 1.148 + 0.381 + 0.381 + 0.171 + 0.219 + 0.168 + 0.091 + 0.285 + 0.133 + 0.110 + 0.097 + 0.101 + 0.208 + 0.174 + 0 + 0.150 + 0.136 + 0.024 = 6.408 mM. Every cell of Table 1 is re-performable the same way from data.csv and calc-notes.md.</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">Glutamine starting concentration by medium</p>
+<p class="viz-sub">Formulated glutamine in mM (Table 1). Glutamine is the largest single pool in every formulation in this atlas.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">DMEM (high glucose)</span><span class="vb-val">4.000</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">DMEM/F-12</span><span class="vb-val">2.500</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:62.5%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">RPMI-1640</span><span class="vb-val">2.053</span></div><div class="vb-track"><div class="vb-fill" style="--w:51.3%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Ham&#x27;s F-12</span><span class="vb-val">1.000</span></div><div class="vb-track"><div class="vb-fill lt" style="--w:25.0%;transition-delay:270ms"></div></div></div><div class="vb-axis"><span>0</span><span>2.000 mM</span><span>4.000 mM</span></div></div>
+<figcaption>Figure 2 — Starting glutamine concentrations: the baseline every spent-media glutamine reading has to be read against.</figcaption>
+</figure>
 <h2 id="table-2-the-depletion-model-only-where-a-published-rate-exists">Table 2. The depletion model (only where a published rate exists)</h2>
 <p>Model: batch culture, constant viable density 1×10⁶ cells/mL (1×10⁹ cells/L), no feeding, consumption at the maximum specific rate reported in Avilan Garzon et al. 2025 for a mAb-producing CHO batch culture (glutamine −4.2×10⁻¹¹ mmol/cell/h; asparagine −1.6×10⁻¹¹ mmol/cell/h on day 2). This is an illustrative bound, not a prediction for your cell line.</p>
 <table>
@@ -370,5 +446,63 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

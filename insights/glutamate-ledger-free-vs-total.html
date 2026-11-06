@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,21 +132,31 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#table-1-the-ledger-free-bound-and-total-glutamate-mg-per-100-g">Table 1. The ledger: free, bound, and total glutamate (mg per 100 g)</a></li><li><a href="#table-2-msg-equivalents-one-free-glutamate-number-three-reporting-bases">Table 2. MSG equivalents: one free-glutamate number, three reporting bases</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#measure-the-free-number-not-the-total">Measure the free number, not the total</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
-<p><em>Slug: glutamate-ledger-free-vs-total</em>
-Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
+<p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
+<div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
-<li><strong>The free share of glutamate spans a 279-fold range across ordinary foods.</strong> Computed from USDA FoodData Central total glutamate and published free-glutamate measurements: free glutamate is 78.9% of total glutamate in soy sauce, 41.1% in dried shiitake, 32.5% in ripe tomato, 27.0% in green peas, 20.4% in sweet corn, 14.6% in Parmesan, 3.2% in cheddar, and 0.3% in milk. The total on a database line tells you almost nothing about the free number a label decision turns on.</li>
-<li><strong>Parmesan's reputation is a free-glutamate story, not a total-glutamate story.</strong> Parmesan holds 8,209 mg of total glutamate per 100 g (FoodData Central), of which 1,200 mg is free (14.6%). Cheddar holds 5,675 mg total, nearly 70% of Parmesan's total, but only 182 mg free. Parmesan delivers 6.6 times the free glutamate of cheddar on 1.45 times the total.</li>
+<li><strong>The free share of glutamate spans a <span class="cu" data-v="279" data-dec="0" data-pre="" data-suf="-fold">279-fold</span> range across ordinary foods.</strong> Computed from USDA FoodData Central total glutamate and published free-glutamate measurements: free glutamate is <span class="cu" data-v="78.9" data-dec="1" data-pre="" data-suf="%">78.9%</span> of total glutamate in soy sauce, 41.1% in dried shiitake, 32.5% in ripe tomato, 27.0% in green peas, 20.4% in sweet corn, 14.6% in Parmesan, 3.2% in cheddar, and 0.3% in milk. The total on a database line tells you almost nothing about the free number a label decision turns on.</li>
+<li><strong>Parmesan's reputation is a free-glutamate story, not a total-glutamate story.</strong> Parmesan holds <span class="cu" data-v="8209" data-dec="0" data-pre="" data-suf="">8,209</span> mg of total glutamate per 100 g (FoodData Central), of which <span class="cu" data-v="1200" data-dec="0" data-pre="" data-suf="">1,200</span> mg is free (14.6%). Cheddar holds 5,675 mg total, nearly 70% of Parmesan's total, but only 182 mg free. Parmesan delivers 6.6 times the free glutamate of cheddar on 1.45 times the total.</li>
 <li><strong>Milk is the control case.</strong> Whole milk carries 708 mg of total glutamate per 100 g and about 2 mg free: 99.7% of its glutamate is bound in protein and tastes of nothing until digestion. Any argument that treats "contains glutamate" as one fact fails on this row alone.</li>
-<li><strong>Soy sauce is the opposite control.</strong> At 1,246 mg free out of 1,579 mg total per 100 g, fermentation has already done the hydrolysis. Its free glutamate converts to 1,585 mg of MSG monohydrate equivalent per 100 g (1,432 mg on the anhydrous MSG basis), computed below.</li>
+<li><strong>Soy sauce is the opposite control.</strong> At <span class="cu" data-v="1246" data-dec="0" data-pre="" data-suf="">1,246</span> mg free out of 1,579 mg total per 100 g, fermentation has already done the hydrolysis. Its free glutamate converts to 1,585 mg of MSG monohydrate equivalent per 100 g (1,432 mg on the anhydrous MSG basis), computed below.</li>
 <li><strong>The reporting basis changes the headline by 27%.</strong> The same free glutamate reads as glutamic acid (×1.000), anhydrous MSG (×1.149), or MSG monohydrate (×1.272). A specification that does not name its basis is ambiguous by more than a quarter before any laboratory touches the sample.</li>
 <li><strong>So what:</strong> If your decision is "no added MSG," an umami claim, or a seasoning specification, the number you need is free glutamate on a named basis. A total-amino-acid report, however accurate, cannot answer it, because 85 to 99.7% of what it counts in cheese and milk is bound.</li>
 <li><strong>Why it matters:</strong> Brands substantiate umami and MSG-related claims with whichever glutamate number is closest to hand, usually the total. The ledger below shows the error that introduces, food by food, and it is largest exactly where the claims are loudest: aged, fermented, and dried ingredients.</li>
 </ul>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>How much of the glutamate in a food is actually free, and how much is bound in protein where it tastes of nothing until digestion? The two numbers answer different questions, yet brands, formulators, and specifications routinely reach for whichever one is closest to hand, usually the total. This article builds a ledger that keeps them apart, food by food.</p>
+<p>The ledger is computed from two named sources: total glutamate from USDA FoodData Central, and free glutamate from published free-amino-acid food composition measurements. Bound glutamate is the total minus the free figure, and the free share is the free figure divided by the total, so every row can be re-performed from the table itself.</p>
+<p>Read the first table for the ledger itself, in milligrams per 100 g, and the second for what happens when the same free figure is reported on different MSG bases. If a claim, an umami argument, or a seasoning specification is the decision at stake, the free number on a named basis is the one that matters, and the perspectives that follow show why substituting the total changes the answer.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Free vs bound glutamate: the ledger in one picture</p>
+<p class="viz-sub">Track length is total glutamate per 100 g, scaled to Parmesan, the largest total. Dark blue is the free share.</p>
+<div class="viz-legend"><span><span class="sw" style="background:#3E6DA3"></span>Free glutamate</span><span><span class="sw" style="background:#C9D6E4"></span>Bound glutamate</span></div><div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy sauce (shoyu)</span><span class="vb-val">1,246 mg free · 78.9%</span></div><div class="stack"><div class="s1" style="width:15.2%"></div><div class="s2" style="width:4.1%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Mushrooms, shiitake, dried</span><span class="vb-val">1,060 mg free · 41.1%</span></div><div class="stack"><div class="s1" style="width:12.9%"></div><div class="s2" style="width:18.5%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Tomato, ripe, raw</span><span class="vb-val">140 mg free · 32.5%</span></div><div class="stack"><div class="s1" style="width:1.7%"></div><div class="s2" style="width:3.5%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Peas, green, raw</span><span class="vb-val">200 mg free · 27.0%</span></div><div class="stack"><div class="s1" style="width:2.4%"></div><div class="s2" style="width:6.6%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Corn, sweet, yellow, raw</span><span class="vb-val">130 mg free · 20.4%</span></div><div class="stack"><div class="s1" style="width:1.6%"></div><div class="s2" style="width:6.2%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Parmesan, hard</span><span class="vb-val">1,200 mg free · 14.6%</span></div><div class="stack"><div class="s1" style="width:14.6%"></div><div class="s2" style="width:85.4%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Cheddar, sharp</span><span class="vb-val">182 mg free · 3.2%</span></div><div class="stack"><div class="s1" style="width:2.2%"></div><div class="s2" style="width:66.9%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk, whole</span><span class="vb-val">2 mg free · 0.3%</span></div><div class="stack"><div class="s1" style="width:0.0%"></div><div class="s2" style="width:8.6%"></div></div></div></div>
+<figcaption>Figure 1 — Free (dark blue) and bound (light) glutamate per 100 g. Soy sauce is mostly free; milk is almost entirely bound; Parmesan has the largest total but only a modest free share.</figcaption>
+</figure>
 <h2 id="table-1-the-ledger-free-bound-and-total-glutamate-mg-per-100-g">Table 1. The ledger: free, bound, and total glutamate (mg per 100 g)</h2>
 <p>Total glutamate = glutamic acid from USDA FoodData Central (SR Legacy; FDC ID in data.csv). Free glutamate = published free-amino-acid food composition measurements (sources per row in calc-notes.md). Bound = total − free (computed). Free % = free ÷ total × 100 (computed).</p>
 <table>
@@ -161,6 +231,12 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 <blockquote>
 <p><strong>Worked example (Table 1, Parmesan).</strong> Total: FoodData Central FDC 170848, Cheese, parmesan, hard: glutamic acid 8.209 g/100 g = 8,209 mg/100 g. Free: 1,200 mg/100 g (Giacometti 1979 compilation, as reproduced in Loliger 2000 and the EAL umami white paper; the published range across compilations is 1,200 to 1,680, see Limitations). Bound = 8,209 − 1,200 = 7,009 mg/100 g. Free % = 1,200 ÷ 8,209 × 100 = 14.6%. Parmesan vs cheddar free ratio = 1,200 ÷ 182 = 6.59 ≈ 6.6×; total ratio = 8,209 ÷ 5,675 = 1.45×.</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">The same free glutamate, reported as MSG monohydrate equivalent</p>
+<p class="viz-sub">Free glutamate per 100 g converted to the MSG monohydrate basis used in Table 2.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy sauce (shoyu)</span><span class="vb-val">1,585 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Parmesan, hard</span><span class="vb-val">1,526 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:96.3%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Mushrooms, shiitake, dried</span><span class="vb-val">1,348 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:85.0%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Peas, green, raw</span><span class="vb-val">254 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:16.0%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Cheddar, sharp</span><span class="vb-val">231 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:14.6%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Tomato, ripe, raw</span><span class="vb-val">178 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:11.2%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Corn, sweet, yellow, raw</span><span class="vb-val">165 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:10.4%;transition-delay:540ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk, whole</span><span class="vb-val">3 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:0.2%;transition-delay:630ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>1,585 mg</span></div></div>
+<figcaption>Figure 2 — MSG monohydrate equivalent of each food's free glutamate, per 100 g. The ranking follows the free column, not the total column.</figcaption>
+</figure>
 <h2 id="table-2-msg-equivalents-one-free-glutamate-number-three-reporting-bases">Table 2. MSG equivalents: one free-glutamate number, three reporting bases</h2>
 <p>Conversion is pure stoichiometry. Glutamic acid MW 147.13; MSG anhydrous MW 169.11 (factor 1.149); MSG monohydrate MW 187.13 (factor 1.272). Values below are mg per 100 g of food, computed from the free-glutamate column of Table 1.</p>
 <table>
@@ -301,5 +377,63 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

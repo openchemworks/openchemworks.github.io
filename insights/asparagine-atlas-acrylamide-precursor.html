@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,13 +132,13 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#summary-key-findings">Summary: key findings</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#the-computed-table-20-potato-varieties-ranked">The computed table: 20 potato varieties, ranked</a></li><li><a href="#beyond-potato-flour-and-coffee-archetypes">Beyond potato: flour and coffee archetypes</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#call-to-action">Call to action</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="summary-key-findings">Summary: key findings</h2>
+<div class="summary-box rv"><h2 id="summary-key-findings">Summary: key findings</h2>
 <ul>
-<li><strong>Potato variety alone swings free asparagine 15.3-fold.</strong> Across 20 US retail potato varieties (Vivanti et al. 2006 data, republished in Finotti et al. 2011, Table 1), free asparagine ranged from 49.63 mg/100 g fresh weight (Purple, Peruvian) to 760.98 mg/100 g (Russet 2). 760.98 / 49.63 = 15.33. The median variety sits at about 117 mg/100 g, so the worst Russet lot carries roughly 6.5 times the median precursor load before any processing choice is made.</li>
-<li><strong>Per serving, the gap is over a gram.</strong> At a 150 g serving, free asparagine runs from 74.4 mg (Purple, Peruvian) to 1,141.5 mg (Russet 2): 49.63 × 1.5 = 74.4; 760.98 × 1.5 = 1,141.5.</li>
+<li><strong>Potato variety alone swings free asparagine <span class="cu" data-v="15.3" data-dec="1" data-pre="" data-suf="-fold">15.3-fold</span>.</strong> Across 20 US retail potato varieties (Vivanti et al. 2006 data, republished in Finotti et al. 2011, Table 1), free asparagine ranged from <span class="cu" data-v="49.63" data-dec="2" data-pre="" data-suf="">49.63</span> mg/100 g fresh weight (Purple, Peruvian) to <span class="cu" data-v="760.98" data-dec="2" data-pre="" data-suf="">760.98</span> mg/100 g (Russet 2). 760.98 / 49.63 = 15.33. The median variety sits at about 117 mg/100 g, so the worst Russet lot carries roughly 6.5 times the median precursor load before any processing choice is made.</li>
+<li><strong>Per serving, the gap is over a gram.</strong> At a 150 g serving, free asparagine runs from 74.4 mg (Purple, Peruvian) to <span class="cu" data-v="1141.5" data-dec="1" data-pre="" data-suf="">1,141.5</span> mg (Russet 2): 49.63 × 1.5 = 74.4; 760.98 × 1.5 = 1,141.5.</li>
 <li><strong>Sugar does not explain the ranking.</strong> The highest-sugar variety (Yukon Gold grade B, 824.35 mg/100 g total free sugar) is third-lowest in asparagine (80.92 mg/100 g), and the highest-asparagine Russet 2 is mid-pack on sugar (374.33 mg/100 g). Asparagine-to-sugar ratios span 0.067 to 4.393, a 65-fold spread. In potato systems, variety selection on asparagine is the lever; sugar is a separate variable.</li>
 <li><strong>Cereals sit lower per 100 g, but vary almost as much within type.</strong> Wheat flour free asparagine spans 7.4 to 66.4 mg/100 g (Hamlet et al. range 74–664 mg/kg, reported in Processes 2023), a 9.0-fold spread inside one ingredient category. Rye flour spans 31.9 to 79.1 mg/100 g. Green Arabica coffee averages 48.6 mg/100 g (486 ± 97 µg/g, Li et al. 2023).</li>
 <li><strong>Benchmark levels are for finished food, not raw material.</strong> EU Regulation 2017/2158 sets acrylamide benchmarks of 500 µg/kg for ready-to-eat French fries, 750 µg/kg for potato crisps, 350 µg/kg for biscuits and wafers, and 400 µg/kg for roast coffee. No regulator publishes the precursor-side table a formulator starts from. This article is that table.</li>
@@ -86,6 +146,17 @@
 <p><strong>So what:</strong> If you buy potatoes, flour, or coffee by specification and the specification does not include free asparagine, you are not controlling your largest acrylamide variable. Variety and lot differences documented here are larger than most processing mitigations deliver.</p>
 <p><strong>Why it matters:</strong> Acrylamide mitigation programs usually start at the fryer or oven. The arithmetic above says the decision that matters most was made earlier, at ingredient selection, and it is measurable for the price of one free-amino-acid test per lot or variety.</p>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>Acrylamide mitigation usually starts at the fryer or the oven, but the precursor load is decided much earlier, when a variety, a lot or a flour is chosen. This article asks the formulator’s starting question: how much free asparagine, the amino acid precursor that acrylamide forms from, does the raw material itself bring into the process, before any processing choice is made?</p>
+<p>The atlas is built only from published free asparagine measurements. Its core is a ranked table of retail potato varieties, measured in the work of Vivanti and colleagues and republished by Finotti and colleagues, with each variety’s value also expressed per serving and in molar terms. Around it sit literature ranges for wheat and rye flour and a published mean for green coffee, presented as archetypes from different studies rather than as head-to-head measurements. No value here was estimated or interpolated.</p>
+<p>Read the ranking as a specification tool, not as a prediction of a finished food’s acrylamide level, which also depends on sugar, moisture and process. What the table does show is where the starting risk sits and how large the ingredient lever is compared with later mitigations. It also shows its own limit: the same variety name, bought as different lots, can differ substantially, which is why variety selection is a strong signal and lot-level measurement is what closes the gap.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Free asparagine in potato varieties, ranked</p>
+<p class="viz-sub">Free asparagine, mg per 100 g fresh weight, for each variety in the atlas table.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Purple, Peruvian</span><span class="vb-val">49.63</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:6.5%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Red medium organic</span><span class="vb-val">77.35</span></div><div class="vb-track"><div class="vb-fill" style="--w:10.2%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Yukon Gold grade B medium</span><span class="vb-val">80.92</span></div><div class="vb-track"><div class="vb-fill" style="--w:10.6%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Red grade A large</span><span class="vb-val">83.56</span></div><div class="vb-track"><div class="vb-fill" style="--w:11.0%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Ruby Red Crescent</span><span class="vb-val">85.67</span></div><div class="vb-track"><div class="vb-fill" style="--w:11.3%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Fingerling Ozette 1</span><span class="vb-val">89.76</span></div><div class="vb-track"><div class="vb-fill" style="--w:11.8%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Yukon Gold grade C small</span><span class="vb-val">92.93</span></div><div class="vb-track"><div class="vb-fill" style="--w:12.2%;transition-delay:540ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Yukon Gold grade A large</span><span class="vb-val">106.26</span></div><div class="vb-track"><div class="vb-fill" style="--w:14.0%;transition-delay:630ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">White medium</span><span class="vb-val">107.98</span></div><div class="vb-track"><div class="vb-fill" style="--w:14.2%;transition-delay:720ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Kennebec</span><span class="vb-val">115.63</span></div><div class="vb-track"><div class="vb-fill" style="--w:15.2%;transition-delay:810ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Purple large</span><span class="vb-val">118.40</span></div><div class="vb-track"><div class="vb-fill" style="--w:15.6%;transition-delay:900ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">White large</span><span class="vb-val">140.84</span></div><div class="vb-track"><div class="vb-fill" style="--w:18.5%;transition-delay:990ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Red grade C small</span><span class="vb-val">145.46</span></div><div class="vb-track"><div class="vb-fill" style="--w:19.1%;transition-delay:1080ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">White Creamer small</span><span class="vb-val">150.48</span></div><div class="vb-track"><div class="vb-fill" style="--w:19.8%;transition-delay:1170ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Butterball Creamer organic</span><span class="vb-val">258.72</span></div><div class="vb-track"><div class="vb-fill" style="--w:34.0%;transition-delay:1260ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Red Creamer, Marble</span><span class="vb-val">268.75</span></div><div class="vb-track"><div class="vb-fill" style="--w:35.3%;transition-delay:1350ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Fingerling French</span><span class="vb-val">274.16</span></div><div class="vb-track"><div class="vb-fill" style="--w:36.0%;transition-delay:1440ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Russet 1</span><span class="vb-val">334.62</span></div><div class="vb-track"><div class="vb-fill" style="--w:44.0%;transition-delay:1530ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Fingerling Ozette 2</span><span class="vb-val">378.84</span></div><div class="vb-track"><div class="vb-fill" style="--w:49.8%;transition-delay:1620ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Russet 2</span><span class="vb-val">760.98</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:1710ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>760.98</span></div></div>
+<figcaption>Figure 1 — Variety alone separates the lowest and highest potato lots by more than an order of magnitude, with Russet lots at the top of the atlas.</figcaption>
+</figure>
 <h2 id="the-computed-table-20-potato-varieties-ranked">The computed table: 20 potato varieties, ranked</h2>
 <p>Source data: Finotti, Bersani, Vivanti &amp; Friedman (2011), Journal of Food Quality 34:74–79, Table 1, republishing Vivanti et al. (2006) measurements on US retail varieties. Accessed 2026-11-05. Full worksheet: data.csv in this folder.</p>
 <table>
@@ -342,6 +413,12 @@
 </table>
 <p>Worked example: unit conversion, wheat flour high end. 664 mg/kg ÷ 10 = 66.4 mg/100 g. All conversions in this article are mg/kg ÷ 10 = mg/100 g, or µg/g = mg/kg numerically.</p>
 <p>Sulfur nutrition is a documented driver in wheat: the Polish study and the literature it reviews report grain asparagine of 3,435 mg/kg under sulfur deficiency versus 211 mg/kg under sulfur sufficiency (Curtis &amp; Halford, reported in Agriculture 2024). That is a field-level variable your flour supplier's agronomy controls, and another reason a single book value for "wheat flour" is not a specification.</p>
+<figure class="viz rv ">
+<p class="viz-title">Free asparagine in flour and coffee archetypes</p>
+<p class="viz-sub">Free asparagine, mg per 100 g. Range ends and the coffee mean are shown as published.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Wheat flour, low end</span><span class="vb-val">7.4</span></div><div class="vb-track"><div class="vb-fill" style="--w:9.4%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Polish wheat grain, low</span><span class="vb-val">23.56</span></div><div class="vb-track"><div class="vb-fill" style="--w:29.8%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Rye flour, low end</span><span class="vb-val">31.9</span></div><div class="vb-track"><div class="vb-fill" style="--w:40.3%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Green coffee, Arabica mean</span><span class="vb-val">48.6</span></div><div class="vb-track"><div class="vb-fill" style="--w:61.4%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Polish wheat grain, high</span><span class="vb-val">58.79</span></div><div class="vb-track"><div class="vb-fill" style="--w:74.3%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Wheat flour, high end</span><span class="vb-val">66.4</span></div><div class="vb-track"><div class="vb-fill" style="--w:83.9%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Rye flour, high end</span><span class="vb-val">79.1</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:540ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>79.1</span></div></div>
+<figcaption>Figure 2 — Flour and coffee sit below most potato varieties, but the spread inside wheat flour alone is wide.</figcaption>
+</figure>
 <h2 id="perspectives">Perspectives</h2>
 <p><strong>Formulator.</strong> Variety and lot selection is the first mitigation lever, and it is quantified above: switching from a Russet-type lot at 335–761 mg/100 g to a low-asparagine variety under 110 mg/100 g removes roughly two-thirds to nine-tenths of the precursor before blanching, asparaginase, or process changes are considered.</p>
 <p><strong>QA.</strong> The cheapest point to learn a lot's precursor load is at intake, on the raw material, not on finished-product acrylamide after the lot is committed. One free-amino-acid panel per variety or supplier lot answers it.</p>
@@ -415,5 +492,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

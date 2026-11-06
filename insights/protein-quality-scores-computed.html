@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,23 +132,34 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#reference-patterns-used-fao-2013">Reference patterns used (FAO 2013)</a></li><li><a href="#table-1-amino-acid-content-mg-per-gram-of-protein-computed-from-fooddata-central">Table 1: Amino acid content, mg per gram of protein (computed from FoodData Central)</a></li><li><a href="#table-2-chemical-scores-undigested-the-ceiling-every-diaas-style-estimate-starts-from">Table 2: Chemical scores (undigested) — the ceiling every DIAAS-style estimate starts from</a></li><li><a href="#table-3-diaas-style-estimates-under-stated-digestibility-assumptions-with-published-measured-diaas-for-comparison">Table 3: DIAAS-style ESTIMATES under stated digestibility assumptions, with published measured DIAAS for comparison</a></li><li><a href="#worked-blend-wheat-pea-computed">Worked blend: wheat + pea (computed)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#get-the-input-measurement-for-your-ingredient">Get the input measurement for your ingredient</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
 <blockquote>
 <p><strong>ESTIMATES, NOT MEASUREMENTS — read this first.</strong> Every score on this page labeled "DIAAS-style estimate" or "chemical score" is an <strong>estimate assembled from published components</strong>: amino acid profiles from USDA FoodData Central, reference patterns from FAO (2013), and digestibility assumptions stated in the tables. True DIAAS is a measured value from ileal digestibility studies in humans or pigs. Nobody at OpenChemWorks ran those studies. Where a published <em>measured</em> DIAAS exists (Mathai, Liu &amp; Stein, 2017), we print it separately and label it "measured (published)" so the two kinds of number can never be confused.</p>
 </blockquote>
-<div class="summary-box"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
+<div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
 <li><strong>Gelatin (collagen) scores 0.00, at every age pattern and every digestibility assumption.</strong> Its tryptophan content in FoodData Central is 0 mg per gram of protein, and a score built on the lowest ratio is zero when any indispensable amino acid is zero. Arithmetic in Topic 4 develops this in full.</li>
-<li><strong>Among the eight ingredients we computed, only wheat flour (apart from gelatin at 0.00, above) falls below the FAO "good quality" line on chemistry alone.</strong> Wheat's chemical score (older child/adult pattern) is <strong>0.46</strong>, limited by lysine at 22.1 mg/g protein against a 48 mg/g pattern. Split peas score <strong>0.88</strong> (limited by sulfur amino acids). Everything dairy, egg, and soy scores above 1.00 before any digestibility correction.</li>
-<li><strong>Digestibility is where plant scores are decided.</strong> Soy isolate's chemical score is 1.07 (sulfur amino acids limiting). Apply a 0.85 digestibility factor to the limiting amino acids and the DIAAS-style estimate is <strong>0.91</strong>. Apply 0.75 and it is <strong>0.80</strong>. Same chemistry, three different claims, decided entirely by an assumption, which is why this page prints the assumption next to every estimate.</li>
-<li><strong>A 50:50 wheat + pea protein blend (by protein) scores 1.03, higher than either ingredient alone (wheat 0.46, pea 0.88).</strong> Wheat brings the sulfur amino acids peas lack (38.9 vs 20.2 mg/g); peas bring the lysine wheat lacks (76.6 vs 22.1 mg/g). The minimum pea share that lifts the blend's lysine to the adult pattern is <strong>47.5% of protein</strong>. Blend math, not marketing, is how plant proteins become complete.</li>
+<li><strong>Among the eight ingredients we computed, only wheat flour (apart from gelatin at 0.00, above) falls below the FAO "good quality" line on chemistry alone.</strong> Wheat's chemical score (older child/adult pattern) is <strong><span class="cu" data-v="0.46" data-dec="2" data-pre="" data-suf="">0.46</span></strong>, limited by lysine at 22.1 mg/g protein against a 48 mg/g pattern. Split peas score <strong><span class="cu" data-v="0.88" data-dec="2" data-pre="" data-suf="">0.88</span></strong> (limited by sulfur amino acids). Everything dairy, egg, and soy scores above 1.00 before any digestibility correction.</li>
+<li><strong>Digestibility is where plant scores are decided.</strong> Soy isolate's chemical score is 1.07 (sulfur amino acids limiting). Apply a 0.85 digestibility factor to the limiting amino acids and the DIAAS-style estimate is <strong><span class="cu" data-v="0.91" data-dec="2" data-pre="" data-suf="">0.91</span></strong>. Apply 0.75 and it is <strong>0.80</strong>. Same chemistry, three different claims, decided entirely by an assumption, which is why this page prints the assumption next to every estimate.</li>
+<li><strong>A 50:50 wheat + pea protein blend (by protein) scores 1.03, higher than either ingredient alone (wheat 0.46, pea 0.88).</strong> Wheat brings the sulfur amino acids peas lack (38.9 vs 20.2 mg/g); peas bring the lysine wheat lacks (76.6 vs 22.1 mg/g). The minimum pea share that lifts the blend's lysine to the adult pattern is <strong><span class="cu" data-v="47.5" data-dec="1" data-pre="" data-suf="%">47.5%</span> of protein</strong>. Blend math, not marketing, is how plant proteins become complete.</li>
 <li><strong>Published measured DIAAS and our computed chemical scores rank ingredients the same way.</strong> Mathai et al. (2017), measuring ileal digestibility in pigs, found dairy proteins at or above 100 on the young-child pattern (milk protein concentrate 120, whey concentrate 107, whey isolate 100), soy isolate at 84, and pea concentrate at 62. Our undigested chemical scores are higher, as they must be, because digestion only removes amino acids. The gap between the two columns is the digestibility cost, made visible.</li>
 <li><strong>So what:</strong> If you are formulating or substantiating a protein-quality claim, the claim rests on three separable numbers: the amino acid profile (measurable today, on your actual ingredient, for $230), the reference pattern (published, free), and digestibility (borrowed from literature, and the weakest link unless your ingredient is the one that was measured). Know which of the three your claim is actually standing on.</li>
 <li><strong>Why it matters:</strong> A total amino acid analysis (AA-T) is the input measurement every score needs, and it is the only one of the three inputs you can own outright for your specific lot. Literature profiles describe a generic ingredient. Your claim describes your product.</li>
 </ul>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>Protein quality claims are usually quoted as a single score, as if the score were a property of the ingredient. This article takes the score apart. A quality score stands on three separable inputs: an amino acid profile, a reference pattern that says how much of each indispensable amino acid a gram of protein should carry, and a digestibility figure that says how much of what is present is actually absorbed. The question the article answers is which of those three inputs each published score is really standing on, and how far the score moves when an assumption changes.</p>
+<p>That matters to anyone formulating a product or substantiating a claim, because only one of the three inputs can be measured on your own ingredient: its amino acid profile. The reference pattern is published and free. Digestibility is almost always borrowed from literature on a related material, and for mid-scoring plant proteins that borrowed assumption, not the chemistry, decides whether the score clears 1.00.</p>
+<p>The profiles are computed from USDA FoodData Central entries, the patterns are those published by FAO, and the measured comparison values are the published DIAAS results of Mathai and colleagues, kept in a separate column throughout so that estimates and measurements are never confused. Read the chemical scores first: they are the ceiling every estimate starts from. Then read the scenario estimates beside the measured values, with the digestibility assumption printed next to each one, and finish with the worked blend, which shows how two incomplete proteins can complete each other.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Chemical scores (undigested), older child / adult pattern</p>
+<p class="viz-sub">The ceiling every DIAAS-style estimate starts from: lowest amino-acid ratio against the FAO reference pattern, before any digestibility correction.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk, dry, nonfat</span><span class="vb-val">1.49</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:99.3%;transition-delay:0ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg, whole, dried</span><span class="vb-val">1.42</span></div><div class="vb-track"><div class="vb-fill" style="--w:94.7%;transition-delay:90ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg, white, dried</span><span class="vb-val">1.38</span></div><div class="vb-track"><div class="vb-fill" style="--w:92.0%;transition-delay:180ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey, sweet, dried</span><span class="vb-val">1.15</span></div><div class="vb-track"><div class="vb-fill" style="--w:76.7%;transition-delay:270ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">1.07</span></div><div class="vb-track"><div class="vb-fill" style="--w:71.3%;transition-delay:360ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Peas, split, raw</span><span class="vb-val">0.88</span></div><div class="vb-track"><div class="vb-fill" style="--w:58.7%;transition-delay:450ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Wheat flour, white</span><span class="vb-val">0.46</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:30.7%;transition-delay:540ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Gelatins, dry powder</span><span class="vb-val">0.00</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:0.0%;transition-delay:630ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-axis"><span>0</span><span>0.75</span><span>1.50</span></div><p class="vb-note">1.00 = meets the FAO reference pattern</p></div>
+<figcaption>Figure 1 — Chemical scores from Table 2. Dairy, egg, and soy sit above the reference line on chemistry alone; wheat and gelatin fall below it.</figcaption>
+</figure>
 <h2 id="reference-patterns-used-fao-2013">Reference patterns used (FAO 2013)</h2>
 <p>Digestible indispensable amino acid scoring patterns, mg per gram of protein (FAO, <em>Dietary protein quality evaluation in human nutrition</em>, Report of an FAO Expert Consultation, 2013):</p>
 <table>
@@ -359,6 +430,12 @@
 <blockquote>
 <p><strong>Worked example.</strong> Soy isolate, &gt;3 y: ratios are His 26.1/16 = 1.63, Ile 48.2/30 = 1.61, Leu 76.8/61 = 1.26, Lys 60.3/48 = 1.26, SAA 24.6/23 = 1.07, AAA 88.5/41 = 2.16, Thr 35.5/25 = 1.42, Trp 12.6/6.6 = 1.91, Val 46.4/40 = 1.16. The lowest is SAA at 1.07, so the chemical score is 1.07, sulfur-amino-acid limited. The same ingredient on the child pattern scores 0.91 because the child pattern asks for more SAA per gram (27 vs 23). Pattern choice alone moves this ingredient across the 1.00 line.</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">Published measured DIAAS (Mathai et al. 2017)</p>
+<p class="viz-sub">Measured ileal digestibility scores on the young-child pattern, printed separately from the computed chemical scores so the two kinds of number are never confused.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk protein concentrate</span><span class="vb-val">120</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein concentrate</span><span class="vb-val">107</span></div><div class="vb-track"><div class="vb-fill" style="--w:89.2%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein isolate</span><span class="vb-val">100</span></div><div class="vb-track"><div class="vb-fill" style="--w:83.3%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">84</span></div><div class="vb-track"><div class="vb-fill" style="--w:70.0%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Pea protein concentrate</span><span class="vb-val">62</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:51.7%;transition-delay:360ms"></div></div></div><div class="vb-axis"><span>0</span><span>60</span><span>120</span></div></div>
+<figcaption>Figure 2 — Measured DIAAS ranks the ingredients the same way the computed chemical scores do; the gap between the two charts is the digestibility cost.</figcaption>
+</figure>
 <h2 id="table-3-diaas-style-estimates-under-stated-digestibility-assumptions-with-published-measured-diaas-for-comparison">Table 3: DIAAS-style ESTIMATES under stated digestibility assumptions, with published measured DIAAS for comparison</h2>
 <p>Estimate formula: chemical score (limiting group, &gt;3 y pattern) × assumed standardized ileal digestibility of the limiting amino acids. The 0.85 and 0.75 columns are <strong>scenarios</strong>, printed to show sensitivity. They are not measurements and must not be quoted as DIAAS.</p>
 <table>
@@ -426,7 +503,7 @@
 <h3 id="formulator-pair-by-limiting-amino-acid-not-by-marketing-category">Formulator: pair by limiting amino acid, not by marketing category</h3>
 <p>Table 1 reads as a pairing chart. Legumes are lysine-rich and SAA-poor; cereals are the reverse. The wheat + pea computation above is the template: identify each ingredient's limiting group, check the partner's surplus in exactly that group, solve for the share. Soy isolate needs no partner on chemistry alone at the adult pattern (1.07); its problem is digestibility evidence, not a partner.</p>
 <h3 id="label-pdcaas-vs-diaas-style-where-they-disagree">Label: PDCAAS vs DIAAS-style, where they disagree</h3>
-<p>FDA protein %DV still runs on PDCAAS, truncated at 1.00. Truncation hides real differences at the top (milk at 1.49 chemical score and egg white at 1.38 both print as 1.00) and the fecal digestibility basis flatters some plant proteins relative to ileal scoring. If your label claim and your marketing claim use different scores, this table is where the discrepancy will be found, by you or by someone else.</p>
+<p>FDA protein %DV still runs on PDCAAS, truncated at 1.00. Truncation hides real differences at the top (milk at <span class="cu" data-v="1.49" data-dec="2" data-pre="" data-suf="">1.49</span> chemical score and egg white at 1.38 both print as 1.00) and the fecal digestibility basis flatters some plant proteins relative to ileal scoring. If your label claim and your marketing claim use different scores, this table is where the discrepancy will be found, by you or by someone else.</p>
 <h3 id="ingredient-buyer-score-per-dollar-data-gap-reported-honestly">Ingredient buyer: score per dollar — data gap, reported honestly</h3>
 <p>A score-per-dollar ranking requires reliable published prices for each ingredient grade. We verified public price reporting for dairy ingredients (USDA Dairy Market News covers whey grades) but did not verify equivalent public reporting for pea and soy ingredient grades on the access date. The per-dollar table is therefore <strong>not published in this version</strong> rather than built on spot marketplace listings. Gap recorded; it closes when a citable price series for plant ingredients is verified.</p>
 <h3 id="skeptic-how-much-of-this-ranking-survives-a-different-assumption">Skeptic: how much of this ranking survives a different assumption?</h3>
@@ -500,5 +577,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

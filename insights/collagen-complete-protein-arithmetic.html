@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,21 +132,32 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#table-1-per-20-g-of-protein-what-each-protein-actually-delivers-computed-from-fooddata-central">Table 1: Per 20 g of protein, what each protein actually delivers (computed from FoodData Central)</a></li><li><a href="#table-2-collagen-against-the-fao-2013-adult-pattern-amino-acid-by-amino-acid">Table 2: Collagen against the FAO 2013 adult pattern, amino acid by amino acid</a></li><li><a href="#table-3-complementarity-math-how-much-complete-protein-a-collagen-blend-actually-needs-computed">Table 3: Complementarity math — how much complete protein a collagen blend actually needs (computed)</a></li><li><a href="#table-4-a-20-g-protein-whey-collagen-blend-as-collagen-share-rises-computed">Table 4: A "20 g protein" whey + collagen blend as collagen share rises (computed)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#measure-your-own-blend">Measure your own blend</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
+<div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
-<li><strong>Collagen contains zero tryptophan, and zero is the whole story for its quality score.</strong> USDA FoodData Central lists tryptophan at 0.0 g per 100 g for gelatin, dry powder (the cooked form of collagen, with the same amino acid profile as collagen peptides). Tryptophan is one of the nine essential amino acids. A protein quality score is set by the lowest essential amino acid ratio, and 0 / 6.6 mg = <strong>0.00</strong>. Collagen's DIAAS-style score and its PDCAAS are both zero, not low. Zero.</li>
-<li><strong>Per 20 g of protein, collagen delivers 3.19 g of essential amino acids. Whey delivers 8.57 g.</strong> Same "20 g protein" on two labels, a 2.7-fold difference in the amino acids the buyer cannot make for themselves (3.19 vs 8.57 g, computed from FoodData Central profiles).</li>
+<li><strong>Collagen contains zero tryptophan, and zero is the whole story for its quality score.</strong> USDA FoodData Central lists tryptophan at 0.0 g per 100 g for gelatin, dry powder (the cooked form of collagen, with the same amino acid profile as collagen peptides). Tryptophan is one of the nine essential amino acids. A protein quality score is set by the lowest essential amino acid ratio, and 0 / 6.6 mg = <strong><span class="cu" data-v="0.0" data-dec="2" data-pre="" data-suf="">0.00</span></strong>. Collagen's DIAAS-style score and its PDCAAS are both zero, not low. Zero.</li>
+<li><strong>Per 20 g of protein, collagen delivers <span class="cu" data-v="3.19" data-dec="2" data-pre="" data-suf="">3.19</span> g of essential amino acids. Whey delivers <span class="cu" data-v="8.57" data-dec="2" data-pre="" data-suf="">8.57</span> g.</strong> Same "20 g protein" on two labels, a 2.7-fold difference in the amino acids the buyer cannot make for themselves (3.19 vs 8.57 g, computed from FoodData Central profiles).</li>
 <li><strong>Leucine: 0.57 g per 20 g of collagen protein, against 1.83 g for whey.</strong> Collagen's leucine content is 28.7 mg per gram of protein, 47% of the FAO adult reference pattern of 61 mg/g, before tryptophan is even considered.</li>
 <li><strong>Even if tryptophan were forgiven, collagen would still fail.</strong> Its next-lowest ratio is sulfur amino acids at 0.31 (7.1 mg/g against a 23 mg/g pattern), then isoleucine at 0.45 and leucine at 0.47. Collagen is not one amino acid short of complete. It is short across the board, and rich in exactly the amino acids (glycine 223 mg/g of protein, proline 144 mg/g) that are not essential.</li>
-<li><strong>Fixing collagen takes a majority of real protein.</strong> To lift a collagen blend's chemical score to 1.00 against the FAO adult pattern, the blend needs at least <strong>58% of its protein from egg white</strong>, or <strong>78% from whey</strong>. Soy isolate, itself sulfur-limited, needs <strong>91%</strong>, which is not a collagen product with support. It is a soy product with collagen in it. Any blend where collagen is the majority of the protein cannot reach a complete chemical score with these partners. That is a theorem of these profiles, not an opinion.</li>
+<li><strong>Fixing collagen takes a majority of real protein.</strong> To lift a collagen blend's chemical score to 1.00 against the FAO adult pattern, the blend needs at least <strong><span class="cu" data-v="58" data-dec="0" data-pre="" data-suf="%">58%</span> of its protein from egg white</strong>, or <strong>78% from whey</strong>. Soy isolate, itself sulfur-limited, needs <strong>91%</strong>, which is not a collagen product with support. It is a soy product with collagen in it. Any blend where collagen is the majority of the protein cannot reach a complete chemical score with these partners. That is a theorem of these profiles, not an opinion.</li>
 <li><strong>As collagen's share of a "20 g protein" blend rises from 0% to 50%, the blend's chemical score falls from 1.15 to 0.81 and its essential amino acids per serving fall from 8.57 g to 5.88 g</strong>, while the nitrogen-based label can keep printing "20 g protein" the whole way down (Topic 2 explains the nitrogen side).</li>
-<li><strong>So what:</strong> Sell collagen for what it measurably is, the best dietary source of glycine in this dataset (4.45 g per 20 g of protein, 11 times whey's 0.43 g), or blend it as the minority partner and publish the blend math. Do not let it borrow a complete-protein claim its own profile refutes in one line: tryptophan, zero.</li>
+<li><strong>So what:</strong> Sell collagen for what it measurably is, the best dietary source of glycine in this dataset (<span class="cu" data-v="4.45" data-dec="2" data-pre="" data-suf="">4.45</span> g per 20 g of protein, 11 times whey's 0.43 g), or blend it as the minority partner and publish the blend math. Do not let it borrow a complete-protein claim its own profile refutes in one line: tryptophan, zero.</li>
 <li><strong>Why it matters:</strong> Protein %DV on a US label is quality-corrected (21 CFR 101.9(c)(7), PDCAAS basis). A PDCAAS of zero means collagen contributes zero corrected grams toward protein %DV when it stands alone. Brands that understand this arithmetic formulate and label accordingly. Brands that do not are one retail audit away from learning it. A total amino acid analysis of your actual product ($230/sample) replaces generic database profiles with your numbers.</li>
 </ul>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>Collagen is sold by the gram of protein, and on a nitrogen test it earns that gram. This article asks a different question: what does a gram of collagen protein actually deliver in the amino acids a buyer cannot make for themselves, and can any blend in which collagen stays the majority ingredient honestly be called a complete protein? Both questions are answered with arithmetic, not opinion, and the arithmetic is short enough to re-perform from the tables.</p>
+<p>The distinction matters commercially, not just scientifically. Protein on a US label is quality-corrected, so a protein with a quality score of zero contributes no corrected grams when it stands alone, whatever the nitrogen count says. A brand that understands this formulates and labels accordingly, selling collagen for the glycine and proline it genuinely delivers in unusual density. A brand that does not is exposed to the first retailer audit that runs the same sums.</p>
+<p>The profiles are computed from USDA FoodData Central, with gelatin as the published proxy for collagen peptides, and scored against the FAO adult reference pattern. Read the per-serving table first: it shows what 20 g of each protein delivers. Then read collagen against the pattern, amino acid by amino acid, and finally the blend tables, which solve for how much complete partner protein a collagen blend needs before its score reaches the pattern at all.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Essential amino acids delivered per 20 g of protein</p>
+<p class="viz-sub">The same “20 g protein” on five labels delivers very different amounts of the amino acids the buyer cannot make for themselves (Table 1).</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk, dry nonfat</span><span class="vb-val">9.29 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg white, dried</span><span class="vb-val">8.91 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:95.9%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey (sweet, dried)</span><span class="vb-val">8.57 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:92.2%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">7.41 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:79.8%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Gelatin / collagen</span><span class="vb-val">3.19 g</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:34.3%;transition-delay:360ms"></div></div></div><div class="vb-axis"><span>0</span><span>4.65 g</span><span>9.29 g</span></div></div>
+<figcaption>Figure 1 — Per 20 g of protein, collagen delivers the fewest essential amino acids in this dataset, less than half of what whey delivers.</figcaption>
+</figure>
 <h2 id="table-1-per-20-g-of-protein-what-each-protein-actually-delivers-computed-from-fooddata-central">Table 1: Per 20 g of protein, what each protein actually delivers (computed from FoodData Central)</h2>
 <p>Values = (g per 100 g food / protein g per 100 g food) × 20 g protein. Gelatin (FDC 169599) stands in for collagen peptides; whey is dried sweet whey (FDC 171283), a per-gram-of-protein profile, not a concentrate specification.</p>
 <table>
@@ -154,6 +225,12 @@
 <blockquote>
 <p><strong>Worked example.</strong> Gelatin leucine per 20 g protein: FoodData Central lists leucine 2.454 g and protein 85.6 g per 100 g gelatin. (2.454 / 85.6) × 20 = 0.573 g, shown as 0.57 g. Gelatin glycine: (19.049 / 85.6) × 20 = 4.45 g. Essential total: sum the nine essential amino acids per 100 g (0.662 + 1.158 + 2.454 + 3.460 + 0.606 + 1.737 + 1.475 + 0.000 + 2.081 = 13.633 g), then (13.633 / 85.6) × 20 = 3.19 g. Independent cross-check: a published secondary computation from the same FoodData Central entries reports collagen at 0.6 g leucine, 0 g tryptophan, 3.2 g essential amino acids, and 4.4 g glycine per 20 g protein, matching this table to rounding.</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">Essential amino acid profile: gelatin vs whey</p>
+<p class="viz-sub">Content in mg per gram of protein, both panels on the same axis (Table 2 and Topic 3, Table 1).</p>
+<p class="viz-sub">Gelatin / collagen</p><div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Histidine</span><span class="vb-val">7.7</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:7.7%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Isoleucine</span><span class="vb-val">13.5</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:13.5%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Leucine</span><span class="vb-val">28.7</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:28.7%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Lysine</span><span class="vb-val">40.4</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:40.4%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Sulfur amino acids</span><span class="vb-val">7.1</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:7.1%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Aromatic amino acids</span><span class="vb-val">23.8</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:23.8%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Threonine</span><span class="vb-val">17.2</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:17.2%;transition-delay:540ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Tryptophan</span><span class="vb-val">0.0</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:0.0%;transition-delay:630ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Valine</span><span class="vb-val">24.3</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:24.3%;transition-delay:720ms"></div></div></div><div class="vb-axis"><span>0</span><span>50</span><span>100</span></div></div><p class="viz-sub">Whey (sweet, dried)</p><div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Histidine</span><span class="vb-val">18.3</span></div><div class="vb-track"><div class="vb-fill" style="--w:18.3%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Isoleucine</span><span class="vb-val">55.6</span></div><div class="vb-track"><div class="vb-fill" style="--w:55.6%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Leucine</span><span class="vb-val">91.7</span></div><div class="vb-track"><div class="vb-fill" style="--w:91.7%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Lysine</span><span class="vb-val">79.7</span></div><div class="vb-track"><div class="vb-fill" style="--w:79.7%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Sulfur amino acids</span><span class="vb-val">38.2</span></div><div class="vb-track"><div class="vb-fill" style="--w:38.2%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Aromatic amino acids</span><span class="vb-val">59.6</span></div><div class="vb-track"><div class="vb-fill" style="--w:59.6%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Threonine</span><span class="vb-val">63.2</span></div><div class="vb-track"><div class="vb-fill" style="--w:63.2%;transition-delay:540ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Tryptophan</span><span class="vb-val">15.9</span></div><div class="vb-track"><div class="vb-fill" style="--w:15.9%;transition-delay:630ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Valine</span><span class="vb-val">53.9</span></div><div class="vb-track"><div class="vb-fill" style="--w:53.9%;transition-delay:720ms"></div></div></div><div class="vb-axis"><span>0</span><span>50</span><span>100</span></div></div>
+<figcaption>Figure 2 — Collagen is short across the board, not in one amino acid only: tryptophan is absent and every other group sits below whey.</figcaption>
+</figure>
 <h2 id="table-2-collagen-against-the-fao-2013-adult-pattern-amino-acid-by-amino-acid">Table 2: Collagen against the FAO 2013 adult pattern, amino acid by amino acid</h2>
 <p>Pattern: older child, adolescent, adult (&gt;3 y), FAO 2013. Ratio = content / pattern. The score is the minimum ratio.</p>
 <table>
@@ -225,6 +302,12 @@
 <blockquote>
 <p><strong>Worked example.</strong> Sulfur amino acids: methionine 0.606 g + cystine 0.0 g per 100 g gelatin; (0.606 / 85.6) × 1000 = 7.1 mg/g protein; ratio = 7.1 / 23 = 0.31. Eight of nine groups fall below 1.00. Collagen would need every one of them lifted, which no single-ingredient addition of collagen to a diet of itself can do. Blending works only because the partner supplies all eight at once (Table 3).</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">Minimum partner share that lifts a collagen blend to a complete score</p>
+<p class="viz-sub">Share of blend protein that must come from the partner protein for the blend chemical score to reach the FAO adult pattern (Table 3).</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg white, dried</span><span class="vb-val">58%</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:58.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey (sweet, dried)</span><span class="vb-val">78%</span></div><div class="vb-track"><div class="vb-fill" style="--w:78.0%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">91%</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:91.0%;transition-delay:180ms"></div></div></div><div class="vb-axis"><span>0</span><span>50%</span><span>100%</span></div></div>
+<figcaption>Figure 3 — Fixing collagen takes a majority of real protein with every partner in this dataset; with soy, the partner must supply nearly all of the blend.</figcaption>
+</figure>
 <h2 id="table-3-complementarity-math-how-much-complete-protein-a-collagen-blend-actually-needs-computed">Table 3: Complementarity math — how much complete protein a collagen blend actually needs (computed)</h2>
 <p>Blend contents are protein-weighted means of the FoodData Central profiles (Topic 3, Table 1). Score = chemical score (undigested) against the FAO adult pattern. "Minimum partner share" solves for the share at which the last failing group reaches its pattern value.</p>
 <table>
@@ -392,5 +475,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,15 +132,15 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#summary-peptone-is-not-an-ingredient-it-is-a-family">Summary: &quot;peptone&quot; is not an ingredient, it is a family</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#1-dataset-five-published-typical-analyses-verified-november-5-2026">1. Dataset: five published typical analyses, verified November 5, 2026</a></li><li><a href="#2-computed-table-1-totals-and-free-fractions">2. Computed table 1: totals and free fractions</a></li><li><a href="#3-computed-table-2-per-amino-acid-spread-across-the-five-products-mgg-total-fraction">3. Computed table 2: per-amino-acid spread across the five products (mg/g, total fraction)</a></li><li><a href="#4-worked-example-the-same-name-switch-and-a-classic-medium">4. Worked example: the same-name switch, and a classic medium</a></li><li><a href="#5-perspectives">5. Perspectives</a></li><li><a href="#6-what-changes-next-cycle">6. What changes next cycle</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p><strong>Slug:</strong> peptones-yeast-extracts-variability
 <strong>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</strong></p>
-<div class="summary-box"><h2 id="summary-peptone-is-not-an-ingredient-it-is-a-family">Summary: "peptone" is not an ingredient, it is a family</h2>
+<div class="summary-box rv"><h2 id="summary-peptone-is-not-an-ingredient-it-is-a-family">Summary: "peptone" is not an ingredient, it is a family</h2>
 <ul>
-<li><strong>Across five manufacturer-published typical amino acid analyses, total reported amino acids range from 390 to 846 mg per gram of product</strong>, a 2.2-fold spread, before any lot-to-lot variation is even considered: soy peptone (ultrafiltered) 389.8 mg/g, soy peptone (standard) 484.8 mg/g, bacteriological yeast extract 524 mg/g, casein tryptone 781 mg/g, bacteriological (gelatin-rich) peptone 846.3 mg/g. All five are sold to do the same job in a medium.</li>
-<li><strong>The per-amino-acid spread is wider than the total spread.</strong> Glycine runs from <strong>11 mg/g</strong> (yeast extract) to <strong>207.1 mg/g</strong> (gelatin-rich bacteriological peptone), an <strong>18.8-fold</strong> range. Proline runs 9 to 117.1 mg/g (<strong>13.0×</strong>). Lysine runs 18 to 60 mg/g (<strong>3.3×</strong>), methionine 6.5 to 17 mg/g (<strong>2.6×</strong>), leucine 29.4 to 70 mg/g (<strong>2.4×</strong>).</li>
-<li><strong>Most of what a peptone supplies is not free amino acid, and the free fraction varies by product class.</strong> From the three sheets that publish both total and free values: yeast extract's free amino acids are <strong>51.1 mg/g, only 9.8%</strong> of its total; the two soy peptones are <strong>183.1 mg/g (37.8%)</strong> and <strong>145.0 mg/g (37.2%)</strong> free. A cell or microbe that takes up free amino acids sees a different medium than the total numbers suggest.</li>
+<li><strong>Across five manufacturer-published typical amino acid analyses, total reported amino acids range from 390 to 846 mg per gram of product</strong>, a 2.2-fold spread, before any lot-to-lot variation is even considered: soy peptone (ultrafiltered) <span class="cu" data-v="389.8" data-dec="1" data-pre="" data-suf="">389.8</span> mg/g, soy peptone (standard) 484.8 mg/g, bacteriological yeast extract 524 mg/g, casein tryptone 781 mg/g, bacteriological (gelatin-rich) peptone <span class="cu" data-v="846.3" data-dec="1" data-pre="" data-suf="">846.3</span> mg/g. All five are sold to do the same job in a medium.</li>
+<li><strong>The per-amino-acid spread is wider than the total spread.</strong> Glycine runs from <strong>11 mg/g</strong> (yeast extract) to <strong>207.1 mg/g</strong> (gelatin-rich bacteriological peptone), an <strong><span class="cu" data-v="18.8" data-dec="1" data-pre="" data-suf="">18.8</span>-fold</strong> range. Proline runs 9 to 117.1 mg/g (<strong>13.0×</strong>). Lysine runs 18 to 60 mg/g (<strong>3.3×</strong>), methionine 6.5 to 17 mg/g (<strong>2.6×</strong>), leucine 29.4 to 70 mg/g (<strong>2.4×</strong>).</li>
+<li><strong>Most of what a peptone supplies is not free amino acid, and the free fraction varies by product class.</strong> From the three sheets that publish both total and free values: yeast extract's free amino acids are <strong>51.1 mg/g, only <span class="cu" data-v="9.8" data-dec="1" data-pre="" data-suf="%">9.8%</span></strong> of its total; the two soy peptones are <strong>183.1 mg/g (<span class="cu" data-v="37.8" data-dec="1" data-pre="" data-suf="%">37.8%</span>)</strong> and <strong>145.0 mg/g (37.2%)</strong> free. A cell or microbe that takes up free amino acids sees a different medium than the total numbers suggest.</li>
 <li><strong>Switching between two soy peptones from the same manufacturer changes a defined medium's free amino acid supply by double-digit percentages.</strong> At 10 g/L, the standard soy peptone supplies <strong>1,831 mg/L</strong> of free amino acids and the ultrafiltered version <strong>1,450 mg/L</strong>, a difference of <strong>381 mg/L (21%)</strong>, including free leucine <strong>290 vs 200 mg/L</strong> and free lysine <strong>183 vs 126 mg/L</strong>. Same supplier, same nominal ingredient name, different process (ultrafiltration), different medium.</li>
 </ul>
 <p><strong>So what:</strong> when a fermentation or culture "behaves differently this lot," the first suspect is not the organism. It is the least characterised input in the recipe, and the recipe usually names it with one word.</p>
@@ -89,6 +149,17 @@
 <p><strong>Profile the lot before the lot profiles your process: <a href="/services/amino-acid-analysis">amino acid analysis, $150/sample</a>.</strong></p>
 </blockquote>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>A medium recipe usually names its peptone or yeast extract in a single word, as if that word specified an ingredient. This article asks what that word actually delivers: how much amino acid supply, total and free, does a named product provide per gram, and how far apart are products that are all sold to do the same job in the same medium?</p>
+<p>It matters because media teams typically specify these inputs by total nitrogen and a growth test, and neither number can see the amino acid supply the process actually consumes. When a fermentation or culture behaves differently this lot, the least characterised input in the recipe is the first suspect. Profiling an incoming lot, total and free, is a small measurement set against the cost of a failed batch.</p>
+<p>The dataset is five manufacturer-published typical amino acid analyses, each read from the sheet itself: a Solabia bacteriological yeast extract, two Nu-Tek soy peptones from the same family in standard and ultrafiltered grades, an Ausamics casein tryptone, and an ITW bacteriological peptone with a gelatin-rich profile. From those sheets this article computes totals, free fractions, and the spread of each individual amino acid across products, then works through what changing nothing but the grade of one soy peptone does to a defined medium. Read the dataset first, then the totals and free fractions, then the per-amino-acid spread. The panels the manufacturers chose to report differ from sheet to sheet, so the totals are sums of what each sheet reports, and the strongest conclusions are drawn per amino acid, where the comparison is like for like.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Total reported amino acids per product</p>
+<p class="viz-sub">Five products sold to do the same job in a medium, with totals spanning the full range charted.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy peptone, ultrafiltered</span><span class="vb-val">389.8 mg/g</span></div><div class="vb-track"><div class="vb-fill lt" style="--w:46.1%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy peptone, standard</span><span class="vb-val">484.8 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:57.3%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Yeast extract</span><span class="vb-val">524 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:61.9%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Casein tryptone</span><span class="vb-val">781 mg/g</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:92.3%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Bacteriological peptone (gelatin-rich)</span><span class="vb-val">846.3 mg/g</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:360ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>846.3 mg/g</span></div></div>
+<figcaption>Figure 1 — Total reported amino acids per gram of product, as printed in the totals table below. The lowest total is less than half the highest.</figcaption>
+</figure>
 <h2 id="1-dataset-five-published-typical-analyses-verified-november-5-2026">1. Dataset: five published typical analyses, verified November 5, 2026</h2>
 <table>
 <thead>
@@ -177,6 +248,12 @@
 </tbody>
 </table>
 <p>Worked example: P2 total = 23.1 (Ala) + 30.3 (Arg) + 64.9 (Asp) + 110.3 (Glu) + 22.4 (Gly) + 15.0 (His) + 25.4 (Ile) + 38.5 (Leu) + 35.9 (Lys) + 7.5 (Met) + 26.2 (Phe) + 27.5 (Ser) + 20.6 (Thr) + 10.8 (Tyr) + 26.4 (Val) = <strong>484.8 mg/g</strong>. <strong>Limit, stated with the table:</strong> the panels differ (15 vs 17 vs 19 amino acids reported; proline and cysteine are missing from the soy sheets, tryptophan from three sheets), so totals are <em>sums of what each manufacturer chose to report</em>, and the true totals of the low-panel products are somewhat higher than shown. The spread conclusions below are drawn per amino acid, where the comparison is like-for-like, precisely because the totals carry this caveat.</p>
+<figure class="viz rv ">
+<p class="viz-title">Free amino acids as a share of the total</p>
+<p class="viz-sub">Only the three products that publish both total and free values can be charted here.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy peptone, standard</span><span class="vb-val">37.8%</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy peptone, ultrafiltered</span><span class="vb-val">37.2%</span></div><div class="vb-track"><div class="vb-fill" style="--w:98.4%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Yeast extract</span><span class="vb-val">9.8%</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:25.9%;transition-delay:180ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>37.8%</span></div></div>
+<figcaption>Figure 2 — Free amino acid share of each product's total. Yeast extract is the outlier: most of what it supplies is not in free form.</figcaption>
+</figure>
 <h2 id="3-computed-table-2-per-amino-acid-spread-across-the-five-products-mgg-total-fraction">3. Computed table 2: per-amino-acid spread across the five products (mg/g, total fraction)</h2>
 <table>
 <thead>
@@ -234,6 +311,12 @@
 </tbody>
 </table>
 <p>Full per-amino-acid values for all five products are in <code>data.csv</code> (138 rows, total and free).</p>
+<figure class="viz rv ">
+<p class="viz-title">Glycine per product: the widest single-amino-acid spread</p>
+<p class="viz-sub">The same amino acid, supplied at very different levels depending on the source material.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Yeast extract</span><span class="vb-val">11 mg/g</span></div><div class="vb-track"><div class="vb-fill lt" style="--w:5.3%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Casein tryptone</span><span class="vb-val">15 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:7.2%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy peptone, ultrafiltered</span><span class="vb-val">18.0 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:8.7%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy peptone, standard</span><span class="vb-val">22.4 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:10.8%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Bacteriological peptone (gelatin-rich)</span><span class="vb-val">207.1 mg/g</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:360ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>207.1 mg/g</span></div></div>
+<figcaption>Figure 3 — Glycine in milligrams per gram of product. The gelatin-rich peptone supplies many times the glycine of every other product charted.</figcaption>
+</figure>
 <h2 id="4-worked-example-the-same-name-switch-and-a-classic-medium">4. Worked example: the same-name switch, and a classic medium</h2>
 <p><strong>Switch inside one supplier's soy family.</strong> Define a medium at 10 g/L soy peptone and change nothing but the grade, standard (P2) to ultrafiltered (P3):</p>
 <table>
@@ -356,5 +439,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

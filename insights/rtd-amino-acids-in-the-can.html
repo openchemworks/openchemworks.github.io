@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,15 +132,15 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#summary-the-label-is-a-release-day-number">Summary: the label is a release-day number</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#1-label-declared-archetypes-brands-named-only-for-these-verbatim-label-facts-access-date-november-5-2026">1. Label-declared archetypes (brands named only for these verbatim label facts; access date November 5, 2026)</a></li><li><a href="#2-the-verified-rate-and-the-computation">2. The verified rate, and the computation</a></li><li><a href="#3-the-overage-table-what-guarantee-the-label-costs">3. The overage table (what &quot;guarantee the label&quot; costs)</a></li><li><a href="#4-the-stable-form-contrast-computed-from-a-published-shelf-life">4. The stable-form contrast, computed from a published shelf life</a></li><li><a href="#5-the-gap-we-are-not-filling">5. The gap we are not filling</a></li><li><a href="#6-perspectives">6. Perspectives</a></li><li><a href="#7-what-changes-next-cycle">7. What changes next cycle</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p><strong>Slug:</strong> rtd-amino-acids-in-the-can
 <strong>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</strong></p>
-<div class="summary-box"><h2 id="summary-the-label-is-a-release-day-number">Summary: the label is a release-day number</h2>
+<div class="summary-box rv"><h2 id="summary-the-label-is-a-release-day-number">Summary: the label is a release-day number</h2>
 <ul>
-<li><strong>The one labile amino acid with a verified published decay rate is free L-glutamine, and it does not survive a shelf.</strong> At the verified rate for glutamine in water at room temperature, <strong>0.23% per day</strong> (Khan &amp; Elia 1991, <em>Clinical Nutrition</em>), a can declaring <strong>1,000 mg of L-glutamine</strong> holds a computed <strong>933 mg at day 30, 813 mg at day 90, 661 mg at day 180, and 432 mg at day 365</strong>, if that rate applied in the can.</li>
-<li><strong>The same computation in a mixed nutrient solution is much harsher.</strong> Khan &amp; Elia's rate in mixed total parenteral nutrition solution, <strong>0.8% per day</strong> at 22–24 °C, leaves <strong>23.6% at day 180 and 5.3% at day 365</strong>. An RTD is neither water nor TPN, so these are scenario bounds, not measurements of any drink. No study we could verify on November 5, 2026 measured glutamine decay inside a commercial amino acid RTD. That absence is a finding of this article, stated plainly rather than filled in.</li>
-<li><strong>Guaranteeing the label at end of shelf life is an overage problem with a computable price:</strong> at the water rate, holding 1,000 mg at day 180 requires filling <strong>1,510 mg</strong> (factor <strong>1.51×</strong>); at day 365, <strong>2,320 mg</strong> (<strong>2.32×</strong>); at the TPN rate for day 180, <strong>4,250 mg</strong> (<strong>4.25×</strong>).</li>
+<li><strong>The one labile amino acid with a verified published decay rate is free L-glutamine, and it does not survive a shelf.</strong> At the verified rate for glutamine in water at room temperature, <strong>0.23% per day</strong> (Khan &amp; Elia 1991, <em>Clinical Nutrition</em>), a can declaring <strong><span class="cu" data-v="1000" data-dec="0" data-pre="" data-suf="">1,000</span> mg of L-glutamine</strong> holds a computed <strong>933 mg at day 30, 813 mg at day 90, <span class="cu" data-v="661" data-dec="0" data-pre="" data-suf="">661</span> mg at day 180, and <span class="cu" data-v="432" data-dec="0" data-pre="" data-suf="">432</span> mg at day 365</strong>, if that rate applied in the can.</li>
+<li><strong>The same computation in a mixed nutrient solution is much harsher.</strong> Khan &amp; Elia's rate in mixed total parenteral nutrition solution, <strong>0.8% per day</strong> at 22–24 °C, leaves <strong><span class="cu" data-v="23.6" data-dec="1" data-pre="" data-suf="%">23.6%</span> at day 180 and 5.3% at day 365</strong>. An RTD is neither water nor TPN, so these are scenario bounds, not measurements of any drink. No study we could verify on November 5, 2026 measured glutamine decay inside a commercial amino acid RTD. That absence is a finding of this article, stated plainly rather than filled in.</li>
+<li><strong>Guaranteeing the label at end of shelf life is an overage problem with a computable price:</strong> at the water rate, holding 1,000 mg at day 180 requires filling <strong><span class="cu" data-v="1510" data-dec="0" data-pre="" data-suf="">1,510</span> mg</strong> (factor <strong>1.51×</strong>); at day 365, <strong>2,320 mg</strong> (<strong>2.32×</strong>); at the TPN rate for day 180, <strong>4,250 mg</strong> (<strong>4.25×</strong>).</li>
 <li><strong>The chemistry has a known workaround, and the labels show it.</strong> The glutamine dipeptide L-alanyl-L-glutamine has a published predicted shelf life (t₉₀) of <strong>5.3 years at 25 °C, pH 6.0</strong>, which implies a daily loss of only <strong>0.0054%</strong> and <strong>98.0% remaining at one year</strong>. One RTD archetype in our label set declares its glutamine <em>as</em> L-alanyl-L-glutamine. Form matters more than overage.</li>
 <li><strong>For BCAAs we publish no decay number, because we could not verify one.</strong> No named study with a BCAA decay rate in a ready-to-drink matrix was found. Any article that gives you a precise BCAA half-life in a can without a citable study is estimating silently. We decline to.</li>
 </ul>
@@ -90,6 +150,17 @@
 <p><strong>Measure what is in the can at the age your customers drink it: <a href="/services/amino-acid-analysis">amino acid analysis, $150/sample</a>.</strong></p>
 </blockquote>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>A ready-to-drink label declares what was in the can on the day it was filled. This article asks a different question: what is still in the can at the age the customer actually drinks it? For intact protein that gap is small. For a free amino acid that degrades in solution, the declaration minus time, temperature and matrix can be large enough to compute, and large enough to matter.</p>
+<p>It matters because end-of-shelf-life content is what a label-claim test measures when a retailer or a competitor sends an aged can to a lab. A formulator who prices the overage the arithmetic demands, or who switches a labile amino acid to a stable form, decides that question at design time. One who does not discovers the gap at audit time, when the only remaining options are expensive ones.</p>
+<p>The computation starts from label-declared archetypes taken from public retailer labels, and from the one decay rate family that could be verified from a named study: the degradation of free L-glutamine in solution reported by Khan and Elia, cross-checked against an independent study of glutamine in culture medium, with a published shelf life for the stable dipeptide form as the contrast. A simple decay model is applied to the declared amount under each scenario. Read the archetypes first, then the rate and the scenario table, then what guaranteeing the label would cost, and finally the stable-form alternative. These are scenario bounds from other matrices, not measurements of any drink, and where no rate could be verified, as for the branched-chain amino acids, this article publishes no number at all and says so plainly.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Free L-glutamine remaining over a year on the shelf</p>
+<p class="viz-sub">Scenario bounds from verified rates in other matrices. An RTD is neither water nor TPN, so these are bounds, not measurements of any drink.</p>
+<div class="viz-legend"><span><span class="swl" style="background:#0C2340"></span>Water, pH 6.5</span><span><span class="swl" style="background:#E8792B"></span>Mixed TPN solution</span><span><span class="swl" style="background:#3E6DA3"></span>MEM medium, cold</span></div><svg class="vchart" viewBox="0 0 680 300" role="img" aria-label="Line chart, % of day-0 glutamine by days"><line x1="62" y1="260.0" x2="584" y2="260.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="264.0" font-size="12.5" text-anchor="end">0</text><line x1="62" y1="199.0" x2="584" y2="199.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="203.0" font-size="12.5" text-anchor="end">25</text><line x1="62" y1="138.0" x2="584" y2="138.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="142.0" font-size="12.5" text-anchor="end">50</text><line x1="62" y1="77.0" x2="584" y2="77.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="81.0" font-size="12.5" text-anchor="end">75</text><line x1="62" y1="16.0" x2="584" y2="16.0" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="54" y="20.0" font-size="12.5" text-anchor="end">100</text><line x1="62" y1="16" x2="62" y2="260" stroke="#8A97A5" stroke-width="1.2"/><line x1="62" y1="260" x2="584" y2="260" stroke="#8A97A5" stroke-width="1.2"/><text class="tick" x="62.0" y="280" font-size="12.5" text-anchor="middle">0</text><text class="tick" x="192.5" y="280" font-size="12.5" text-anchor="middle">91.25</text><text class="tick" x="323.0" y="280" font-size="12.5" text-anchor="middle">182.5</text><text class="tick" x="453.5" y="280" font-size="12.5" text-anchor="middle">273.75</text><text class="tick" x="584.0" y="280" font-size="12.5" text-anchor="middle">365</text><text class="tick" x="323" y="298" font-size="12.5" text-anchor="middle">days</text><text class="tick" x="14" y="138" font-size="12.5" text-anchor="middle" transform="rotate(-90 14 138)">% of day-0 glutamine</text><polyline class="draw" pathLength="1" points="62.0,16.0 104.9,32.3 190.7,61.6 319.4,98.7 584.0,154.6" fill="none" stroke="#0C2340" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="16.0" r="3.4" fill="#0C2340"/><circle class="pop" cx="104.9" cy="32.3" r="3.4" fill="#0C2340"/><circle class="pop" cx="190.7" cy="61.6" r="3.4" fill="#0C2340"/><circle class="pop" cx="319.4" cy="98.7" r="3.4" fill="#0C2340"/><circle class="pop" cx="584.0" cy="154.6" r="3.4" fill="#0C2340"/><text class="vval pop" x="592.0" y="158.6" font-size="13.5">43.2%</text><polyline class="draw" pathLength="1" points="62.0,16.0 104.9,68.2 190.7,141.7 319.4,202.4 584.0,247.1" fill="none" stroke="#E8792B" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="16.0" r="3.4" fill="#E8792B"/><circle class="pop" cx="104.9" cy="68.2" r="3.4" fill="#E8792B"/><circle class="pop" cx="190.7" cy="141.7" r="3.4" fill="#E8792B"/><circle class="pop" cx="319.4" cy="202.4" r="3.4" fill="#E8792B"/><circle class="pop" cx="584.0" cy="247.1" r="3.4" fill="#E8792B"/><text class="vval pop" x="592.0" y="251.1" font-size="13.5">5.3%</text><polyline class="draw" pathLength="1" points="62.0,16.0 104.9,23.3 190.7,37.0 319.4,56.3 584.0,90.7" fill="none" stroke="#3E6DA3" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="pop" cx="62.0" cy="16.0" r="3.4" fill="#3E6DA3"/><circle class="pop" cx="104.9" cy="23.3" r="3.4" fill="#3E6DA3"/><circle class="pop" cx="190.7" cy="37.0" r="3.4" fill="#3E6DA3"/><circle class="pop" cx="319.4" cy="56.3" r="3.4" fill="#3E6DA3"/><circle class="pop" cx="584.0" cy="90.7" r="3.4" fill="#3E6DA3"/><text class="vval pop" x="592.0" y="94.7" font-size="13.5">69.4%</text></svg>
+<figcaption>Figure 1 — Free L-glutamine remaining by shelf age under each verified-rate scenario. The mixed-solution scenario falls fastest; the cold-medium scenario falls slowest.</figcaption>
+</figure>
 <h2 id="1-label-declared-archetypes-brands-named-only-for-these-verbatim-label-facts-access-date-november-5-2026">1. Label-declared archetypes (brands named only for these verbatim label facts; access date November 5, 2026)</h2>
 <table>
 <thead>
@@ -162,6 +233,12 @@
 </tbody>
 </table>
 <p>Worked example: 1,000 mg declared, water rate, day 180: 1,000 × (1 − 0.0023)^180 = 1,000 × 0.661 = <strong>661 mg</strong>. The method's limits, in the same paragraph as the flag: <strong>an RTD is an acidic, carbonated, flavoured matrix, not water and not TPN; glutamine's maximum stability is reported in the pH 5.0–7.5 range, and an RTD's low pH could move the rate in either direction relative to these bounds; pasteurisation heat load is not in these rates at all.</strong> These numbers are therefore presented as "label math that does not close at shelf age, under a verified rate from a different matrix," which is a reason to measure, not a measurement. Only an amino acid analysis of an aged can settles it.</p>
+<figure class="viz rv ">
+<p class="viz-title">Glutamine left in a can that declared 1,000 mg (water rate)</p>
+<p class="viz-sub">What the declaration becomes at shelf age if the water rate applied in the can.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Declared, day 0</span><span class="vb-val">1,000 mg</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Day 180</span><span class="vb-val">661 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:66.1%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Day 365</span><span class="vb-val">432 mg</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:43.2%;transition-delay:180ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>1,000 mg</span></div></div>
+<figcaption>Figure 2 — Milligrams of glutamine remaining from a declared 1,000 mg at the water rate. By the final age charted, less than half the declared amount remains.</figcaption>
+</figure>
 <h2 id="3-the-overage-table-what-guarantee-the-label-costs">3. The overage table (what "guarantee the label" costs)</h2>
 <table>
 <thead>
@@ -185,6 +262,12 @@
 </tbody>
 </table>
 <p>At the harsher bound, overage stops being a strategy. The alternatives the arithmetic points to are: use a stable form (next section), shorten the dated shelf life, refrigerate the channel, or declare less.</p>
+<figure class="viz rv ">
+<p class="viz-title">Fill needed to hold 1,000 mg at end of shelf life</p>
+<p class="viz-sub">Guaranteeing the label is an overage problem, and at the harsher rate the fill stops being plausible.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Water rate, day 180</span><span class="vb-val">1,510 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:35.5%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Water rate, day 365</span><span class="vb-val">2,320 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:54.6%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">TPN rate, day 180</span><span class="vb-val">4,250 mg</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:180ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>4,250 mg</span></div></div>
+<figcaption>Figure 3 — Fill required at packing to still hold the declared amount at the age shown. The harshest scenario charted needs the largest fill by a wide margin.</figcaption>
+</figure>
 <h2 id="4-the-stable-form-contrast-computed-from-a-published-shelf-life">4. The stable-form contrast, computed from a published shelf life</h2>
 <p>A published dipeptide kinetics study (abstract, <em>European Journal of Pharmaceutical Sciences</em>, 1998) reports L-alanyl-L-glutamine's predicted shelf life (time to 90% remaining) at pH 6.0 as <strong>5.3 years at 25 °C</strong>. Converting: k = −ln(0.90) / (5.3 × 365) = 5.45 × 10⁻⁵ per day, a daily loss of <strong>0.0054%</strong>, roughly <strong>43 times slower</strong> than free glutamine's water rate (0.23 ÷ 0.0054 ≈ 43). At one year: e^(−k×365) = <strong>98.0% remaining</strong>. Archetype A′ (§1) declares glutamine in exactly this dipeptide form. We do not know any maker's reason for choosing it; we can compute what the choice is worth.</p>
 <h2 id="5-the-gap-we-are-not-filling">5. The gap we are not filling</h2>
@@ -270,5 +353,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

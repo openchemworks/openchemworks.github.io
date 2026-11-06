@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,21 +132,31 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#table-1-jones-factors-and-the-signed-error-of-the-625-default">Table 1. Jones factors and the signed error of the 6.25 default</a></li><li><a href="#table-2-what-the-error-is-worth-on-real-profiles-g-per-100-g">Table 2. What the error is worth on real profiles (g per 100 g)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#cross-check-your-declaration-against-the-amino-acid-sum">Cross-check your declaration against the amino acid sum</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
-<p><em>Slug: nitrogen-conversion-factors-625-problem</em>
-Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
+<p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
+<div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
-<li><strong>The default factor is wrong in a known direction for most honest ingredients.</strong> 6.25 assumes protein is 16.00% nitrogen. Published Jones factors imply nitrogen contents from 15.67% (milk) to 19.31% (almonds). Using 6.25 where the Jones factor applies overstates protein for 12 of the 16 ingredient classes in our table, understates it for 2 (milk at 6.38 and wheat bran at 6.31), and is exact for the 2 classes whose Jones factor is 6.25 itself.</li>
-<li><strong>Almonds are the largest honest error: +20.7%.</strong> Jones factor 5.18 vs 6.25. On FoodData Central's almond profile (21.15 g protein per 100 g, Jones basis), declaring at 6.25 would print 25.52 g, an overstatement of 4.37 g per 100 g, with no spiking, no fraud, and no bad lab work. Just the wrong constant.</li>
-<li><strong>Gelatin overstates by 12.6%, peanuts by 14.5%, soy by 9.5%, wheat flour by 9.6%.</strong> Computed per class in Table 1; anchored to FoodData Central profiles in Table 2 (soybeans: 36.49 g becomes 39.94 g; peanuts: 25.80 g becomes 29.53 g).</li>
+<li><strong>The default factor is wrong in a known direction for most honest ingredients.</strong> 6.25 assumes protein is 16.00% nitrogen. Published Jones factors imply nitrogen contents from 15.67% (milk) to 19.31% (almonds). Using 6.25 where the Jones factor applies overstates protein for <span class="cu" data-v="12" data-dec="0" data-pre="" data-suf="">12</span> of the 16 ingredient classes in our table, understates it for 2 (milk at 6.38 and wheat bran at 6.31), and is exact for the 2 classes whose Jones factor is 6.25 itself.</li>
+<li><strong>Almonds are the largest honest error: <span class="cu" data-v="20.7" data-dec="1" data-pre="+" data-suf="%">+20.7%</span>.</strong> Jones factor 5.18 vs 6.25. On FoodData Central's almond profile (21.15 g protein per 100 g, Jones basis), declaring at 6.25 would print 25.52 g, an overstatement of 4.37 g per 100 g, with no spiking, no fraud, and no bad lab work. Just the wrong constant.</li>
+<li><strong>Gelatin overstates by <span class="cu" data-v="12.6" data-dec="1" data-pre="" data-suf="%">12.6%</span>, peanuts by 14.5%, soy by 9.5%, wheat flour by 9.6%.</strong> Computed per class in Table 1; anchored to FoodData Central profiles in Table 2 (soybeans: 36.49 g becomes 39.94 g; peanuts: 25.80 g becomes 29.53 g).</li>
 <li><strong>Milk runs the other way.</strong> Jones factor 6.38: 6.25 understates milk protein by 2.0%. On whole milk's 3.15 g per 100 g, the 6.25 declaration would be 3.09 g. The default is not a conservative choice; it is simply a different error per ingredient.</li>
-<li><strong>Per gram of nitrogen, the spread is 5.18 to 6.38 g of "protein."</strong> One gram of measured nitrogen becomes 6.25 g of declared protein by default, but 5.18 g in almonds and 6.38 g in milk, a 23.2% spread (6.38 ÷ 5.18 = 1.232) created entirely by the choice of constant.</li>
+<li><strong>Per gram of nitrogen, the spread is 5.18 to 6.38 g of "protein."</strong> One gram of measured nitrogen becomes 6.25 g of declared protein by default, but 5.18 g in almonds and 6.38 g in milk, a <span class="cu" data-v="23.2" data-dec="1" data-pre="" data-suf="%">23.2%</span> spread (6.38 ÷ 5.18 = 1.232) created entirely by the choice of constant.</li>
 <li><strong>So what:</strong> If your label, your specification, or your feed guarantee was computed at 6.25 for an ingredient with a Jones factor well below 6.25, the number is overstated by a computable amount, and an amino acid sum exposes it without any argument about methods. Check your factor before someone else does.</li>
 <li><strong>Why it matters:</strong> Protein is the headline number on protein foods. A systematic 10 to 21% overstatement on nuts, seeds, soy, and wheat ingredients is large enough to fail a retailer verification, misprice a formulation, and mislead a consumer, even when every measurement underneath it was done correctly.</li>
 </ul>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>How much protein does a nitrogen measurement really support? The measurement itself gives nitrogen; the protein figure on a label comes from multiplying that nitrogen by a conversion factor, and the default factor, 6.25, assumes every protein carries the same share of nitrogen. This article asks how large the error from that assumption is, ingredient by ingredient, and in which direction it runs.</p>
+<p>The computation uses the published Jones factors for each ingredient class, from which the implied nitrogen share and the signed error of using 6.25 are derived. It then anchors that arithmetic to real FoodData Central profiles, backing out the nitrogen each profile implies and re-declaring it at the default factor, so the abstract error becomes grams per 100 g on foods a reader can recognise.</p>
+<p>Read the first table as the factor map: where the default overstates, where it understates, and where it is exact. Read the second for what that error is worth on real profiles. The perspectives that follow cover the label, analytical, and historical angles, including the amino acid sum as a cross-check that never passes through a nitrogen constant at all.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Signed error of using 6.25 instead of the Jones factor</p>
+<p class="viz-sub">Positive bars overstate protein; the two negative bars understate it. Orange is almonds, the largest error.</p>
+<div class="vbars"><div class="vb-head"><span class="vb-name">Almonds</span><span class="vb-val">+20.7%</span></div><div class="dtrack"><div class="dbar hl" style="left:16.7%;width:69.0%;--w:69.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Other tree nuts and oil seeds</span><span class="vb-val">+17.9%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:59.7%;--w:59.7%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Peanut</span><span class="vb-val">+14.5%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:48.3%;--w:48.3%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Brazil nut</span><span class="vb-val">+14.5%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:48.3%;--w:48.3%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Gelatin</span><span class="vb-val">+12.6%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:42.0%;--w:42.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Wheat flour (endosperm)</span><span class="vb-val">+9.6%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:32.0%;--w:32.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Soybean</span><span class="vb-val">+9.5%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:31.7%;--w:31.7%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Barley</span><span class="vb-val">+7.2%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:24.0%;--w:24.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Oats</span><span class="vb-val">+7.2%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:24.0%;--w:24.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Rye</span><span class="vb-val">+7.2%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:24.0%;--w:24.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Wheat, whole kernel</span><span class="vb-val">+7.2%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:24.0%;--w:24.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Rice</span><span class="vb-val">+5.0%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:16.7%;--w:16.7%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Corn (maize)</span><span class="vb-val">0.0%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:0.0%;--w:0.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Other animal products</span><span class="vb-val">0.0%</span></div><div class="dtrack"><div class="dbar" style="left:16.7%;width:0.0%;--w:0.0%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Wheat bran</span><span class="vb-val">-1.0%</span></div><div class="dtrack"><div class="dbar neg" style="left:13.3%;width:3.3%;--w:3.3%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-head"><span class="vb-name">Milk and milk products</span><span class="vb-val">-2.0%</span></div><div class="dtrack"><div class="dbar neg" style="left:10.0%;width:6.7%;--w:6.7%"></div><div class="dzero" style="left:16.7%"></div></div><div class="vb-axis"><span>-5%</span><span>0</span><span>+25%</span></div></div>
+<figcaption>Figure 1 — Error introduced by the 6.25 default for each ingredient class, relative to its Jones factor. Most classes are overstated; milk and wheat bran run the other way.</figcaption>
+</figure>
 <h2 id="table-1-jones-factors-and-the-signed-error-of-the-625-default">Table 1. Jones factors and the signed error of the 6.25 default</h2>
 <p>Jones factors from Jones (1941), USDA Circular 183, as tabulated in FAO food composition tables and in Mariotti, Tomé &amp; Mirand (2008), Critical Reviews in Food Science and Nutrition 48:177–184. Implied nitrogen % = 100 ÷ factor (computed). Error of 6.25 = (6.25 − Jones) ÷ Jones × 100 (computed; positive = 6.25 overstates).</p>
 <table>
@@ -200,6 +270,12 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 <blockquote>
 <p><strong>Worked example (Table 1, almonds).</strong> Implied nitrogen % = 100 ÷ 5.18 = 19.305 → 19.31%. Error = (6.25 − 5.18) ÷ 5.18 × 100 = 1.07 ÷ 5.18 × 100 = 20.66 → +20.7%. Interpretation: almond protein really carries about 19.31 g of nitrogen per 100 g of protein (the amandin figure traces to Osborne &amp; Campbell's 19.3% nitrogen for the almond globulin amandin, cited by Jones). A nitrogen method that assumes 16% therefore invents roughly a fifth more protein than the nitrogen can represent.</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">What the same nitrogen declares at 6.25, on real profiles</p>
+<p class="viz-sub">Protein per 100 g after re-declaring the nitrogen in each FoodData Central profile at the 6.25 default.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Gelatin, dry powder</span><span class="vb-val">96.40 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soybeans, mature seeds, raw</span><span class="vb-val">39.94 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:41.4%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Peanuts, all types, raw</span><span class="vb-val">29.53 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:30.6%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Almonds</span><span class="vb-val">25.52 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:26.5%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg, whole, raw</span><span class="vb-val">12.56 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:13.0%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Wheat flour, white, all-purpose</span><span class="vb-val">11.33 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:11.8%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Rice, white, long-grain, raw</span><span class="vb-val">7.49 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:7.8%;transition-delay:540ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk, whole</span><span class="vb-val">3.09 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:3.2%;transition-delay:630ms"></div></div></div><div class="vb-axis"><span>0</span><span>48.20 g</span><span>96.40 g</span></div></div>
+<figcaption>Figure 2 — Declared protein at 6.25 for the anchor profiles in Table 2. Gelatin shows the largest absolute gap between the Jones-basis value and the 6.25 declaration.</figcaption>
+</figure>
 <h2 id="table-2-what-the-error-is-worth-on-real-profiles-g-per-100-g">Table 2. What the error is worth on real profiles (g per 100 g)</h2>
 <p>Method: treat the FoodData Central protein value as the Jones-basis value (FDC protein for these foods is conventionally derived with specific factors; see Limitations), back out the nitrogen the measurement must have seen (N = protein ÷ Jones factor), then re-declare that same nitrogen at 6.25. The nitrogen does not change; only the constant does.</p>
 <table>
@@ -357,5 +433,63 @@ Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.1
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

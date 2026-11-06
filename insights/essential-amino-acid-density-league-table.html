@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,19 +132,31 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#summary-key-findings">Summary: key findings</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#table-1-eaa-density-per-gram-of-protein-and-per-100-kcal">Table 1: EAA density per gram of protein and per 100 kcal</a></li><li><a href="#table-2-eaa-per-dollar-whey-grades-only-verified-public-prices">Table 2: EAA per dollar, whey grades only (verified public prices)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#call-to-action">Call to action</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="summary-key-findings">Summary: key findings</h2>
+<div class="summary-box rv"><h2 id="summary-key-findings">Summary: key findings</h2>
 <ul>
-<li><strong>Per gram of protein, whey isolate wins, but by less than marketing implies.</strong> Total essential amino acids (the nine EAAs, summed) per gram of protein: whey protein isolate 516.3 mg/g, egg white powder 468.8 mg/g, whole dry milk 464.9 mg/g, WPC80 462.7 mg/g, WPC34 450.8 mg/g, whole dried egg 434.1 mg/g. The full spread from first to last is 19%: 516.3 / 434.1 = 1.19. Protein source matters; it is not a 2× decision on this axis.</li>
-<li><strong>Per 100 kcal, the ranking flips.</strong> Egg white powder delivers 10,274 mg EAA per 100 kcal and WPC80 delivers 8,985 mg, while whole dried egg falls to 3,625 mg and whole dry milk to 2,467 mg, because their fat carries calories that carry no amino acids. WPI still leads at 12,628 mg/100 kcal. A ranking built for a lean RTD and a ranking built for a meal replacement are different tables.</li>
-<li><strong>Per dollar, the cheaper whey grade wins.</strong> At publicly reported US spot prices on November 5, 2025 (Vesper price index, reporting USDA Dairy Market News market conditions): WPC80 at $6.35/lb delivers 26.44 g EAA per dollar; WPI at $10.70/lb delivers 19.86 g per dollar. WPC80 gives 33% more EAA per dollar: 26.44 / 19.86 = 1.33. Leucine per dollar is nearly tied (5.77 g vs 5.51 g), because WPI's leucine density partly offsets its price.</li>
+<li><strong>Per gram of protein, whey isolate wins, but by less than marketing implies.</strong> Total essential amino acids (the nine EAAs, summed) per gram of protein: whey protein isolate <span class="cu" data-v="516.3" data-dec="1" data-pre="" data-suf="">516.3</span> mg/g, egg white powder 468.8 mg/g, whole dry milk 464.9 mg/g, WPC80 462.7 mg/g, WPC34 450.8 mg/g, whole dried egg 434.1 mg/g. The full spread from first to last is 19%: 516.3 / 434.1 = 1.19. Protein source matters; it is not a 2× decision on this axis.</li>
+<li><strong>Per 100 kcal, the ranking flips.</strong> Egg white powder delivers <span class="cu" data-v="10274" data-dec="0" data-pre="" data-suf="">10,274</span> mg EAA per 100 kcal and WPC80 delivers 8,985 mg, while whole dried egg falls to 3,625 mg and whole dry milk to 2,467 mg, because their fat carries calories that carry no amino acids. WPI still leads at <span class="cu" data-v="12628" data-dec="0" data-pre="" data-suf="">12,628</span> mg/100 kcal. A ranking built for a lean RTD and a ranking built for a meal replacement are different tables.</li>
+<li><strong>Per dollar, the cheaper whey grade wins.</strong> At publicly reported US spot prices on November 5, 2025 (Vesper price index, reporting USDA Dairy Market News market conditions): WPC80 at $6.35/lb delivers <span class="cu" data-v="26.44" data-dec="2" data-pre="" data-suf="">26.44</span> g EAA per dollar; WPI at $10.70/lb delivers <span class="cu" data-v="19.86" data-dec="2" data-pre="" data-suf="">19.86</span> g per dollar. WPC80 gives <span class="cu" data-v="33" data-dec="0" data-pre="" data-suf="%">33%</span> more EAA per dollar: 26.44 / 19.86 = 1.33. Leucine per dollar is nearly tied (5.77 g vs 5.51 g), because WPI's leucine density partly offsets its price.</li>
 <li><strong>GAP, stated plainly: plant proteins are not in this table, and per-dollar data is whey-only.</strong> No public commodity price reporting for plant protein ingredients (soy, pea, rice isolates) comparable to USDA Dairy Market News for whey could be sourced on 2026-11-05, and no public bulk price for egg powders was sourced either. Per the program's integrity rules, those rankings are not estimated. The league table below is dairy + egg only, and the per-dollar ranking covers only the two whey grades with a verified public price. Closing this gap is a named task for the next cycle.</li>
 </ul>
 <p><strong>So what:</strong> Pick your ranking axis before you pick your ingredient. Per-gram, per-calorie, and per-dollar tables crown different winners from the same underlying profiles, and a formulator who optimizes the wrong axis overpays or under-delivers.</p>
 <p><strong>Why it matters:</strong> Ingredient buying is usually argued on price per pound or protein percentage. Neither is the unit your label claim or your customer's nutrition panel runs on. EAA density in the unit you actually sell (per gram of protein claimed, per calorie declared, per dollar spent) is.</p>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>Which protein ingredient delivers the most essential amino acids? This article shows that the honest answer depends on the unit you rank by. Ranked per gram of protein, per calorie, and per dollar, the same six ingredients produce three different league tables with three different winners, and the gaps between first and last change size from one table to the next.</p>
+<p>That matters because ingredient buying is usually argued on price per pound or protein percentage, and neither is the unit a label claim or a customer nutrition panel runs on. A formulator who optimises the wrong axis either overpays for density the product never uses or under-delivers on the density it promises.</p>
+<p>Everything here is computed from published profiles: the whey grades from the U.S. Dairy Export Council Reference Manual for U.S. Whey and Lactose Products, and the egg and milk profiles from USDA FoodData Central. The per-dollar ranking is deliberately narrower than the other two: it covers only the two whey grades with a verified public spot price, because no public commodity price reporting for plant protein ingredients, and no public bulk price for egg powders, could be sourced. That gap is reported as a finding, not filled by estimation.</p>
+<p>Read the three rankings as three answers to three different questions. Decide first whether your constraint is the protein you declare, the calories you declare, or the dollars you spend, and only then crown a winner.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Essential amino acids per gram of protein</p>
+<p class="viz-sub">Milligrams of total essential amino acids per gram of protein. Orange is the leader on this axis.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein isolate (WPI)</span><span class="vb-val">516.3 mg/g</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg white powder</span><span class="vb-val">468.8 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:90.8%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whole dry milk</span><span class="vb-val">464.9 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:90.0%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">WPC80</span><span class="vb-val">462.7 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:89.6%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">WPC34</span><span class="vb-val">450.8 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:87.3%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whole dried egg</span><span class="vb-val">434.1 mg/g</span></div><div class="vb-track"><div class="vb-fill" style="--w:84.1%;transition-delay:450ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>516.3 mg/g protein</span></div></div>
+<figcaption>Figure 1 — Per gram of protein, whey protein isolate leads, and the full spread across the six ingredients is narrow. The same profiles reorder on the two axes that follow.</figcaption>
+</figure>
 <h2 id="table-1-eaa-density-per-gram-of-protein-and-per-100-kcal">Table 1: EAA density per gram of protein and per 100 kcal</h2>
 <p>Profiles: whey grades from the U.S. Dairy Export Council Reference Manual for U.S. Whey and Lactose Products (2005), p.51–52, which reproduces USDA nutrient database values; egg and milk profiles from USDA FoodData Central (SR Legacy). Accessed 2026-11-05. EAA total = His + Ile + Leu + Lys + Met + Phe + Thr + Trp + Val. Full worksheet: data.csv.</p>
 <table>
@@ -158,6 +230,12 @@
 </table>
 <p>Worked example, WPI per gram of protein: EAA sum = 1.35 + 5.90 + 13.00 + 9.15 + 2.05 + 2.30 + 6.25 + 1.50 + 5.35 = 46.85 g per 100 g. 46.85 g ÷ 90.75 g protein = 0.5163 g/g = 516.3 mg/g protein. Per 100 kcal: 46,850 mg ÷ 371 kcal × 100 = 12,628 mg/100 kcal.</p>
 <p>Read the milk row carefully: whole dry milk ranks third per gram of protein (464.9 mg/g) and last per calorie (2,467 mg/100 kcal). Both numbers are correct. They answer different questions.</p>
+<figure class="viz rv ">
+<p class="viz-title">Essential amino acids per 100 kcal</p>
+<p class="viz-sub">Fat carries calories that carry no amino acids, so fat-bearing ingredients fall on this axis.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein isolate (WPI)</span><span class="vb-val">12,628 mg</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg white powder</span><span class="vb-val">10,274 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:81.4%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">WPC80</span><span class="vb-val">8,985 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:71.2%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">WPC34</span><span class="vb-val">4,198 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:33.2%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whole dried egg</span><span class="vb-val">3,625 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:28.7%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whole dry milk</span><span class="vb-val">2,467 mg</span></div><div class="vb-track"><div class="vb-fill" style="--w:19.5%;transition-delay:450ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>12,628 mg/100 kcal</span></div></div>
+<figcaption>Figure 2 — Per calorie, whole dry milk drops from near the top of the per-gram ranking to last, and whole dried egg falls with it. Egg white powder holds second place.</figcaption>
+</figure>
 <h2 id="table-2-eaa-per-dollar-whey-grades-only-verified-public-prices">Table 2: EAA per dollar, whey grades only (verified public prices)</h2>
 <p>Prices: Vesper US price index, November 5, 2025, EXW: WPC80 instant $6.35/lb, WPI instant $10.70/lb, reported during a period of record whey tightness attributed to factory downtime. These are spot prices on one date, not contract prices. Accessed 2026-11-05.</p>
 <table>
@@ -189,6 +267,12 @@
 </table>
 <p>Worked example, WPC80: EAA per pound = 37.016 g/100 g × 4.53592 (100-g units per lb) = 167.9 g. 167.9 ÷ 6.35 = 26.44 g/$. Leucine: 8.08 × 4.53592 = 36.65 g/lb; 36.65 ÷ 6.35 = 5.77 g/$.</p>
 <p>USDA Dairy Market News also reported dry whey at $0.71/lb (CME weekly average, week ending November 7, 2025, Mideast Market Administrator bulletin). Dry whey is not WPC34 (it is lower in protein), so it is not entered into this table as a WPC34 price. It is recorded here so the next cycle can add a dry-whey row with its own matching profile.</p>
+<figure class="viz rv ">
+<p class="viz-title">Essential amino acids per dollar: whey grades only</p>
+<p class="viz-sub">Grams of essential amino acids per dollar at the verified public spot prices.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">WPC80</span><span class="vb-val">26.44 g</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein isolate (WPI)</span><span class="vb-val">19.86 g</span></div><div class="vb-track"><div class="vb-fill" style="--w:75.1%;transition-delay:90ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>26.44 g per dollar</span></div></div>
+<figcaption>Figure 3 — Per dollar, WPC80 beats WPI. Only these two grades are charted: no public prices for the egg powders or for plant proteins could be sourced, so no per-dollar figure is estimated for them.</figcaption>
+</figure>
 <h2 id="perspectives">Perspectives</h2>
 <p><strong>Formulator.</strong> For label targets (grams of protein, EAA claims), Table 1's per-gram column is your axis. WPI's leucine density (143.3 mg/g protein) is in a class of its own; the next best is WPC34 at 102.4.</p>
 <p><strong>Procurement.</strong> Per-dollar, the premium grade is paying for concentration and leucine, not for total EAAs. If your constraint is EAA grams per dollar, WPC80 wins at November 2025 spot prices. If your constraint is leucine per serving in a small format, rerun the math on the leucine column before concluding.</p>
@@ -262,5 +346,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>

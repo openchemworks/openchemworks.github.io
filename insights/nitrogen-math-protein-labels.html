@@ -39,6 +39,66 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
+<style id="viz-css">
+.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
+.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
+.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
+.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
+.viz svg{display:block;width:100%;height:auto}
+.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
+.viz svg .vlab{font-weight:600;fill:#22334A}
+.viz svg .vval{font-weight:700;fill:#0C2340}
+.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
+.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+.vbars{margin:6px 0 2px}
+.vb-row{margin:0 0 11px}
+.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
+.vb-name{color:#22334A}
+.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
+.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
+.vb-fill.hl{background:#E8792B}
+.vb-fill.dk{background:#0C2340}
+.vb-fill.lt{background:#8FB0D1}
+.vb-fill.neg{background:#B3541E}
+.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
+.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
+.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
+.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
+.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
+.dbar.neg{background:#B3541E}
+.dbar.hl{background:#E8792B}
+.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
+.stack>div{height:100%}
+.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
+.cu{font-variant-numeric:tabular-nums}
+.js .rv.armed{opacity:0;transform:translateY(14px)}
+.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js .vbars.armed .vb-fill{width:0}
+.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .dbar{width:0!important}
+.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
+.js .vbars.armed .stack>div{flex-grow:0!important}
+.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
+.js svg.armed .draw{stroke-dashoffset:1}
+.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
+.js svg .pop{opacity:1}
+.js svg.armed .pop{opacity:0}
+.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
+.js svg .grow{transform-box:fill-box;transform-origin:left center}
+.js svg.armed .grow{transform:scaleX(0)}
+.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
+@media (prefers-reduced-motion: reduce){
+.viz *,.rv,.cu{transition:none!important;animation:none!important}
+}
+@media (max-width:560px){
+.viz{padding:14px 13px 10px}
+.vb-head{font-size:.86em}
+.vb-track,.dtrack{height:13px}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -72,20 +132,31 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#our-posted-prices">Our posted prices</a></li><li><a href="#what-drives-the-price">What drives the price</a></li><li><a href="#estimating-your-total">Estimating your total</a></li><li><a href="#what-you-should-get-for-the-price">What you should get for the price</a></li><li><a href="#estimator">Price your order</a></li><li><a href="#key-papers">Key papers</a></li><li><a href="#latest-research">Latest research</a></li><li><a href="#references">References</a></li></ol></nav><div class="rail-cta"><b>Price and book</b><p>Build your order online and see the total as you go. New customers: 5 samples for $250.</p><a class="btn btn-orange" href="/pricing#order">Open the builder</a></div></aside>
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#table-1-the-spiking-exchange-rates-computed-from-molecular-formulas">Table 1: The spiking exchange rates (computed from molecular formulas)</a></li><li><a href="#table-2-nitrogen-protein-vs-amino-acid-sum-protein-honest-ingredients-usda-fooddata-central-per-100-g">Table 2: Nitrogen protein vs amino-acid-sum protein, honest ingredients (USDA FoodData Central, per 100 g)</a></li><li><a href="#table-3-what-a-stated-addition-does-to-a-30-g-label-claim-computed-scenario">Table 3: What a stated addition does to a 30 g label claim (computed scenario)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#know-your-own-number">Know your own number</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
 <div class="art-main"><article class="prose">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
-<div class="summary-box"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
+<div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
-<li><strong>1 gram of glycine reads as 1.17 grams of "protein" on a nitrogen test.</strong> Glycine (C2H5NO2, molecular weight 75.07) is 18.66% nitrogen. 0.1866 g nitrogen × 6.25 = 1.166 g of apparent protein. Glycine is not protein. A nitrogen test cannot tell the difference.</li>
-<li><strong>1 gram of creatine monohydrate reads as 1.76 grams of "protein."</strong> Creatine monohydrate is 28.17% nitrogen (three nitrogen atoms), so 1 g contributes 0.2817 × 6.25 = 1.761 g of apparent protein, more leverage per gram than any common spiking agent except urea.</li>
-<li><strong>To fake 8.5 g of protein you need only 7.3 g of glycine, or 4.8 g of creatine monohydrate.</strong> 8.5 / 1.166 = 7.29 g glycine. 8.5 / 1.761 = 4.83 g creatine monohydrate. 8.5 g is the amount the Body Fortress class-action complaint alleged was spiked into a serving labeled 30 g of protein (21.5 g alleged true whey protein; 8.5 / 30 = 28.3% of the claim).</li>
+<li><strong>1 gram of glycine reads as 1.17 grams of "protein" on a nitrogen test.</strong> Glycine (C2H5NO2, molecular weight 75.07) is 18.66% nitrogen. 0.1866 g nitrogen × 6.25 = <span class="cu" data-v="1.166" data-dec="3" data-pre="" data-suf="">1.166</span> g of apparent protein. Glycine is not protein. A nitrogen test cannot tell the difference.</li>
+<li><strong>1 gram of creatine monohydrate reads as 1.76 grams of "protein."</strong> Creatine monohydrate is 28.17% nitrogen (three nitrogen atoms), so 1 g contributes 0.2817 × 6.25 = <span class="cu" data-v="1.761" data-dec="3" data-pre="" data-suf="">1.761</span> g of apparent protein, more leverage per gram than any common spiking agent except urea.</li>
+<li><strong>To fake <span class="cu" data-v="8.5" data-dec="1" data-pre="" data-suf="">8.5</span> g of protein you need only 7.3 g of glycine, or 4.8 g of creatine monohydrate.</strong> 8.5 / 1.166 = <span class="cu" data-v="7.29" data-dec="2" data-pre="" data-suf="">7.29</span> g glycine. 8.5 / 1.761 = 4.83 g creatine monohydrate. 8.5 g is the amount the Body Fortress class-action complaint alleged was spiked into a serving labeled 30 g of protein (21.5 g alleged true whey protein; 8.5 / 30 = 28.3% of the claim).</li>
 <li><strong>Honest ingredients nearly close under amino-acid-sum math; spiked math does not.</strong> Summing all 18 amino acids published by USDA FoodData Central for soy protein isolate gives 88.08 g per 100 g against 88.32 g of nitrogen protein, a gap of −0.3%. For wheat flour the gap is 0.0%. The gaps that remain for honest ingredients are small, explainable (see the gelatin finding below), and stable. Added free nitrogen breaks the closure in one direction only: nitrogen protein rises, amino acid sum does not.</li>
-<li><strong>Gelatin is the exception that proves the method needs care: its amino acid sum is 76.53 g against 85.6 g of nitrogen protein, a −10.6% gap, and the gap is a database gap, not spiking.</strong> The FoodData Central gelatin entry publishes no hydroxyproline value, and hydroxyproline is a major collagen amino acid. Any audit that flags gelatin on sum math alone, without reading the source entry, is wrong. We flag it here, in our own table, on purpose.</li>
+<li><strong>Gelatin is the exception that proves the method needs care: its amino acid sum is <span class="cu" data-v="76.53" data-dec="2" data-pre="" data-suf="">76.53</span> g against 85.6 g of nitrogen protein, a −10.6% gap, and the gap is a database gap, not spiking.</strong> The FoodData Central gelatin entry publishes no hydroxyproline value, and hydroxyproline is a major collagen amino acid. Any audit that flags gelatin on sum math alone, without reading the source entry, is wrong. We flag it here, in our own table, on purpose.</li>
 <li><strong>So what:</strong> If your product's nitrogen protein and its amino-acid-sum protein disagree by more than a few percent, in the direction nitrogen &gt; sum, you have either added free nitrogen, a database hole like gelatin's, or a labeling problem. Two tests settle which: a free amino acid profile (AA-1) and a total amino acid profile (AA-T). Total minus free is the protein-bound fraction. Nitrogen alone can never give you that split.</li>
 <li><strong>Why it matters:</strong> The 2014 CRN/AHPA voluntary guidance already tells the industry to exclude non-protein nitrogen from protein declarations, retailer verification programs test for exactly this, and the Body Fortress litigation shows the allegation alone is expensive. A $150 free profile plus a $230 total profile ($380 for the pair) is the cheapest way to know your own number before a retailer, a plaintiff, or a competitor computes it for you.</li>
 </ul>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>A protein declaration is usually not measured as protein at all. It is measured as nitrogen and multiplied by 6.25, on the assumption that every nitrogen atom in the sample arrived inside a protein. This article asks how much of the protein printed on a label that assumption can manufacture: how many grams of apparent protein a gram of free glycine, taurine, or creatine adds to a nitrogen result, and how far a finished product can drift from its label before anyone measuring amino acids would notice.</p>
+<p>The question matters to anyone who buys, formulates, or sells a protein product, because the gap is not theoretical. It is the mechanism behind protein-spiking litigation, behind retailer verification programs, and behind raw materials that can be priced as protein while delivering mostly cheap free nitrogen. If your product is honest, the same arithmetic is your defense, provided you have run it on your own formulation before someone else does.</p>
+<p>Everything here is computed, and every input is named. The exchange rates come from molecular formulas and the nitrogen fraction of each compound. The closure test sums the amino acids published by USDA FoodData Central for honest ingredients and sets that sum against their nitrogen protein. The closing scenario applies the exchange rates to a stated label claim. Read the tables in that order: first what each gram of added nitrogen is worth, then whether honest ingredients close, then what a stated addition does to a real label. The free and total amino acid profiles are the pair of measurements that settle which side of the gap any actual product sits on.</p>
+
+<figure class="viz rv ">
+<p class="viz-title">Apparent protein per 1 g added: the spiking exchange rates</p>
+<p class="viz-sub">Grams of label “protein” a nitrogen test reports for each gram of compound added. True protein, on the 6.25 assumption, would read 1.000.</p>
+<div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Urea (reference)</span><span class="vb-val">2.915</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Creatine (anhydrous)</span><span class="vb-val">2.003</span></div><div class="vb-track"><div class="vb-fill" style="--w:68.7%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Creatine monohydrate</span><span class="vb-val">1.761</span></div><div class="vb-track"><div class="vb-fill" style="--w:60.4%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Glycine</span><span class="vb-val">1.166</span></div><div class="vb-track"><div class="vb-fill" style="--w:40.0%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Taurine</span><span class="vb-val">0.700</span></div><div class="vb-track"><div class="vb-fill lt" style="--w:24.0%;transition-delay:360ms"></div></div></div><div class="vb-axis"><span>0</span><span>1.458</span><span>2.915</span></div></div>
+<figcaption>Figure 1 — Exchange rates from Table 1: every compound above true protein inflates a nitrogen-based protein declaration; taurine inflates it least per gram.</figcaption>
+</figure>
 <h2 id="table-1-the-spiking-exchange-rates-computed-from-molecular-formulas">Table 1: The spiking exchange rates (computed from molecular formulas)</h2>
 <p>Nitrogen methods (Kjeldahl, Dumas) measure total nitrogen and multiply by 6.25, the factor 21 CFR 101.9(c)(7) permits for protein declaration. Every nitrogen atom counts, wherever it sits.</p>
 <table>
@@ -153,6 +224,12 @@
 <blockquote>
 <p><strong>Worked example.</strong> Glycine nitrogen fraction = 14.007 / 75.07 = 0.1866. Apparent protein per gram = 0.1866 × 6.25 = 1.166 g. Grams of glycine to mimic 8.5 g protein = 8.5 / 1.166 = 7.29 g. Creatine monohydrate: nitrogen mass = 3 × 14.007 = 42.021; fraction = 42.021 / 149.15 = 0.2817; × 6.25 = 1.761 g apparent protein per gram; 8.5 / 1.761 = 4.83 g. Every figure in Table 1 re-performs from the formula and standard atomic weight of nitrogen (14.007) alone.</p>
 </blockquote>
+<figure class="viz rv ">
+<p class="viz-title">Nitrogen protein vs amino-acid sum: the gap for honest ingredients</p>
+<p class="viz-sub">Gap as a percent of nitrogen protein, per 100 g (Table 2). Negative means the amino acid sum falls short of the nitrogen figure.</p>
+<div class="vbars"><div class="vb-head"><span class="vb-name">Milk, dry, nonfat</span><span class="vb-val">+5.0</span></div><div class="dtrack"><div class="dbar" style="left:66.7%;width:27.8%;--w:27.8%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Egg, whole, dried</span><span class="vb-val">+1.0</span></div><div class="dtrack"><div class="dbar" style="left:66.7%;width:5.6%;--w:5.6%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Wheat flour, white</span><span class="vb-val">0.0</span></div><div class="dtrack"><div class="dbar" style="left:66.7%;width:0.0%;--w:0.0%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">-0.3</span></div><div class="dtrack"><div class="dbar neg" style="left:65.0%;width:1.7%;--w:1.7%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Soy flour, full-fat</span><span class="vb-val">-3.4</span></div><div class="dtrack"><div class="dbar neg" style="left:47.8%;width:18.9%;--w:18.9%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Whey, sweet, dried</span><span class="vb-val">-4.6</span></div><div class="dtrack"><div class="dbar neg" style="left:41.1%;width:25.6%;--w:25.6%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Peas, green split, raw</span><span class="vb-val">-6.4</span></div><div class="dtrack"><div class="dbar neg" style="left:31.1%;width:35.6%;--w:35.6%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-head"><span class="vb-name">Gelatin, dry powder</span><span class="vb-val">-10.6</span></div><div class="dtrack"><div class="dbar hl" style="left:7.8%;width:58.9%;--w:58.9%"></div><div class="dzero" style="left:66.7%"></div></div><div class="vb-axis"><span>-12</span><span>0</span><span>+6</span></div></div>
+<figcaption>Figure 2 — Honest ingredients nearly close: most gaps are small. Gelatin is the exception flagged in the article, a database gap (no hydroxyproline value published), not spiking.</figcaption>
+</figure>
 <h2 id="table-2-nitrogen-protein-vs-amino-acid-sum-protein-honest-ingredients-usda-fooddata-central-per-100-g">Table 2: Nitrogen protein vs amino-acid-sum protein, honest ingredients (USDA FoodData Central, per 100 g)</h2>
 <table>
 <thead>
@@ -355,5 +432,63 @@
 </footer>
 <script src="/assets/site.js?v=20261009a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script id="viz-js">
+(function(){
+"use strict";
+var rm=false;
+try{rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+function fmt(v,dec,pre,suf){
+  var s=v.toFixed(dec),parts=s.split("."),ip=parts[0];
+  ip=ip.replace(/\B(?=(\d{3})+(?!\d))/g,",");
+  return pre+ip+(parts.length>1?"."+parts[1]:"")+suf;
+}
+function countUp(el){
+  var v=parseFloat(el.getAttribute("data-v"));
+  if(isNaN(v))return;
+  var dec=parseInt(el.getAttribute("data-dec")||"0",10),
+      pre=el.getAttribute("data-pre")||"",suf=el.getAttribute("data-suf")||"",
+      t0=null,D=1250;
+  function step(ts){
+    if(!t0)t0=ts;
+    var p=Math.min((ts-t0)/D,1),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(v*e,dec,pre,suf);
+    if(p<1)requestAnimationFrame(step);else el.textContent=fmt(v,dec,pre,suf);
+  }
+  requestAnimationFrame(step);
+}
+function activate(scope){
+  scope.classList.add("in");
+  var cus=scope.querySelectorAll?scope.querySelectorAll(".cu"):[];
+  for(var i=0;i<cus.length;i++)countUp(cus[i]);
+  if(scope.classList&&scope.classList.contains("cu"))countUp(scope);
+}
+var targets=[];
+function collect(){
+  var els=document.querySelectorAll(".rv,.vbars,svg.vchart,.summary-box");
+  for(var i=0;i<els.length;i++)targets.push(els[i]);
+}
+if(rm||!("IntersectionObserver" in window)){
+  collect();
+  for(var j=0;j<targets.length;j++){
+    targets[j].classList.add("in");
+    var c=targets[j].querySelectorAll?targets[j].querySelectorAll(".cu"):[];
+    for(var k=0;k<c.length;k++)c[k].classList.add("in");
+  }
+}else{
+  collect();
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){activate(entries[i].target);io.unobserve(entries[i].target);}
+    }
+  },{threshold:0.22});
+  for(var m=0;m<targets.length;m++){targets[m].classList.add("armed");io.observe(targets[m]);}
+  setTimeout(function(){
+    for(var n=0;n<targets.length;n++){
+      if(!targets[n].classList.contains("in"))activate(targets[n]);
+    }
+  },6000);
+}
+})();
+</script>
 </body>
 </html>
