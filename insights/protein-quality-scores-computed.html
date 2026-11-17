@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Protein Quality Scores, Computed: DIAAS-Style Ratings for Commercial Ingredients | OpenChemWorks</title>
-<meta name="description" content="Gelatin (collagen) scores 0.00, at every age pattern and every digestibility assumption.">
+<title>Protein Quality Scores, Computed | OpenChemWorks</title>
+<meta name="description" content="Gelatin (collagen) scores 0.00, at every age pattern and every digestibility assumption. Protein quality scores computed for commercial ingredients.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://openchemworks.com/insights/protein-quality-scores-computed">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -15,8 +15,8 @@
 <meta name="theme-color" content="#0C2340">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OpenChemWorks">
-<meta property="og:title" content="Protein Quality Scores, Computed: DIAAS-Style Ratings for Commercial Ingredients">
-<meta property="og:description" content="Gelatin (collagen) scores 0.00, at every age pattern and every digestibility assumption.">
+<meta property="og:title" content="Protein Quality Scores, Computed">
+<meta property="og:description" content="Gelatin (collagen) scores 0.00, at every age pattern and every digestibility assumption. Protein quality scores computed for commercial ingredients.">
 <meta property="og:url" content="https://openchemworks.com/insights/protein-quality-scores-computed">
 <meta property="og:image" content="https://openchemworks.com/img/og/insights-protein-quality-scores-computed.jpg">
 <meta property="og:image:width" content="1200">
@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261009a">
-<link rel="alternate" type="application/rss+xml" title="OpenChemWorks — methods, notes and guides" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css?v=20261116a">
+<link rel="alternate" type="application/rss+xml" title="OpenChemWorks: methods, notes and guides" href="/feed.xml">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-27TQ6F9EE9"></script>
 <script>
@@ -39,66 +39,7 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
-<style id="viz-css">
-.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
-.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
-.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
-.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
-.viz svg{display:block;width:100%;height:auto}
-.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
-.viz svg .vlab{font-weight:600;fill:#22334A}
-.viz svg .vval{font-weight:700;fill:#0C2340}
-.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
-.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
-.vbars{margin:6px 0 2px}
-.vb-row{margin:0 0 11px}
-.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
-.vb-name{color:#22334A}
-.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
-.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
-.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
-.vb-fill.hl{background:#E8792B}
-.vb-fill.dk{background:#0C2340}
-.vb-fill.lt{background:#8FB0D1}
-.vb-fill.neg{background:#B3541E}
-.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
-.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
-.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
-.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
-.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
-.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
-.dbar.neg{background:#B3541E}
-.dbar.hl{background:#E8792B}
-.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
-.stack>div{height:100%}
-.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
-.cu{font-variant-numeric:tabular-nums}
-.js .rv.armed{opacity:0;transform:translateY(14px)}
-.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-.js .vbars.armed .vb-fill{width:0}
-.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
-.js .vbars.armed .dbar{width:0!important}
-.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
-.js .vbars.armed .stack>div{flex-grow:0!important}
-.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
-.js svg.armed .draw{stroke-dashoffset:1}
-.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
-.js svg .pop{opacity:1}
-.js svg.armed .pop{opacity:0}
-.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
-.js svg .grow{transform-box:fill-box;transform-origin:left center}
-.js svg.armed .grow{transform:scaleX(0)}
-.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
-@media (prefers-reduced-motion: reduce){
-.viz *,.rv,.cu{transition:none!important;animation:none!important}
-}
-@media (max-width:560px){
-.viz{padding:14px 13px 10px}
-.vb-head{font-size:.86em}
-.vb-track,.dtrack{height:13px}
-}
-</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +63,7 @@
 </header>
 <main id="main">
 <section class="phero">
-<div class="glow"></div><div class="grid"></div>
+
 <canvas aria-hidden="true" class="anim" data-anim="quiet" id="heroAnim"></canvas>
 <div class="container">
 <div class="inner">
@@ -132,11 +73,11 @@
 </div>
 </section>
 <section class="section art-sec"><div class="container art-grid">
-<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#reference-patterns-used-fao-2013">Reference patterns used (FAO 2013)</a></li><li><a href="#table-1-amino-acid-content-mg-per-gram-of-protein-computed-from-fooddata-central">Table 1: Amino acid content, mg per gram of protein (computed from FoodData Central)</a></li><li><a href="#table-2-chemical-scores-undigested-the-ceiling-every-diaas-style-estimate-starts-from">Table 2: Chemical scores (undigested) — the ceiling every DIAAS-style estimate starts from</a></li><li><a href="#table-3-diaas-style-estimates-under-stated-digestibility-assumptions-with-published-measured-diaas-for-comparison">Table 3: DIAAS-style ESTIMATES under stated digestibility assumptions, with published measured DIAAS for comparison</a></li><li><a href="#worked-blend-wheat-pea-computed">Worked blend: wheat + pea (computed)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#get-the-input-measurement-for-your-ingredient">Get the input measurement for your ingredient</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
-<div class="art-main"><article class="prose">
+<aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#at-a-glance-what-the-numbers-say">At a glance: what the numbers say</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#reference-patterns-used-fao-2013">Reference patterns used (FAO 2013)</a></li><li><a href="#table-1-amino-acid-content-mg-per-gram-of-protein-computed-from-fooddata-central">Table 1: Amino acid content, mg per gram of protein (computed from FoodData Central)</a></li><li><a href="#table-2-chemical-scores-undigested-the-ceiling-every-diaas-style-estimate-starts-from">Table 2: Chemical scores (undigested), the ceiling every DIAAS-style estimate starts from</a></li><li><a href="#table-3-diaas-style-estimates-under-stated-digestibility-assumptions-with-published-measured-diaas-for-comparison">Table 3: DIAAS-style ESTIMATES under stated digestibility assumptions, with published measured DIAAS for comparison</a></li><li><a href="#worked-blend-wheat-pea-computed">Worked blend: wheat + pea (computed)</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#get-the-input-measurement-for-your-ingredient">Get the input measurement for your ingredient</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
+<div class="art-main"><article class="prose art-protein-quality-scores-computed">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
 <blockquote>
-<p><strong>ESTIMATES, NOT MEASUREMENTS — read this first.</strong> Every score on this page labeled "DIAAS-style estimate" or "chemical score" is an <strong>estimate assembled from published components</strong>: amino acid profiles from USDA FoodData Central, reference patterns from FAO (2013), and digestibility assumptions stated in the tables. True DIAAS is a measured value from ileal digestibility studies in humans or pigs. Nobody at OpenChemWorks ran those studies. Where a published <em>measured</em> DIAAS exists (Mathai, Liu &amp; Stein, 2017), we print it separately and label it "measured (published)" so the two kinds of number can never be confused.</p>
+<p><strong>ESTIMATES, NOT MEASUREMENTS, read this first.</strong> Every score on this page labeled "DIAAS-style estimate" or "chemical score" is an <strong>estimate assembled from published components</strong>: amino acid profiles from USDA FoodData Central, reference patterns from FAO (2013), and digestibility assumptions stated in the tables. True DIAAS is a measured value from ileal digestibility studies in humans or pigs. Nobody at OpenChemWorks ran those studies. Where a published <em>measured</em> DIAAS exists (Mathai, Liu &amp; Stein, 2017), we print it separately and label it "measured (published)" so the two kinds of number can never be confused.</p>
 </blockquote>
 <div class="summary-box rv"><h2 id="at-a-glance-what-the-numbers-say">At a glance: what the numbers say</h2>
 <ul>
@@ -158,7 +99,7 @@
 <p class="viz-title">Chemical scores (undigested), older child / adult pattern</p>
 <p class="viz-sub">The ceiling every DIAAS-style estimate starts from: lowest amino-acid ratio against the FAO reference pattern, before any digestibility correction.</p>
 <div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk, dry, nonfat</span><span class="vb-val">1.49</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:99.3%;transition-delay:0ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg, whole, dried</span><span class="vb-val">1.42</span></div><div class="vb-track"><div class="vb-fill" style="--w:94.7%;transition-delay:90ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Egg, white, dried</span><span class="vb-val">1.38</span></div><div class="vb-track"><div class="vb-fill" style="--w:92.0%;transition-delay:180ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey, sweet, dried</span><span class="vb-val">1.15</span></div><div class="vb-track"><div class="vb-fill" style="--w:76.7%;transition-delay:270ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">1.07</span></div><div class="vb-track"><div class="vb-fill" style="--w:71.3%;transition-delay:360ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Peas, split, raw</span><span class="vb-val">0.88</span></div><div class="vb-track"><div class="vb-fill" style="--w:58.7%;transition-delay:450ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Wheat flour, white</span><span class="vb-val">0.46</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:30.7%;transition-delay:540ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Gelatins, dry powder</span><span class="vb-val">0.00</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:0.0%;transition-delay:630ms"></div><div class="vb-ref" style="left:66.7%"></div></div></div><div class="vb-axis"><span>0</span><span>0.75</span><span>1.50</span></div><p class="vb-note">1.00 = meets the FAO reference pattern</p></div>
-<figcaption>Figure 1 — Chemical scores from Table 2. Dairy, egg, and soy sit above the reference line on chemistry alone; wheat and gelatin fall below it.</figcaption>
+<figcaption>Figure 1: Chemical scores from Table 2. Dairy, egg, and soy sit above the reference line on chemistry alone; wheat and gelatin fall below it.</figcaption>
 </figure>
 <h2 id="reference-patterns-used-fao-2013">Reference patterns used (FAO 2013)</h2>
 <p>Digestible indispensable amino acid scoring patterns, mg per gram of protein (FAO, <em>Dietary protein quality evaluation in human nutrition</em>, Report of an FAO Expert Consultation, 2013):</p>
@@ -356,7 +297,7 @@
 <blockquote>
 <p><strong>Worked example.</strong> Soy isolate lysine: FoodData Central lists lysine 5.327 g and protein 88.32 g per 100 g. (5.327 / 88.32) × 1000 = 60.3 mg lysine per gram of protein. Soy isolate SAA: (1.130 + 1.046) / 88.32 × 1000 = 24.6 mg/g. EAA total counts the nine indispensable amino acids individually (methionine and phenylalanine counted once each, without their sparing partners): for soy isolate, 2.303 + 4.253 + 6.783 + 5.327 + 1.130 + 4.593 + 3.137 + 1.116 + 4.098 = 32.74 g per 100 g food; 32.74 / 88.32 × 1000 = 371 mg/g protein. Note: dried sweet whey (FDC 171283) is a lactose-rich dairy ingredient (12.93% protein), not a whey protein concentrate; its per-gram-of-protein profile is what is scored here, and it should not be read as the profile of a commercial WPC/WPI.</p>
 </blockquote>
-<h2 id="table-2-chemical-scores-undigested-the-ceiling-every-diaas-style-estimate-starts-from">Table 2: Chemical scores (undigested) — the ceiling every DIAAS-style estimate starts from</h2>
+<h2 id="table-2-chemical-scores-undigested-the-ceiling-every-diaas-style-estimate-starts-from">Table 2: Chemical scores (undigested), the ceiling every DIAAS-style estimate starts from</h2>
 <p>Chemical score = lowest (content / pattern) ratio across the nine scoring groups. No digestibility applied. This is an estimate component, not a DIAAS.</p>
 <table>
 <thead>
@@ -434,7 +375,7 @@
 <p class="viz-title">Published measured DIAAS (Mathai et al. 2017)</p>
 <p class="viz-sub">Measured ileal digestibility scores on the young-child pattern, printed separately from the computed chemical scores so the two kinds of number are never confused.</p>
 <div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Milk protein concentrate</span><span class="vb-val">120</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein concentrate</span><span class="vb-val">107</span></div><div class="vb-track"><div class="vb-fill" style="--w:89.2%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Whey protein isolate</span><span class="vb-val">100</span></div><div class="vb-track"><div class="vb-fill" style="--w:83.3%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Soy protein isolate</span><span class="vb-val">84</span></div><div class="vb-track"><div class="vb-fill" style="--w:70.0%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Pea protein concentrate</span><span class="vb-val">62</span></div><div class="vb-track"><div class="vb-fill dk" style="--w:51.7%;transition-delay:360ms"></div></div></div><div class="vb-axis"><span>0</span><span>60</span><span>120</span></div></div>
-<figcaption>Figure 2 — Measured DIAAS ranks the ingredients the same way the computed chemical scores do; the gap between the two charts is the digestibility cost.</figcaption>
+<figcaption>Figure 2: Measured DIAAS ranks the ingredients the same way the computed chemical scores do; the gap between the two charts is the digestibility cost.</figcaption>
 </figure>
 <h2 id="table-3-diaas-style-estimates-under-stated-digestibility-assumptions-with-published-measured-diaas-for-comparison">Table 3: DIAAS-style ESTIMATES under stated digestibility assumptions, with published measured DIAAS for comparison</h2>
 <p>Estimate formula: chemical score (limiting group, &gt;3 y pattern) × assumed standardized ileal digestibility of the limiting amino acids. The 0.85 and 0.75 columns are <strong>scenarios</strong>, printed to show sensitivity. They are not measurements and must not be quoted as DIAAS.</p>
@@ -504,17 +445,17 @@
 <p>Table 1 reads as a pairing chart. Legumes are lysine-rich and SAA-poor; cereals are the reverse. The wheat + pea computation above is the template: identify each ingredient's limiting group, check the partner's surplus in exactly that group, solve for the share. Soy isolate needs no partner on chemistry alone at the adult pattern (1.07); its problem is digestibility evidence, not a partner.</p>
 <h3 id="label-pdcaas-vs-diaas-style-where-they-disagree">Label: PDCAAS vs DIAAS-style, where they disagree</h3>
 <p>FDA protein %DV still runs on PDCAAS, truncated at 1.00. Truncation hides real differences at the top (milk at <span class="cu" data-v="1.49" data-dec="2" data-pre="" data-suf="">1.49</span> chemical score and egg white at 1.38 both print as 1.00) and the fecal digestibility basis flatters some plant proteins relative to ileal scoring. If your label claim and your marketing claim use different scores, this table is where the discrepancy will be found, by you or by someone else.</p>
-<h3 id="ingredient-buyer-score-per-dollar-data-gap-reported-honestly">Ingredient buyer: score per dollar — data gap, reported honestly</h3>
+<h3 id="ingredient-buyer-score-per-dollar-data-gap-reported-honestly">Ingredient buyer: score per dollar, data gap, reported honestly</h3>
 <p>A score-per-dollar ranking requires reliable published prices for each ingredient grade. We verified public price reporting for dairy ingredients (USDA Dairy Market News covers whey grades) but did not verify equivalent public reporting for pea and soy ingredient grades on the access date. The per-dollar table is therefore <strong>not published in this version</strong> rather than built on spot marketplace listings. Gap recorded; it closes when a citable price series for plant ingredients is verified.</p>
 <h3 id="skeptic-how-much-of-this-ranking-survives-a-different-assumption">Skeptic: how much of this ranking survives a different assumption?</h3>
 <p>Change the pattern (adult to child) and whey drops from 1.15 to 0.92, soy from 1.07 to 0.91 (Table 2). Change the digestibility assumption by 0.10 and mid-table estimates move by roughly 0.10 (Table 3). Change nothing and gelatin is still 0.00 and wheat is still last. The top and bottom of the ranking are robust; the middle is assumption-driven, and this page's estimates should be cited with their assumptions attached or not cited at all.</p>
 <h2 id="get-the-input-measurement-for-your-ingredient">Get the input measurement for your ingredient</h2>
 <p>Every score above starts from a total amino acid profile. Literature profiles describe generic ingredients; a claim needs your lot's profile.</p>
-<p><strong><a href="/services/total-amino-acid-analysis">Total amino acid analysis (AA-T): $230/sample — the score input, measured</a></strong></p>
+<p><strong><a href="/services/total-amino-acid-analysis">Total amino acid analysis (AA-T): $230/sample, the score input, measured</a></strong></p>
 <h2 id="methods-sources">Methods &amp; Sources</h2>
 <ul>
 <li>FAO (2013), <em>Dietary protein quality evaluation in human nutrition: Report of an FAO Expert Consultation</em>, FAO Food and Nutrition Paper 92: scoring patterns for the three age groups (His 21/20/16, Ile 55/32/30, Leu 96/66/61, Lys 69/57/48, SAA 33/27/23, AAA 94/52/41, Thr 44/31/25, Trp 17/8.5/6.6, Val 55/43/40 mg/g protein), DIAAS definition, and quality bands. Patterns cross-verified against the IDF factsheet summary of FAO 2013 and the Stein laboratory's published pattern footnotes. Accessed November 5, 2026.</li>
-<li>USDA FoodData Central, SR Legacy, via the FDC API: FDC 172195, 172204, 172188, 171283, 174276, 172428, 169761, 169599 (protein and amino acids per 100 g). https://fdc.nal.usda.gov/ — accessed November 5, 2026.</li>
+<li>USDA FoodData Central, SR Legacy, via the FDC API: FDC 172195, 172204, 172188, 171283, 174276, 172428, 169761, 169599 (protein and amino acids per 100 g). https://fdc.nal.usda.gov/, accessed November 5, 2026.</li>
 <li>Mathai, J.K., Liu, Y. &amp; Stein, H.H. (2017), <em>British Journal of Nutrition</em>: measured DIAAS in growing pigs for dairy and plant proteins (young-child pattern: milk protein concentrate 120, whey protein concentrate 107, whey protein isolate 100, soy flour 89, soy protein isolate 84, pea protein concentrate 62; dairy proteins first-limited by histidine or sulfur amino acids, soy and pea by sulfur amino acids), via the University of Illinois Stein laboratory publications and published summaries of the paper. Accessed November 5, 2026.</li>
 <li>Formulas: content (mg/g protein) = (g per 100 g food / protein g per 100 g food) × 1000; ratio = content / pattern; chemical score = minimum ratio; DIAAS-style estimate = chemical score × assumed SID of limiting group; blend content = protein-weighted mean. Worksheet: data.csv. Notes: calc-notes.md.</li>
 <li>Limitations: chemical scores ignore digestibility entirely and are ceilings, not quality claims. Scenario estimates apply one uniform SID to the limiting group only; true DIAAS applies a measured SID per amino acid. Ingredient proxies (whole foods for commercial isolates/concentrates) are named in every table. FoodData Central entries are SR Legacy values for generic foods, not specifications for any commercial ingredient.</li>
@@ -526,7 +467,7 @@
     </article></div></div></section>
 <section class="section band tight">
 <div class="container">
-<div class="section-title" style="margin-bottom:1.6rem"><h2>Related</h2><div class="rule"></div></div>
+<div class="section-title" style="margin-bottom:1.6rem"><h2>Related</h2></div>
 <div class="tiles"><a class="tile" href="/applications/cell-culture-media">
 <span class="viz"><canvas aria-hidden="true" data-anim="cellculture" data-hover="" data-mini=""></canvas></span> <span class="body">
 <span class="eyebrow">Application</span> <h3>Cell culture media</h3>
@@ -547,7 +488,7 @@
 </section>
 <section class="cta-band">
 <div class="container">
-<div class="cta-copy"><span class="kicker">Price and book online</span><h2>Have samples in mind?</h2><p>Pick the tests, the sample type and any preparation. The total updates as you go, and you can book in the same place. Every report includes the chromatogram and QC behind the numbers.</p><p>For the short version, see <a href="/insights/amino-acid-testing-price-index">how much does amino acid testing cost</a>: the per-sample numbers, and why quotes vary.</p></div>
+<div class="cta-copy"><span class="kicker">Order builder</span><h2>Have samples in mind?</h2><p>Pick the tests, the sample type and any preparation. The total updates as you go, and you can book in the same place. Every report includes the chromatogram and QC behind the numbers.</p><p>For the short version, see <a href="/insights/amino-acid-testing-price-index">how much does amino acid testing cost</a>: the per-sample numbers, and why quotes vary.</p></div>
 <div class="cta-side">
 <ul class="cta-prices"><li><span>Free amino acids</span><b>$150</b></li><li><span>Total amino acids</span><b>$230</b></li><li><span>Creatine</span><b>$120</b></li></ul>
 <div class="actions"><a class="btn btn-orange" href="/pricing#order">Open the order builder</a><a class="btn btn-outline-white" href="/pricing">Full price list</a></div>
@@ -563,12 +504,12 @@
       <span><span class="name">Open<em>Chem</em>Works</span><span class="sub">Analytical Laboratory · Davis, California</span></span>
     </a>
       <p>Independent analytical testing laboratory. Amino acids, creatine and custom HPLC methods, with published prices and online booking.</p>
-      <p><a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>Davis, California</p>
+      <p><a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>720 Olive Drive Suite G, Davis, CA 95616</p>
       <p class="f-cta"><a class="btn btn-orange" href="/pricing#order">Price &amp; book samples</a></p>
     </div>
     <div><h2>Services</h2><ul><li><a href="/services/amino-acid-analysis">Free amino acid analysis</a></li><li><a href="/services/total-amino-acid-analysis">Total amino acids</a></li><li><a href="/services/creatine-testing">Creatine testing</a></li><li><a href="/services/method-development">Custom HPLC methods</a></li><li><a href="/services/contract-manufacturers">For CDMOs and contract labs</a></li><li><a href="/services/sample-submission">How to send samples</a></li><li><a href="/pricing">Prices and order builder</a></li></ul></div>
     <div><h2>Applications</h2><ul><li><a href="/applications/cell-culture-media">Cell culture media</a></li><li><a href="/applications/cell-and-gene-therapy">Cell and gene therapy</a></li><li><a href="/applications/fermentation">Precision &amp; microbial fermentation</a></li><li><a href="/applications/cultivated-meat">Cultivated meat</a></li><li><a href="/applications/protein-hydrolysates">Protein hydrolysates &amp; peptones</a></li><li><a href="/applications/wine-and-brewing">Wine &amp; brewing</a></li><li><a href="/applications/label-claims">Supplements, beverages &amp; pet food</a></li></ul></div>
-    <div><h2>Resources</h2><ul><li><a href="/methods/">Methods library</a></li><li><a href="/insights/">Guides</a></li><li><a href="/jobs/">Testing by task</a></li><li><a href="/notes/">Application notes</a></li><li><a href="/example-report.pdf">Example report</a></li><li><a href="/openchemworks-sample-sheet.xlsx">Sample sheet (Excel)</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul></div>
+    <div><h2>Resources</h2><ul><li><a href="/methods/">Methods library</a></li><li><a href="/analytes/">Analytes reference</a></li><li><a href="/insights/">Guides</a></li><li><a href="/jobs/">Testing by task</a></li><li><a href="/notes/">Application notes</a></li><li><a href="/example-report.pdf">Example report</a></li><li><a href="/openchemworks-sample-sheet.xlsx">Sample sheet (Excel)</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul></div>
     <div class="legal">
       <span>Analytical services for research, development and process monitoring.</span>
       <span>We specialize in ultrafast turnaround. With planning, we offer overnight turnaround from the day your samples arrive.</span>

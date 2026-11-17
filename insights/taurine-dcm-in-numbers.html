@@ -5,7 +5,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Taurine and the DCM Question, in Numbers | OpenChemWorks</title>
-<meta name="description" content="The qualifying studies point in opposite directions.">
+<meta name="description" content="The qualifying studies point in opposite directions. Taurine and DCM in numbers: what the studies measured, what they found, and where they disagree.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://openchemworks.com/insights/taurine-dcm-in-numbers">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OpenChemWorks">
 <meta property="og:title" content="Taurine and the DCM Question, in Numbers">
-<meta property="og:description" content="The qualifying studies point in opposite directions.">
+<meta property="og:description" content="The qualifying studies point in opposite directions. Taurine and DCM in numbers: what the studies measured, what they found, and where they disagree.">
 <meta property="og:url" content="https://openchemworks.com/insights/taurine-dcm-in-numbers">
 <meta property="og:image" content="https://openchemworks.com/img/og/insights-taurine-dcm-in-numbers.jpg">
 <meta property="og:image:width" content="1200">
@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261009a">
-<link rel="alternate" type="application/rss+xml" title="OpenChemWorks — methods, notes and guides" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css?v=20261116a">
+<link rel="alternate" type="application/rss+xml" title="OpenChemWorks: methods, notes and guides" href="/feed.xml">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-27TQ6F9EE9"></script>
 <script>
@@ -39,66 +39,7 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
-<style id="viz-css">
-.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
-.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
-.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
-.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
-.viz svg{display:block;width:100%;height:auto}
-.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
-.viz svg .vlab{font-weight:600;fill:#22334A}
-.viz svg .vval{font-weight:700;fill:#0C2340}
-.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
-.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
-.vbars{margin:6px 0 2px}
-.vb-row{margin:0 0 11px}
-.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
-.vb-name{color:#22334A}
-.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
-.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
-.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
-.vb-fill.hl{background:#E8792B}
-.vb-fill.dk{background:#0C2340}
-.vb-fill.lt{background:#8FB0D1}
-.vb-fill.neg{background:#B3541E}
-.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
-.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
-.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
-.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
-.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
-.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
-.dbar.neg{background:#B3541E}
-.dbar.hl{background:#E8792B}
-.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
-.stack>div{height:100%}
-.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
-.cu{font-variant-numeric:tabular-nums}
-.js .rv.armed{opacity:0;transform:translateY(14px)}
-.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-.js .vbars.armed .vb-fill{width:0}
-.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
-.js .vbars.armed .dbar{width:0!important}
-.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
-.js .vbars.armed .stack>div{flex-grow:0!important}
-.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
-.js svg.armed .draw{stroke-dashoffset:1}
-.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
-.js svg .pop{opacity:1}
-.js svg.armed .pop{opacity:0}
-.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
-.js svg .grow{transform-box:fill-box;transform-origin:left center}
-.js svg.armed .grow{transform:scaleX(0)}
-.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
-@media (prefers-reduced-motion: reduce){
-.viz *,.rv,.cu{transition:none!important;animation:none!important}
-}
-@media (max-width:560px){
-.viz{padding:14px 13px 10px}
-.vb-head{font-size:.86em}
-.vb-track,.dtrack{height:13px}
-}
-</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +63,7 @@
 </header>
 <main id="main">
 <section class="phero">
-<div class="glow"></div><div class="grid"></div>
+
 <canvas aria-hidden="true" class="anim" data-anim="quiet" id="heroAnim"></canvas>
 <div class="container">
 <div class="inner">
@@ -133,7 +74,7 @@
 </section>
 <section class="section art-sec"><div class="container art-grid">
 <aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#gate-record-read-first">GATE RECORD (read first)</a></li><li><a href="#summary-key-findings">Summary: key findings</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#the-computed-dataset">The computed dataset</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#what-to-do-with-this">What to do with this</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
-<div class="art-main"><article class="prose">
+<div class="art-main"><article class="prose art-taurine-dcm-in-numbers">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
 <h2 id="gate-record-read-first">GATE RECORD (read first)</h2>
 <p>This topic was built only if a first data pass found at least 3 studies with extractable taurine distributions (whole blood or plasma values broken out by diet category). The pass, run November 5, 2026, found exactly 3 that meet the rule as written:</p>
@@ -164,7 +105,7 @@
 <p class="viz-title">Blood taurine by diet category: three studies, no pooling</p>
 <p class="viz-sub">Whole blood (WB) and plasma (pl.) values. Dots show the published central value for each group.</p>
 <svg class="vchart" viewBox="0 0 680 552" role="img" aria-label="Dot plot, µmol/L"><line x1="205.0" y1="12" x2="205.0" y2="516" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="205.0" y="538" font-size="12.5" text-anchor="middle">0</text><line x1="302.2" y1="12" x2="302.2" y2="516" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="302.2" y="538" font-size="12.5" text-anchor="middle">100</text><line x1="399.5" y1="12" x2="399.5" y2="516" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="399.5" y="538" font-size="12.5" text-anchor="middle">200</text><line x1="496.8" y1="12" x2="496.8" y2="516" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="496.8" y="538" font-size="12.5" text-anchor="middle">300</text><line x1="594.0" y1="12" x2="594.0" y2="516" stroke="#D8DEE6" stroke-width="1"/><text class="tick" x="594.0" y="538" font-size="12.5" text-anchor="middle">400</text><text class="tick" x="400" y="551" font-size="12.5" text-anchor="middle">µmol/L</text><text class="vlab" x="195" y="31.0" font-size="13" text-anchor="end">Ontiveros WB non-trad.</text><text x="195" y="46.0" font-size="11.5" text-anchor="end">mean +/- SD</text><line class="pop" x1="391.7" y1="33.0" x2="531.8" y2="33.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="391.7" y1="27.0" x2="391.7" y2="39.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="531.8" y1="27.0" x2="531.8" y2="39.0" stroke="#E8792B" stroke-width="2.4"/><circle class="pop" cx="461.7" cy="33.0" r="5.2" fill="#E8792B"/><text class="vval pop" x="540.8" y="37.0" font-size="13.5">264</text><text class="vlab" x="195" y="73.0" font-size="13" text-anchor="end">Ontiveros WB trad.</text><text x="195" y="88.0" font-size="11.5" text-anchor="end">mean +/- SD</text><line class="pop" x1="447.7" y1="75.0" x2="539.9" y2="75.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="447.7" y1="69.0" x2="447.7" y2="81.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="539.9" y1="69.0" x2="539.9" y2="81.0" stroke="#3E6DA3" stroke-width="2.4"/><circle class="pop" cx="493.8" cy="75.0" r="5.2" fill="#3E6DA3"/><text class="vval pop" x="548.9" y="79.0" font-size="13.5">297</text><text class="vlab" x="195" y="115.0" font-size="13" text-anchor="end">Ontiveros pl. non-trad.</text><text x="195" y="130.0" font-size="11.5" text-anchor="end">mean +/- SD</text><line class="pop" x1="271.2" y1="117.0" x2="337.4" y2="117.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="271.2" y1="111.0" x2="271.2" y2="123.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="337.4" y1="111.0" x2="337.4" y2="123.0" stroke="#E8792B" stroke-width="2.4"/><circle class="pop" cx="304.3" cy="117.0" r="5.2" fill="#E8792B"/><text class="vval pop" x="346.4" y="121.0" font-size="13.5">102.1</text><text class="vlab" x="195" y="157.0" font-size="13" text-anchor="end">Ontiveros pl. trad.</text><text x="195" y="172.0" font-size="11.5" text-anchor="end">mean +/- SD</text><line class="pop" x1="272.9" y1="159.0" x2="343.3" y2="159.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="272.9" y1="153.0" x2="272.9" y2="165.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="343.3" y1="153.0" x2="343.3" y2="165.0" stroke="#3E6DA3" stroke-width="2.4"/><circle class="pop" cx="308.1" cy="159.0" r="5.2" fill="#3E6DA3"/><text class="vval pop" x="352.3" y="163.0" font-size="13.5">106</text><text class="vlab" x="195" y="199.0" font-size="13" text-anchor="end">Adin pl. grain-free</text><text x="195" y="214.0" font-size="11.5" text-anchor="end">median (IQR)</text><line class="pop" x1="303.2" y1="201.0" x2="348.9" y2="201.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="303.2" y1="195.0" x2="303.2" y2="207.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="348.9" y1="195.0" x2="348.9" y2="207.0" stroke="#E8792B" stroke-width="2.4"/><circle class="pop" cx="326.6" cy="201.0" r="5.2" fill="#E8792B"/><text class="vval pop" x="357.9" y="205.0" font-size="13.5">125</text><text class="vlab" x="195" y="241.0" font-size="13" text-anchor="end">Adin pl. grain-incl.</text><text x="195" y="256.0" font-size="11.5" text-anchor="end">median (IQR)</text><line class="pop" x1="288.6" y1="243.0" x2="324.6" y2="243.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="288.6" y1="237.0" x2="288.6" y2="249.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="324.6" y1="237.0" x2="324.6" y2="249.0" stroke="#3E6DA3" stroke-width="2.4"/><circle class="pop" cx="306.1" cy="243.0" r="5.2" fill="#3E6DA3"/><text class="vval pop" x="333.6" y="247.0" font-size="13.5">104</text><text class="vlab" x="195" y="283.0" font-size="13" text-anchor="end">Adin WB grain-free</text><text x="195" y="298.0" font-size="11.5" text-anchor="end">median (IQR)</text><line class="pop" x1="441.3" y1="285.0" x2="512.3" y2="285.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="441.3" y1="279.0" x2="441.3" y2="291.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="512.3" y1="279.0" x2="512.3" y2="291.0" stroke="#E8792B" stroke-width="2.4"/><circle class="pop" cx="478.3" cy="285.0" r="5.2" fill="#E8792B"/><text class="vval pop" x="521.3" y="289.0" font-size="13.5">281</text><text class="vlab" x="195" y="325.0" font-size="13" text-anchor="end">Adin WB grain-incl.</text><text x="195" y="340.0" font-size="11.5" text-anchor="end">median (IQR)</text><line class="pop" x1="393.7" y1="327.0" x2="475.4" y2="327.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="393.7" y1="321.0" x2="393.7" y2="333.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="475.4" y1="321.0" x2="475.4" y2="333.0" stroke="#3E6DA3" stroke-width="2.4"/><circle class="pop" cx="425.8" cy="327.0" r="5.2" fill="#3E6DA3"/><text class="vval pop" x="484.4" y="331.0" font-size="13.5">227</text><text class="vlab" x="195" y="367.0" font-size="13" text-anchor="end">Donadelli pl. grain-free</text><text x="195" y="382.0" font-size="11.5" text-anchor="end">mean, SEM in source</text><line class="pop" x1="391.7" y1="369.0" x2="391.7" y2="369.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="391.7" y1="363.0" x2="391.7" y2="375.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="391.7" y1="363.0" x2="391.7" y2="375.0" stroke="#E8792B" stroke-width="2.4"/><circle class="pop" cx="391.7" cy="369.0" r="5.2" fill="#E8792B"/><text class="vval pop" x="400.7" y="373.0" font-size="13.5">192</text><text class="vlab" x="195" y="409.0" font-size="13" text-anchor="end">Donadelli pl. control</text><text x="195" y="424.0" font-size="11.5" text-anchor="end">mean, SEM in source</text><line class="pop" x1="309.1" y1="411.0" x2="309.1" y2="411.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="309.1" y1="405.0" x2="309.1" y2="417.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="309.1" y1="405.0" x2="309.1" y2="417.0" stroke="#3E6DA3" stroke-width="2.4"/><circle class="pop" cx="309.1" cy="411.0" r="5.2" fill="#3E6DA3"/><text class="vval pop" x="318.1" y="415.0" font-size="13.5">107</text><text class="vlab" x="195" y="451.0" font-size="13" text-anchor="end">Donadelli WB grain-free</text><text x="195" y="466.0" font-size="11.5" text-anchor="end">mean, SEM in source</text><line class="pop" x1="491.9" y1="453.0" x2="491.9" y2="453.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="491.9" y1="447.0" x2="491.9" y2="459.0" stroke="#E8792B" stroke-width="2.4"/><line class="pop" x1="491.9" y1="447.0" x2="491.9" y2="459.0" stroke="#E8792B" stroke-width="2.4"/><circle class="pop" cx="491.9" cy="453.0" r="5.2" fill="#E8792B"/><text class="vval pop" x="500.9" y="457.0" font-size="13.5">295</text><text class="vlab" x="195" y="493.0" font-size="13" text-anchor="end">Donadelli WB control</text><text x="195" y="508.0" font-size="11.5" text-anchor="end">mean, SEM in source</text><line class="pop" x1="385.9" y1="495.0" x2="385.9" y2="495.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="385.9" y1="489.0" x2="385.9" y2="501.0" stroke="#3E6DA3" stroke-width="2.4"/><line class="pop" x1="385.9" y1="489.0" x2="385.9" y2="501.0" stroke="#3E6DA3" stroke-width="2.4"/><circle class="pop" cx="385.9" cy="495.0" r="5.2" fill="#3E6DA3"/><text class="vval pop" x="394.9" y="499.0" font-size="13.5">186</text></svg>
-<figcaption>Figure 1 — The studies disagree in direction and the matrices disagree within studies. Whiskers are SD or IQR as labeled in each row, and the Donadelli dots are values only, with SEM reported in the source. Nothing here is pooled.</figcaption>
+<figcaption>Figure 1: The studies disagree in direction and the matrices disagree within studies. Whiskers are SD or IQR as labeled in each row, and the Donadelli dots are values only, with SEM reported in the source. Nothing here is pooled.</figcaption>
 </figure>
 <h2 id="the-computed-dataset">The computed dataset</h2>
 <p>Units throughout: nmol/mL, which is numerically identical to µmol/L. "Our computation" means arithmetic on the study's published summary statistics; formulas in calc-notes.md.</p>
@@ -274,7 +215,7 @@
 <p><strong>Regulatory.</strong> Dated status line: FDA opened the investigation in July 2018; the detailed public dataset covers reports to April 30, 2019 (524 reports); on December 23, 2022 FDA said it would not release further public updates until meaningful new scientific information emerges, and that report counts alone do not establish causation. As of our access date (November 5, 2026) we found no newer FDA update superseding that statement. If that changes, this section is the first thing the bi-weekly cycle rewrites.</p>
 <h2 id="what-to-do-with-this">What to do with this</h2>
 <p>If you formulate or sell a grain-free or legume-heavy diet, the defensible position is a measured one: your diet's amino acid assay on file, and a taurine testing plan that names both matrices.</p>
-<p><strong>Check your own product: <a href="/services/amino-acid-analysis">Amino acid analysis, $150/sample</a>.</strong> Taurine is not part of the AA-1 panel. Ask at inquiry if taurine is the number you need.</p>
+<p><strong>Check your own product: <a href="/services/amino-acid-analysis">Amino acid analysis, $150/sample</a>.</strong> For taurine itself, taurine testing is a full amino acid analysis at $150 per sample.</p>
 <h2 id="methods-sources">Methods &amp; Sources</h2>
 <p>Gate rule and audit: stated in full at the top of this article; the underlying extraction log is in calc-notes.md. Inclusion rule for Table 1: peer-reviewed study, taurine values published as a numeric distribution (mean ± SD, median + IQR, or mean + SEM) split by a diet category. Computations: percent difference = (A − B)/B × 100 on published means/medians; Cohen's d for Ontiveros from published means and SDs with pooled SD = sqrt((SD1² + SD2²)/2). We did not pool across studies (different breeds, designs, diet definitions, and summary statistics) and we did not convert medians to means. Limitations: (1) Donadelli n=8, sequential design, test diet taurine 0.14% vs control 0.07%, manufacturer-affiliated authorship (Champion Petfoods) disclosed in the paper; its rise in taurine cannot be separated from its doubled dietary taurine. (2) Adin 2021 groups are unbalanced (26 vs 162) and breed-adjusted results differ from unadjusted ones; we report both. (3) Ontiveros "non-traditional" bundles grain-free status, legume/potato position, and manufacturer size; it is not a pure grain-free contrast. (4) Diet-archetype amino acid profiles of legume-heavy formulations (planned from USDA FoodData Central ingredient data) were not computed in this cycle; recorded as a gap below, not filled with estimates.</p>
 <p>Sources (accessed November 5, 2026): Ontiveros ES et al., PLoS ONE 2020, 15:e0233206 (PMC7228784); Adin D et al., J Vet Intern Med 2021, 35:771–779 (PMC7995416); Donadelli RA et al., Transl Anim Sci 2020, 4:txaa141 (PMC7433909); Kaplan JL et al., PLoS ONE 2018, 13:e0209112; Adin D et al., J Vet Cardiol 2019, 21:1–9 (abstract and figure legend); Freeman LM et al., JAVMA 2018, 253:1390–1394 and Tufts DCM update, November 2018; FDA, Investigation into Potential Link Between Certain Diets and Canine Dilated Cardiomyopathy, page last updated December 23, 2022 (figures as summarized in the December 2022 update coverage). URLs in calc-notes.md.</p>
@@ -285,7 +226,7 @@
     </article></div></div></section>
 <section class="section band tight">
 <div class="container">
-<div class="section-title" style="margin-bottom:1.6rem"><h2>Related</h2><div class="rule"></div></div>
+<div class="section-title" style="margin-bottom:1.6rem"><h2>Related</h2></div>
 <div class="tiles"><a class="tile" href="/applications/cell-culture-media">
 <span class="viz"><canvas aria-hidden="true" data-anim="cellculture" data-hover="" data-mini=""></canvas></span> <span class="body">
 <span class="eyebrow">Application</span> <h3>Cell culture media</h3>
@@ -306,7 +247,7 @@
 </section>
 <section class="cta-band">
 <div class="container">
-<div class="cta-copy"><span class="kicker">Price and book online</span><h2>Have samples in mind?</h2><p>Pick the tests, the sample type and any preparation. The total updates as you go, and you can book in the same place. Every report includes the chromatogram and QC behind the numbers.</p><p>For the short version, see <a href="/insights/amino-acid-testing-price-index">how much does amino acid testing cost</a>: the per-sample numbers, and why quotes vary.</p></div>
+<div class="cta-copy"><span class="kicker">Order builder</span><h2>Have samples in mind?</h2><p>Pick the tests, the sample type and any preparation. The total updates as you go, and you can book in the same place. Every report includes the chromatogram and QC behind the numbers.</p><p>For the short version, see <a href="/insights/amino-acid-testing-price-index">how much does amino acid testing cost</a>: the per-sample numbers, and why quotes vary.</p></div>
 <div class="cta-side">
 <ul class="cta-prices"><li><span>Free amino acids</span><b>$150</b></li><li><span>Total amino acids</span><b>$230</b></li><li><span>Creatine</span><b>$120</b></li></ul>
 <div class="actions"><a class="btn btn-orange" href="/pricing#order">Open the order builder</a><a class="btn btn-outline-white" href="/pricing">Full price list</a></div>
@@ -322,12 +263,12 @@
       <span><span class="name">Open<em>Chem</em>Works</span><span class="sub">Analytical Laboratory · Davis, California</span></span>
     </a>
       <p>Independent analytical testing laboratory. Amino acids, creatine and custom HPLC methods, with published prices and online booking.</p>
-      <p><a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>Davis, California</p>
+      <p><a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>720 Olive Drive Suite G, Davis, CA 95616</p>
       <p class="f-cta"><a class="btn btn-orange" href="/pricing#order">Price &amp; book samples</a></p>
     </div>
     <div><h2>Services</h2><ul><li><a href="/services/amino-acid-analysis">Free amino acid analysis</a></li><li><a href="/services/total-amino-acid-analysis">Total amino acids</a></li><li><a href="/services/creatine-testing">Creatine testing</a></li><li><a href="/services/method-development">Custom HPLC methods</a></li><li><a href="/services/contract-manufacturers">For CDMOs and contract labs</a></li><li><a href="/services/sample-submission">How to send samples</a></li><li><a href="/pricing">Prices and order builder</a></li></ul></div>
     <div><h2>Applications</h2><ul><li><a href="/applications/cell-culture-media">Cell culture media</a></li><li><a href="/applications/cell-and-gene-therapy">Cell and gene therapy</a></li><li><a href="/applications/fermentation">Precision &amp; microbial fermentation</a></li><li><a href="/applications/cultivated-meat">Cultivated meat</a></li><li><a href="/applications/protein-hydrolysates">Protein hydrolysates &amp; peptones</a></li><li><a href="/applications/wine-and-brewing">Wine &amp; brewing</a></li><li><a href="/applications/label-claims">Supplements, beverages &amp; pet food</a></li></ul></div>
-    <div><h2>Resources</h2><ul><li><a href="/methods/">Methods library</a></li><li><a href="/insights/">Guides</a></li><li><a href="/jobs/">Testing by task</a></li><li><a href="/notes/">Application notes</a></li><li><a href="/example-report.pdf">Example report</a></li><li><a href="/openchemworks-sample-sheet.xlsx">Sample sheet (Excel)</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul></div>
+    <div><h2>Resources</h2><ul><li><a href="/methods/">Methods library</a></li><li><a href="/analytes/">Analytes reference</a></li><li><a href="/insights/">Guides</a></li><li><a href="/jobs/">Testing by task</a></li><li><a href="/notes/">Application notes</a></li><li><a href="/example-report.pdf">Example report</a></li><li><a href="/openchemworks-sample-sheet.xlsx">Sample sheet (Excel)</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul></div>
     <div class="legal">
       <span>Analytical services for research, development and process monitoring.</span>
       <span>We specialize in ultrafast turnaround. With planning, we offer overnight turnaround from the day your samples arrive.</span>

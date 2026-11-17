@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Cost Per Data Point: What a Panel Actually Buys, by Method | OpenChemWorks</title>
-<meta name="description" content="The spread in cost per analyte is 14x across published offerings.">
+<title>Cost Per Data Point by Method | OpenChemWorks</title>
+<meta name="description" content="The spread in cost per analyte is 14x across published offerings. What a panel actually buys, method by method, at published prices per data point.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://openchemworks.com/insights/cost-per-data-point-by-method">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -15,8 +15,8 @@
 <meta name="theme-color" content="#0C2340">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OpenChemWorks">
-<meta property="og:title" content="Cost Per Data Point: What a Panel Actually Buys, by Method">
-<meta property="og:description" content="The spread in cost per analyte is 14x across published offerings.">
+<meta property="og:title" content="Cost Per Data Point by Method">
+<meta property="og:description" content="The spread in cost per analyte is 14x across published offerings. What a panel actually buys, method by method, at published prices per data point.">
 <meta property="og:url" content="https://openchemworks.com/insights/cost-per-data-point-by-method">
 <meta property="og:image" content="https://openchemworks.com/img/og/insights-cost-per-data-point-by-method.jpg">
 <meta property="og:image:width" content="1200">
@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=20261009a">
-<link rel="alternate" type="application/rss+xml" title="OpenChemWorks — methods, notes and guides" href="/feed.xml">
+<link rel="stylesheet" href="/assets/site.css?v=20261116a">
+<link rel="alternate" type="application/rss+xml" title="OpenChemWorks: methods, notes and guides" href="/feed.xml">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-27TQ6F9EE9"></script>
 <script>
@@ -39,66 +39,7 @@
 
   gtag('config', 'G-27TQ6F9EE9');
 </script>
-<style id="viz-css">
-.viz{margin:1.6em 0;padding:18px 20px 14px;background:#F7F9FC;border:1px solid #D8DEE6;border-radius:10px}
-.viz .viz-title{font-weight:700;font-size:1.02em;color:#0C2340;margin:0 0 4px}
-.viz .viz-sub{font-size:.86em;color:#5A6B80;margin:0 0 12px}
-.viz figcaption{font-size:.82em;color:#5A6B80;margin-top:10px;line-height:1.45}
-.viz svg{display:block;width:100%;height:auto}
-.viz svg text{font-family:'IBM Plex Sans',Arial,sans-serif;fill:#43536A}
-.viz svg .vlab{font-weight:600;fill:#22334A}
-.viz svg .vval{font-weight:700;fill:#0C2340}
-.viz-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.84em;color:#43536A;margin:0 0 10px}
-.viz-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
-.viz-legend .swl{display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
-.vbars{margin:6px 0 2px}
-.vb-row{margin:0 0 11px}
-.vb-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.9em;margin:0 0 4px}
-.vb-name{color:#22334A}
-.vb-val{font-weight:700;color:#0C2340;font-variant-numeric:tabular-nums;white-space:nowrap}
-.vb-track{position:relative;height:15px;background:#E4EAF1;border-radius:4px}
-.vb-fill{height:100%;border-radius:4px;background:#3E6DA3;width:var(--w)}
-.vb-fill.hl{background:#E8792B}
-.vb-fill.dk{background:#0C2340}
-.vb-fill.lt{background:#8FB0D1}
-.vb-fill.neg{background:#B3541E}
-.vb-ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
-.vb-axis{display:flex;justify-content:space-between;font-size:.76em;color:#71808F;margin-top:5px;font-variant-numeric:tabular-nums}
-.vb-note{font-size:.8em;color:#5A6B80;margin-top:6px}
-.dtrack{position:relative;height:15px;background:#E4EAF1;border-radius:4px;margin:0 0 11px}
-.dzero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0C2340;opacity:.65}
-.dbar{position:absolute;top:0;height:100%;border-radius:4px;background:#3E6DA3}
-.dbar.neg{background:#B3541E}
-.dbar.hl{background:#E8792B}
-.stack{display:flex;height:17px;border-radius:4px;overflow:hidden;background:#E4EAF1;margin:0 0 4px}
-.stack>div{height:100%}
-.stack .s1{background:#3E6DA3}.stack .s2{background:#C9D6E4}
-.cu{font-variant-numeric:tabular-nums}
-.js .rv.armed{opacity:0;transform:translateY(14px)}
-.js .rv.armed.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-.js .vbars.armed .vb-fill{width:0}
-.js .vbars.armed.in .vb-fill{width:var(--w);transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
-.js .vbars.armed .dbar{width:0!important}
-.js .vbars.armed.in .dbar{width:var(--w)!important;transition:width 1.15s cubic-bezier(.22,.71,.24,1)}
-.js .vbars.armed .stack>div{flex-grow:0!important}
-.js svg .draw{stroke-dasharray:1;stroke-dashoffset:0}
-.js svg.armed .draw{stroke-dashoffset:1}
-.js svg.armed.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.5s ease .15s}
-.js svg .pop{opacity:1}
-.js svg.armed .pop{opacity:0}
-.js svg.armed.in .pop{opacity:1;transition:opacity .5s ease .9s}
-.js svg .grow{transform-box:fill-box;transform-origin:left center}
-.js svg.armed .grow{transform:scaleX(0)}
-.js svg.armed.in .grow{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.22,.71,.24,1)}
-@media (prefers-reduced-motion: reduce){
-.viz *,.rv,.cu{transition:none!important;animation:none!important}
-}
-@media (max-width:560px){
-.viz{padding:14px 13px 10px}
-.vb-head{font-size:.86em}
-.vb-track,.dtrack{height:13px}
-}
-</style>
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -122,7 +63,7 @@
 </header>
 <main id="main">
 <section class="phero">
-<div class="glow"></div><div class="grid"></div>
+
 <canvas aria-hidden="true" class="anim" data-anim="quiet" id="heroAnim"></canvas>
 <div class="container">
 <div class="inner">
@@ -133,7 +74,7 @@
 </section>
 <section class="section art-sec"><div class="container art-grid">
 <aside class="art-rail"><nav aria-label="On this page" class="toc2"><b>On this page</b><ol><li><a href="#summary-key-findings">Summary: key findings</a></li><li><a href="#introduction">Introduction</a></li><li><a href="#the-computed-dataset">The computed dataset</a></li><li><a href="#perspectives">Perspectives</a></li><li><a href="#what-to-do-with-this">What to do with this</a></li><li><a href="#methods-sources">Methods &amp; Sources</a></li><li><a href="#changelog">Changelog</a></li></ol></nav></aside>
-<div class="art-main"><article class="prose">
+<div class="art-main"><article class="prose art-cost-per-data-point-by-method">
 <p>Last updated: November 5, 2026 · Data as of November 5, 2026 · Version v2026.11</p>
 <div class="summary-box rv"><h2 id="summary-key-findings">Summary: key findings</h2>
 <p>Every price below is a published price, verified on the lab's own page on November 5, 2026, except the OpenChemWorks rows and the census seed rows, which come from the Insights program plan's verified seed (plan §1, Topic 1, verified 2026-11-05). Cost per analyte is our computation: published price ÷ analytes reported. Where a lab does not publish its analyte count, we say so and show the scenario, because that missing number is itself a finding.</p>
@@ -157,7 +98,7 @@
 <p class="viz-title">Cost per reported analyte, by published offering</p>
 <p class="viz-sub">Published price divided by analytes reported. Orange is OpenChemWorks.</p>
 <div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Walk-In Lab LC/MS blood panel</span><span class="vb-val">$7.08</span></div><div class="vb-track"><div class="vb-fill" style="--w:7.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">OpenChemWorks AA-1 (per reported value)</span><span class="vb-val">$7.50</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:7.4%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">UC Davis plasma panel, bulk tier</span><span class="vb-val">$8.05</span></div><div class="vb-track"><div class="vb-fill" style="--w:8.0%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">UC Davis plasma panel</span><span class="vb-val">$9.40</span></div><div class="vb-track"><div class="vb-fill" style="--w:9.3%;transition-delay:270ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">OpenChemWorks AA-T</span><span class="vb-val">$14.38</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:14.2%;transition-delay:360ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Bio-Synthesis modified / blank</span><span class="vb-val">$16.67</span></div><div class="vb-track"><div class="vb-fill" style="--w:16.5%;transition-delay:450ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">UC Davis food/tissue panel</span><span class="vb-val">$18.40</span></div><div class="vb-track"><div class="vb-fill" style="--w:18.2%;transition-delay:540ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Medallion profile</span><span class="vb-val">$19.12</span></div><div class="vb-track"><div class="vb-fill" style="--w:18.9%;transition-delay:630ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Bio-Synthesis hydrolysis + analysis</span><span class="vb-val">$25.00</span></div><div class="vb-track"><div class="vb-fill" style="--w:24.8%;transition-delay:720ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">UC Davis single analyte</span><span class="vb-val">$101.00</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:810ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>$101</span></div></div>
-<figcaption>Figure 1 — Cost per analyte runs from the Walk-In Lab panel to the UC Davis single-analyte service. The hydrolysis-only service is not charted because it reports no analytes.</figcaption>
+<figcaption>Figure 1: Cost per analyte runs from the Walk-In Lab panel to the UC Davis single-analyte service. The hydrolysis-only service is not charted because it reports no analytes.</figcaption>
 </figure>
 <h2 id="the-computed-dataset">The computed dataset</h2>
 <h3 id="table-1-cost-per-analyte-published-offerings-our-computation">Table 1. Cost per analyte, published offerings (our computation)</h3>
@@ -318,13 +259,13 @@
 <p class="viz-title">Coverage of the reference analyte set</p>
 <p class="viz-sub">Share of the reference set that each published panel covers, where the source publishes a score.</p>
 <div class="vbars"><div class="vb-row"><div class="vb-head"><span class="vb-name">Walk-In Lab LC/MS blood panel</span><span class="vb-val">95.5%</span></div><div class="vb-track"><div class="vb-fill" style="--w:100.0%;transition-delay:0ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">OpenChemWorks AA-1 (per reported value)</span><span class="vb-val">90.9%</span></div><div class="vb-track"><div class="vb-fill hl" style="--w:95.2%;transition-delay:90ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Bio-Synthesis hydrolysis + analysis</span><span class="vb-val">81.8%</span></div><div class="vb-track"><div class="vb-fill" style="--w:85.7%;transition-delay:180ms"></div></div></div><div class="vb-row"><div class="vb-head"><span class="vb-name">Medallion profile</span><span class="vb-val">77.3%</span></div><div class="vb-track"><div class="vb-fill" style="--w:80.9%;transition-delay:270ms"></div></div></div><div class="vb-axis"><span>0</span><span></span><span>95.5%</span></div></div>
-<figcaption>Figure 2 — The panel that is cheapest per analyte also covers the widest share of the reference set, and the narrowest scored coverage comes from the ion-exchange profile.</figcaption>
+<figcaption>Figure 2: The panel that is cheapest per analyte also covers the widest share of the reference set, and the narrowest scored coverage comes from the ion-exchange profile.</figcaption>
 </figure>
 <h2 id="perspectives">Perspectives</h2>
 <p><strong>Buyer.</strong> Three defined jobs. (1) "Is my product's amino acid profile what the label says?" A free-amino-acid panel on the finished product: AA-1 class, $7.50 per reported value, 3–5 days. (2) "What is the total protein quality of this ingredient?" A hydrolysis-inclusive panel: $14.38–$25.00 per analyte across this census; the buying question is whether Trp/Cys/Met handling is specified, because that is where the panels silently diverge. (3) "One number, defensibly: taurine in this plasma." A single-analyte service at $101 is the most expensive row in Table 1 per analyte and may still be the right buy, because you are purchasing a reference laboratory's validated single-analyte method, not 1/20th of a panel. Per-analyte cost ranks efficiency; it does not rank fitness for a job.</p>
 <p><strong>Analytical.</strong> What the extra money buys, honestly bounded: ion-exchange with post-column ninhydrin (UC Davis, Medallion) is the long-standing reference approach, robust for physiological fluids and food hydrolysates, at the cost of long run times and, at Medallion as published, no Cys/Met/Trp. AccQ-Tag UPLC/HPLC (Bio-Synthesis, OpenChemWorks) buys speed and small sample volume with pre-column derivatization; its hydrolysis caveats for Trp/Cys are the same chemistry, not a brand difference. LC-MS/MS (Walk-In's clinical panel) buys the broadest metabolite list per dollar in this census, aimed at blood diagnostics, not at food or feed matrices. Sensitivity claims beyond what these pages publish are not compared here, because they were not published in comparable form. That is a gap in the public record, not a tie.</p>
 <p><strong>Lab economics.</strong> Ion-exchange costs what it costs because the instrument is dedicated, runs are long, and the method carries decades of validation in regulated matrices; you are paying for defensibility per run, amortized slowly. Derivatization HPLC/UPLC spreads a general-purpose instrument across many assay types, which is part of why per-analyte prices cluster lower. None of that makes one "better"; it explains the price structure a buyer is looking at.</p>
-<p><strong>Skeptic.</strong> Where LC-MS/MS is overkill: a 36-analyte clinical blood list is wasted on a feed ingredient whose specification turns on 6 amino acids, and its per-analyte crown in Table 1 is partly an artifact of counting metabolites a food buyer never asked for. Where HPLC-UV is not enough: trace free amino acids in a dilute beverage, or any job where a co-eluting peak would change a label decision; there, mass-selective detection earns its premium. And the standing skeptic note for this whole article: per-analyte arithmetic rewards long lists. Coverage against the analytes your decision actually needs (Table 1, last column, and your own specification) is the correction.</p>
+<p><strong>Skeptic.</strong> Where LC-MS/MS is overkill: a 36-analyte clinical blood list is wasted on a feed ingredient whose specification turns on 6 amino acids, and its per-analyte crown in Table 1 is partly an artifact of counting metabolites a food buyer never asked for. Where HPLC with fluorescence detection is not enough: trace free amino acids in a dilute beverage, or any job where a co-eluting peak would change a label decision; there, mass-selective detection earns its premium. And the standing skeptic note for this whole article: per-analyte arithmetic rewards long lists. Coverage against the analytes your decision actually needs (Table 1, last column, and your own specification) is the correction.</p>
 <h2 id="what-to-do-with-this">What to do with this</h2>
 <p>Normalize any quote you receive with the three divisions above before you compare it to anything, including to us.</p>
 <p><strong>Check your own product: <a href="/services/amino-acid-analysis">Amino acid analysis, $150/sample</a>.</strong> AA-1 free amino acid analysis, AccQ-Tag on HPLC, priced on this page at $7.50 per reported value (20 reported values: 19 amino acids + ammonia), 3–5 business days.</p>
@@ -339,7 +280,7 @@
     </article></div></div></section>
 <section class="section band tight">
 <div class="container">
-<div class="section-title" style="margin-bottom:1.6rem"><h2>Related</h2><div class="rule"></div></div>
+<div class="section-title" style="margin-bottom:1.6rem"><h2>Related</h2></div>
 <div class="tiles"><a class="tile" href="/applications/cell-culture-media">
 <span class="viz"><canvas aria-hidden="true" data-anim="cellculture" data-hover="" data-mini=""></canvas></span> <span class="body">
 <span class="eyebrow">Application</span> <h3>Cell culture media</h3>
@@ -360,7 +301,7 @@
 </section>
 <section class="cta-band">
 <div class="container">
-<div class="cta-copy"><span class="kicker">Price and book online</span><h2>Have samples in mind?</h2><p>Pick the tests, the sample type and any preparation. The total updates as you go, and you can book in the same place. Every report includes the chromatogram and QC behind the numbers.</p><p>For the short version, see <a href="/insights/amino-acid-testing-price-index">how much does amino acid testing cost</a>: the per-sample numbers, and why quotes vary.</p></div>
+<div class="cta-copy"><span class="kicker">Order builder</span><h2>Have samples in mind?</h2><p>Pick the tests, the sample type and any preparation. The total updates as you go, and you can book in the same place. Every report includes the chromatogram and QC behind the numbers.</p><p>For the short version, see <a href="/insights/amino-acid-testing-price-index">how much does amino acid testing cost</a>: the per-sample numbers, and why quotes vary.</p></div>
 <div class="cta-side">
 <ul class="cta-prices"><li><span>Free amino acids</span><b>$150</b></li><li><span>Total amino acids</span><b>$230</b></li><li><span>Creatine</span><b>$120</b></li></ul>
 <div class="actions"><a class="btn btn-orange" href="/pricing#order">Open the order builder</a><a class="btn btn-outline-white" href="/pricing">Full price list</a></div>
@@ -376,12 +317,12 @@
       <span><span class="name">Open<em>Chem</em>Works</span><span class="sub">Analytical Laboratory · Davis, California</span></span>
     </a>
       <p>Independent analytical testing laboratory. Amino acids, creatine and custom HPLC methods, with published prices and online booking.</p>
-      <p><a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>Davis, California</p>
+      <p><a href="mailto:info@openchemworks.com">info@openchemworks.com</a><br>720 Olive Drive Suite G, Davis, CA 95616</p>
       <p class="f-cta"><a class="btn btn-orange" href="/pricing#order">Price &amp; book samples</a></p>
     </div>
     <div><h2>Services</h2><ul><li><a href="/services/amino-acid-analysis">Free amino acid analysis</a></li><li><a href="/services/total-amino-acid-analysis">Total amino acids</a></li><li><a href="/services/creatine-testing">Creatine testing</a></li><li><a href="/services/method-development">Custom HPLC methods</a></li><li><a href="/services/contract-manufacturers">For CDMOs and contract labs</a></li><li><a href="/services/sample-submission">How to send samples</a></li><li><a href="/pricing">Prices and order builder</a></li></ul></div>
     <div><h2>Applications</h2><ul><li><a href="/applications/cell-culture-media">Cell culture media</a></li><li><a href="/applications/cell-and-gene-therapy">Cell and gene therapy</a></li><li><a href="/applications/fermentation">Precision &amp; microbial fermentation</a></li><li><a href="/applications/cultivated-meat">Cultivated meat</a></li><li><a href="/applications/protein-hydrolysates">Protein hydrolysates &amp; peptones</a></li><li><a href="/applications/wine-and-brewing">Wine &amp; brewing</a></li><li><a href="/applications/label-claims">Supplements, beverages &amp; pet food</a></li></ul></div>
-    <div><h2>Resources</h2><ul><li><a href="/methods/">Methods library</a></li><li><a href="/insights/">Guides</a></li><li><a href="/jobs/">Testing by task</a></li><li><a href="/notes/">Application notes</a></li><li><a href="/example-report.pdf">Example report</a></li><li><a href="/openchemworks-sample-sheet.xlsx">Sample sheet (Excel)</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul></div>
+    <div><h2>Resources</h2><ul><li><a href="/methods/">Methods library</a></li><li><a href="/analytes/">Analytes reference</a></li><li><a href="/insights/">Guides</a></li><li><a href="/jobs/">Testing by task</a></li><li><a href="/notes/">Application notes</a></li><li><a href="/example-report.pdf">Example report</a></li><li><a href="/openchemworks-sample-sheet.xlsx">Sample sheet (Excel)</a></li><li><a href="/about">About</a> · <a href="/privacy">Privacy</a></li></ul></div>
     <div class="legal">
       <span>Analytical services for research, development and process monitoring.</span>
       <span>We specialize in ultrafast turnaround. With planning, we offer overnight turnaround from the day your samples arrive.</span>
