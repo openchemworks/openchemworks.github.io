@@ -31,11 +31,40 @@
 
   var utm = loadUtm();
 
+  // Buyer group for this page. Keep in step with "Buyer groups and sorting rules"
+  // in the OpenChemWorks Growth Lab doc. First match wins.
+  function pageGroup(path) {
+    var p = String(path || '').toLowerCase();
+    var rules = [
+      ['cdmo', /contract-manufacturers|analyzer-vs-send-out|method-development/],
+      ['bioprocess', /cell-culture|spent-media|fermentation|cell-and-gene|cultivated-meat|cell-free|bioreactor|ammonia-cell|^\/notes|peptones|ammonia-glutamine|depletion-atlas|\/analytes\/ammonia/],
+      ['supplement_food', /supplement|creatine|sports-nutrition|protein-powders|protein-bars|protein-drink|verify-bcaa|food|sauces|seasoning|pet-food|animal-feed|plant-based|wine|hydrolysates|label|collagen|homemade|nitrogen-math|medical-nutrition|plasma/],
+      ['lab_shoppers', /^\/$|^\/index|^\/services\/?$|^\/services\/(amino-acid-analysis|total-amino-acid-analysis|accq-tag|overnight|sample-submission)|^\/pricing|^\/quote|^\/about|choosing-an-amino-acid-analysis|price-index|amino-acid-analysis-cost|how-much-sample/],
+      ['method_learners', /^\/methods|choosing-an-amino-acid-method|hydrolysis-losses|reading-a-lab-report|unit-converter/],
+      ['curiosity', /^\/analytes|nitrogen-conversion|protein-quality|essential-amino|free-glutamate|free-vs-total|what-does-an-amino-acid-panel/]
+    ];
+    for (var i = 0; i < rules.length; i++) {
+      if (rules[i][1].test(p)) { return rules[i][0]; }
+    }
+    return 'other';
+  }
+
+  var group = pageGroup(window.location.pathname);
+
+  // Optional experiment tag: <meta name="ocw-exp" content="E2">
+  var exp = '';
+  try {
+    var expMeta = document.querySelector('meta[name="ocw-exp"]');
+    if (expMeta) { exp = String(expMeta.getAttribute('content') || '').slice(0, 40); }
+  } catch (e) {}
+
   // Sends a GA4 event only when gtag is available. Never throws.
   function send(name, params) {
     try {
       if (typeof window.gtag === 'function') {
         params = params || {};
+        params.page_group = group;
+        if (exp) { params.exp = exp; }
         for (var k in utm) {
           if (Object.prototype.hasOwnProperty.call(utm, k)) { params[k] = utm[k]; }
         }
@@ -43,6 +72,13 @@
       }
     } catch (e) {}
   }
+
+  // Tags the page view itself with the group, so GA4 can report sessions by group.
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('set', { page_group: group });
+    }
+  } catch (e) {}
 
   function closestEl(node, selector) {
     try {
@@ -82,13 +118,23 @@
         params.link_url = link.getAttribute('href');
         send('phone_click', params);
       }
+
+      // "Book these samples" in the order builder: the strongest signal before a booking.
+      if (closestEl(target, '.ob-go')) {
+        send('booking_intent', { page_path: window.location.pathname });
+      }
     } catch (e) {}
   }, true);
 
   document.addEventListener('submit', function (ev) {
     try {
-      if (closestEl(ev.target, '#order form') || closestEl(ev.target, '#order')) {
-        send('booking_submit', { page_path: window.location.pathname });
+      if (closestEl(ev.target, '#order form') || closestEl(ev.target, '#order') || closestEl(ev.target, '[data-ob] form')) {
+        var purpose = '';
+        try {
+          var sel = ev.target.querySelector('[name="purpose"]');
+          if (sel) { purpose = String(sel.value || '').slice(0, 60); }
+        } catch (e) {}
+        send('booking_submit', { page_path: window.location.pathname, purpose: purpose });
       }
     } catch (e) {}
   }, true);
