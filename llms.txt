@@ -1,0 +1,17 @@
+# OpenChemWorks
+
+OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free and total amino acid analysis, creatine testing and custom HPLC methods for research, product development and process monitoring. Prices are published and you can book online. Overnight turnaround available, with expedited service on request. We are not yet accredited. Every report includes the chromatogram, calibration and QC results.
+
+## Key pages
+
+- Home: https://openchemworks.com/ - Tests, published prices and online booking.
+- Amino acid analysis: https://openchemworks.com/services/amino-acid-analysis - Free amino acid profile, 19 amino acids plus ammonia, $150 per sample.
+- Overnight amino acid analysis: https://openchemworks.com/services/overnight-amino-acid-analysis - How overnight and expedited service works.
+- Pricing: https://openchemworks.com/pricing - Every price in one table, with the order builder.
+- Request a quote: https://openchemworks.com/quote - For overnight or expedited runs, special sample prep, new sample types or custom methods.
+- How to send samples: https://openchemworks.com/services/sample-submission - Volumes, labeling and shipping.
+- AQC derivatization: https://openchemworks.com/methods/aqc-derivatization - How the method works.
+- AccQ-Tag amino acid analysis: https://openchemworks.com/services/accq-tag-amino-acid-analysis - The AccQ-Tag method, run by OpenChemWorks and sold per sample.
+- Bioreactor amino acid monitoring: https://openchemworks.com/services/bioreactor-amino-acid-monitoring - Ship time points and get the whole run back as data.
+- Creatine testing: https://openchemworks.com/services/creatine-testing - Creatine in powders, capsules, gummies and drinks, $120 per sample.
+- Insights: https://openchemworks.com/insights/ - Guides on amino acid testing, panels, prices and choosing a lab.
