@@ -15,3 +15,7 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 - Bioreactor amino acid monitoring: https://openchemworks.com/services/bioreactor-amino-acid-monitoring - Ship time points and get the whole run back as data.
 - Creatine testing: https://openchemworks.com/services/creatine-testing - Creatine in powders, capsules, gummies and drinks, $120 per sample.
 - Insights: https://openchemworks.com/insights/ - Guides on amino acid testing, panels, prices and choosing a lab.
+
+- Amino acid testing for food products: https://openchemworks.com/applications/food-testing - Free vs total amino acids for food products, sample amounts and prices.
+- Amino acid unit converter: https://openchemworks.com/tools/amino-acid-unit-converter - Convert between µM, mg/L, mg/100 mL and mg/g for the AA-1 amino acids.
+- Analyzer or send-out calculator: https://openchemworks.com/tools/analyzer-vs-send-out-calculator - Compare in-house analyzer cost per sample with published send-out prices.
