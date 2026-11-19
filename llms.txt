@@ -14,6 +14,7 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 - AccQ-Tag amino acid analysis: https://openchemworks.com/services/accq-tag-amino-acid-analysis - The AccQ-Tag method, run by OpenChemWorks and sold per sample.
 - Bioreactor amino acid monitoring: https://openchemworks.com/services/bioreactor-amino-acid-monitoring - Ship time points and get the whole run back as data.
 - Creatine testing: https://openchemworks.com/services/creatine-testing - Creatine in powders, capsules, gummies and drinks, $120 per sample.
+- Supplement lot testing: https://openchemworks.com/services/supplement-lot-testing - Every production or ingredient lot of amino acid and creatine supplements, from $125 per sample at 15+ a month.
 - Insights: https://openchemworks.com/insights/ - Guides on amino acid testing, panels, prices and choosing a lab.
 
 - Amino acid testing for food products: https://openchemworks.com/applications/food-testing - Free vs total amino acids for food products, sample amounts and prices.
