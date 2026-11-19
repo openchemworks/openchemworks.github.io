@@ -34,6 +34,8 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500,region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']});
+  try{var c=localStorage.getItem('ocw-consent');if(c==='granted'){gtag('consent','update',{analytics_storage:'granted'});}}catch(e){}
   gtag('js', new Date());
 
   gtag('config', 'G-27TQ6F9EE9');
@@ -71,9 +73,9 @@
 </div>
 </section>
 <section class="section"><div class="container prose legal-copy">
-<p>Last updated October 16, 2026.</p>
+<p>Last updated November 19, 2026.</p>
 <h2 id="what">What we collect</h2>
-<p>This website has no accounts and no advertising trackers. We use Google Analytics to count visits and see which pages people read; it sets cookies and sends Google the usual visit data (pages viewed, approximate location, device type). The order builder keeps your draft order in your own browser (local storage on your device) so it survives a page change; it is not sent anywhere until you book. When you book, or sign up for updates, the details you enter (name, email, organization, phone, sample description and the order) are sent to us through Google Forms.</p>
+<p>This website has no accounts and no advertising trackers. We use Google Analytics 4 to measure page visits and clicks on order, quote, email and phone links; it sets cookies and sends Google the usual visit data (pages viewed, approximate location, device type). If a link to this site carries campaign tags (utm), those tags are recorded with these events. Visitors in the EU, UK, Iceland, Liechtenstein, Norway and Switzerland are asked first, and analytics cookies stay off unless you allow them. Your choice is stored in your browser and you can change it by clearing this site's data in your browser. The order builder keeps your draft order in your own browser (local storage on your device) so it survives a page change; it is not sent anywhere until you book. When you book, or sign up for updates, the details you enter (name, email, organization, phone, sample description and the order) are sent to us through Google Forms.</p>
 <p>When you book, email us or send samples, we receive your name, contact details, organization and the information you provide about your samples. We use it to confirm the booking, run and report the analysis, invoice, and reply to you.</p>
 <h2 id="sharing">Sharing</h2>
 <p>Client information, sample descriptions and results are shared only with the submitting client, except where the law requires otherwise. We do not sell personal information.</p>
@@ -106,6 +108,7 @@
 </footer>
 <script src="/assets/site.js?v=20261114a" defer></script>
 <script src="/assets/anim.js?v=20261009a" defer></script>
+<script src="/assets/consent.js" defer></script>
 <script src="/assets/track.js" defer></script>
 </body>
 </html>

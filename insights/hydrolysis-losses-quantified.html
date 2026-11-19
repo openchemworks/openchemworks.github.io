@@ -35,6 +35,8 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500,region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']});
+  try{var c=localStorage.getItem('ocw-consent');if(c==='granted'){gtag('consent','update',{analytics_storage:'granted'});}}catch(e){}
   gtag('js', new Date());
 
   gtag('config', 'G-27TQ6F9EE9');
@@ -318,6 +320,7 @@ if(rm||!("IntersectionObserver" in window)){
 }
 })();
 </script>
+<script src="/assets/consent.js" defer></script>
 <script src="/assets/track.js" defer></script>
 </body>
 </html>

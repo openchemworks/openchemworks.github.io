@@ -1,11 +1,45 @@
 (function () {
   'use strict';
 
+  var UTM_KEY = 'ocw-utm';
+
+  // Reads utm_* from the URL, keeps them for the visit (sessionStorage), returns them.
+  function loadUtm() {
+    var out = {};
+    try {
+      var q = new URLSearchParams(window.location.search);
+      var fromUrl = {};
+      ['source', 'medium', 'campaign'].forEach(function (k) {
+        var v = q.get('utm_' + k);
+        if (v) { fromUrl[k] = v.slice(0, 100); }
+      });
+      if (Object.keys(fromUrl).length) {
+        try { window.sessionStorage.setItem(UTM_KEY, JSON.stringify(fromUrl)); } catch (e) {}
+        return fromUrl;
+      }
+      try {
+        var saved = JSON.parse(window.sessionStorage.getItem(UTM_KEY) || 'null');
+        if (saved && typeof saved === 'object') {
+          ['source', 'medium', 'campaign'].forEach(function (k) {
+            if (typeof saved[k] === 'string' && saved[k]) { out[k] = saved[k]; }
+          });
+        }
+      } catch (e) {}
+    } catch (e) {}
+    return out;
+  }
+
+  var utm = loadUtm();
+
   // Sends a GA4 event only when gtag is available. Never throws.
   function send(name, params) {
     try {
       if (typeof window.gtag === 'function') {
-        window.gtag('event', name, params || {});
+        params = params || {};
+        for (var k in utm) {
+          if (Object.prototype.hasOwnProperty.call(utm, k)) { params[k] = utm[k]; }
+        }
+        window.gtag('event', name, params);
       }
     } catch (e) {}
   }
