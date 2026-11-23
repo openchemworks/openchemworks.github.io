@@ -39,7 +39,7 @@
       ['cdmo', /contract-manufacturers|analyzer-vs-send-out|method-development/],
       ['bioprocess', /cell-culture|spent-media|fermentation|cell-and-gene|cultivated-meat|cell-free|bioreactor|ammonia-cell|^\/notes|peptones|ammonia-glutamine|depletion-atlas|\/analytes\/ammonia/],
       ['supplement_food', /supplement|creatine|sports-nutrition|protein-powders|protein-bars|protein-drink|verify-bcaa|food|sauces|seasoning|pet-food|animal-feed|plant-based|wine|hydrolysates|label|collagen|homemade|nitrogen-math|medical-nutrition|plasma/],
-      ['lab_shoppers', /^\/$|^\/index|^\/services\/?$|^\/services\/(amino-acid-analysis|total-amino-acid-analysis|accq-tag|overnight|sample-submission)|^\/pricing|^\/quote|^\/about|choosing-an-amino-acid-analysis|price-index|amino-acid-analysis-cost|how-much-sample/],
+      ['lab_shoppers', /^\/$|^\/index|^\/services\/?$|^\/services\/(amino-acid-analysis|total-amino-acid-analysis|accq-tag|overnight|sample-submission)|^\/pricing|^\/quote|^\/about|choosing-an-amino-acid-analysis|price-index|amino-acid-analysis-cost|amino-acid-testing-cost|accredited-amino-acid|how-much-sample|^\/(insights|applications|jobs|tools)\/?$/],
       ['method_learners', /^\/methods|choosing-an-amino-acid-method|hydrolysis-losses|reading-a-lab-report|unit-converter/],
       ['curiosity', /^\/analytes|nitrogen-conversion|protein-quality|essential-amino|free-glutamate|free-vs-total|what-does-an-amino-acid-panel/]
     ];
