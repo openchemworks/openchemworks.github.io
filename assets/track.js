@@ -119,6 +119,18 @@
         send('phone_click', params);
       }
 
+      link = closestEl(target, 'a[href$=".pdf"]');
+      if (link) {
+        params.link_url = link.getAttribute('href');
+        send('report_pdf_click', params);
+      }
+
+      link = closestEl(target, 'a[href$=".xlsx"]');
+      if (link) {
+        params.link_url = link.getAttribute('href');
+        send('sample_sheet_download', params);
+      }
+
       // "Book these samples" in the order builder: the strongest signal before a booking.
       if (closestEl(target, '.ob-go')) {
         send('booking_intent', { page_path: window.location.pathname });
@@ -135,6 +147,11 @@
           if (sel) { purpose = String(sel.value || '').slice(0, 60); }
         } catch (e) {}
         send('booking_submit', { page_path: window.location.pathname, purpose: purpose });
+      } else if (closestEl(ev.target, '.capture-form')) {
+        send('lead_capture_submit', {
+          page_path: window.location.pathname,
+          segment: String(ev.target.getAttribute('data-segment') || '').slice(0, 60)
+        });
       }
     } catch (e) {}
   }, true);

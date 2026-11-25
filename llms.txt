@@ -12,10 +12,14 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 - How to send samples: https://openchemworks.com/services/sample-submission - Volumes, labeling and shipping.
 - AQC derivatization: https://openchemworks.com/methods/aqc-derivatization - How the method works.
 - AccQ-Tag amino acid analysis: https://openchemworks.com/services/accq-tag-amino-acid-analysis - The AccQ-Tag method, run by OpenChemWorks and sold per sample.
-- Bioreactor amino acid monitoring: https://openchemworks.com/services/bioreactor-amino-acid-monitoring - Ship time points and get the whole run back as data.
-- Creatine testing: https://openchemworks.com/services/creatine-testing - Creatine in powders, capsules, gummies and drinks, $120 per sample.
-- Supplement lot testing: https://openchemworks.com/services/supplement-lot-testing - Every production or ingredient lot of amino acid and creatine supplements, from $125 per sample at 15+ a month.
+- Bioreactor amino acid monitoring: https://openchemworks.com/services/bioreactor-amino-acid-monitoring - Ship time points and get the whole run back as data (RUN-1, $1,990 for up to 24 time points).
+- Spent media analysis: https://openchemworks.com/applications/spent-media - 19 free amino acids plus ammonia in cell culture spent media ($150/sample, $1,990 RUN-1).
+- Creatine testing: https://openchemworks.com/services/creatine-testing - CR-1 ($120 powders, capsules, drinks) and CR-1G ($180 gummies and chews, includes matrix spike recovery plus creatine and creatinine quantitation; +$120 uniformity CR-1U, +$100 taurine CR-1T); $180 minimum order.
+- Supplement lot testing: https://openchemworks.com/services/supplement-lot-testing - Every production or ingredient lot of amino acid and creatine supplements, from $125 per sample at 15+ a month ($180 minimum order).
+- Supplement testing cost: https://openchemworks.com/jobs/supplement-testing-cost - Published per-sample prices and pre-compliance vs ISO 17025 guidance.
 - Insights: https://openchemworks.com/insights/ - Guides on amino acid testing, panels, prices and choosing a lab.
+- Creatine gummy testing cost and degradation: https://openchemworks.com/insights/creatine-gummy-testing-cost-and-degradation - Why creatine gummies fail labels, creatinine cyclization, matrix spike recovery, and $180 CR-1G pricing.
+- Repligen (908 Devices) REBEL vs send-out spent media analysis: https://openchemworks.com/insights/repligen-rebel-vs-send-out-spent-media-analysis - Comparing at-line CE-MS vs $1,990 RUN-1 HPLC (3-5 day turnaround or overnight on request).
 
 - Amino acid testing for food products: https://openchemworks.com/applications/food-testing - Free vs total amino acids for food products, sample amounts and prices.
 - Amino acid unit converter: https://openchemworks.com/tools/amino-acid-unit-converter - Convert between µM, mg/L, mg/100 mL and mg/g for the AA-1 amino acids.
