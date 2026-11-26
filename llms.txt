@@ -23,4 +23,5 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 
 - Amino acid testing for food products: https://openchemworks.com/applications/food-testing - Free vs total amino acids for food products, sample amounts and prices.
 - Amino acid unit converter: https://openchemworks.com/tools/amino-acid-unit-converter - Convert between µM, mg/L, mg/100 mL and mg/g for the AA-1 amino acids.
+- Protein label & amino-spiking calculator: https://openchemworks.com/tools/protein-amino-spiking-checker - Compute synthetic N x 6.25 protein inflation from free glycine, taurine, creatine, glutamine or arginine vs intact protein.
 - Analyzer or send-out calculator: https://openchemworks.com/tools/analyzer-vs-send-out-calculator - Compare in-house analyzer cost per sample with published send-out prices.
