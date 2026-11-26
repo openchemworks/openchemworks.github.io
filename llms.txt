@@ -19,7 +19,7 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 - Supplement testing cost: https://openchemworks.com/jobs/supplement-testing-cost - Published per-sample prices and pre-compliance vs ISO 17025 guidance.
 - Insights: https://openchemworks.com/insights/ - Guides on amino acid testing, panels, prices and choosing a lab.
 - Creatine gummy testing cost and degradation: https://openchemworks.com/insights/creatine-gummy-testing-cost-and-degradation - Why creatine gummies fail labels, creatinine cyclization, matrix spike recovery, and $180 CR-1G pricing.
-- Repligen (908 Devices) REBEL vs send-out spent media analysis: https://openchemworks.com/insights/repligen-rebel-vs-send-out-spent-media-analysis - Comparing at-line CE-MS vs $1,990 RUN-1 HPLC (3-5 day turnaround or overnight on request).
+- Repligen (908 Devices) REBEL vs send-out spent media analysis: https://openchemworks.com/insights/repligen-rebel-vs-send-out-spent-media-analysis - Comparing at-line CE-MS vs $1,990 RUN-1 HPLC (overnight turnaround available, with expedited service on request).
 
 - Amino acid testing for food products: https://openchemworks.com/applications/food-testing - Free vs total amino acids for food products, sample amounts and prices.
 - Amino acid unit converter: https://openchemworks.com/tools/amino-acid-unit-converter - Convert between µM, mg/L, mg/100 mL and mg/g for the AA-1 amino acids.
