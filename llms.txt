@@ -7,7 +7,7 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 - Home: https://openchemworks.com/ - Tests, published prices and online booking.
 - Amino acid analysis: https://openchemworks.com/services/amino-acid-analysis - Free amino acid profile, 19 amino acids plus ammonia, $150 per sample.
 - Overnight amino acid analysis: https://openchemworks.com/services/overnight-amino-acid-analysis - How overnight and expedited service works.
-- Pricing: https://openchemworks.com/pricing - Every price in one table, with the order builder.
+- Pricing: https://openchemworks.com/pricing - Every price in one table, with the order builder ($0 prep surcharge for clear liquids; +$30 PREP-1 per dry powder/capsule/solid; intact tissues custom quoted; $180 online minimum).
 - Request a quote: https://openchemworks.com/quote - For overnight or expedited runs, special sample prep, new sample types or custom methods.
 - How to send samples: https://openchemworks.com/services/sample-submission - Volumes, labeling and shipping.
 - AQC derivatization: https://openchemworks.com/methods/aqc-derivatization - How the method works.
