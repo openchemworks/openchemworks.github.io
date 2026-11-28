@@ -1,0 +1,8 @@
+record_type,condition_or_day,temp_c,pH,k_chem_per_day,vcd_1e6_per_ml,gln_start_mM,gln_end_mM,thermal_gln_loss_mM,cellular_gln_loss_mM,apparent_qgln_pmol_cell_day,corrected_qgln_pmol_cell_day,chemical_nh3_mM,metabolic_nh3_mM,apparent_Y_NH3_Gln,metabolic_Y_NH3_Gln,source_or_note
+literature_rate,37 C cell-free medium (~10%/day loss),37,7.2,0.105,,,,,,,,,0.105,,,Tritsch & Moore (1962) Exp Cell Res PMID 13994204 DOI 10.1016/0014-4827(62)90290-2
+literature_rate,4 C refrigerated hold (~10% over 9 days),4,7.2,0.0117,,,,,,,,,,,,"Tritsch & Moore (1962) Exp Cell Res PMID 13994204 (~9 days to 10% loss at 4 C)"
+literature_rate,37 C pH 7.4 mammalian medium (0.0034 h^-1),37,7.4,0.0816,,,,,,,,,,,,"Ozturk & Palsson (1990) Biotechnol Prog PMID 1366484 DOI 10.1021/bp00002a005 (0.002-0.004 h^-1 across pH 7.2-7.4; 0.0034 h^-1 = 0.0816/d)"
+modeled_example,Day 0 to Day 1 (low VCD lag/early growth),37,7.2,0.105,0.60,4.000,3.204,0.378,0.418,1.327,0.697,0.378,0.293,0.843,0.701,"ODE integration of d[Gln]/dt = -k_chem*[Gln] - q_Gln*VCD with true cellular Y_NH3/Gln = 0.70"
+modeled_example,Day 1 to Day 2 (mid-exponential),37,7.2,0.105,1.40,3.204,1.946,0.268,0.990,0.899,0.707,0.268,0.693,0.764,0.700,"Unadjusted apparent qGln inflates cellular demand by +27% during Day 1-2"
+modeled_example,Day 2 to Day 3 (late exponential near depletion),37,7.2,0.105,2.60,1.946,0.000,0.097,1.849,0.748,0.711,0.097,1.294,0.715,0.700,"Ignoring thermal decay inflates apparent Y_NH3/Gln early and obscures true cellular demand"
+modeled_example,Cell-free 37 C matched control (Days 0-4),37,7.2,0.105,0.00,4.000,2.628,1.372,0.000,0.000,0.000,1.372,0.000,,,"Matched fresh medium incubated at 37 C without cells directly measures chemical NH3 share"
