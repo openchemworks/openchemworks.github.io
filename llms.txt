@@ -18,6 +18,7 @@ OpenChemWorks is an amino acid analysis lab in Davis, California. We offer free 
 - Supplement lot testing: https://openchemworks.com/services/supplement-lot-testing - Every production or ingredient lot of amino acid and creatine supplements, from $125 per sample at 15+ a month ($180 minimum order).
 - Supplement testing cost: https://openchemworks.com/jobs/supplement-testing-cost - Published per-sample prices and pre-compliance vs ISO 17025 guidance.
 - Insights: https://openchemworks.com/insights/ - Guides on amino acid testing, panels, prices and choosing a lab.
+- US amino acid testing price index (Dataset + CSV): https://openchemworks.com/insights/amino-acid-testing-price-index - Verified US published lab price census ($150-$650/sample) with downloadable CSV (https://openchemworks.com/datasets/us-amino-acid-testing-price-index-2026-11.csv).
 - Creatine gummy testing cost and degradation: https://openchemworks.com/insights/creatine-gummy-testing-cost-and-degradation - Why creatine gummies fail labels, creatinine cyclization, matrix spike recovery, and $180 CR-1G pricing.
 - Repligen (908 Devices) REBEL vs send-out spent media analysis: https://openchemworks.com/insights/repligen-rebel-vs-send-out-spent-media-analysis - Comparing at-line CE-MS vs $1,990 RUN-1 HPLC (overnight turnaround available, with expedited service on request).
 
